@@ -1,0 +1,6 @@
+id,type,text1,text2,text3,text4,notes,Column 08,Column 09,Column 10
+# Types: WEAPON,SHIP,RESOURCE,CUSTOM,ACTION_TOOLTIP,ASTEROID,PLANET,SHIP_SYSTEM,FACTION,TERRAIN
+#astral,SHIP,Text goes here,,,,,,,
+JHS_junkhubship_core,SHIP,"A lumbering behemoth of bygone era, cherished and maintained to modern standard by those who call this vessel their home.
+
+Voidfaring ships, as the name implies, is a type of ship that designed to cross the abyss of space without the help of gates system. likely derived from ship of the era where convenient long range transportation device such as gates havent invented. Djoeng Class Voidfaring Hubship is designed to be a traveling colony or pioneering vessels first and foremost, carrying with them the entire colony and its people to set out to the unknown to find their new home, or simply living their entire lives as travelling colony fleet, never stay too long in one place and always moving alone.",,,,,,,

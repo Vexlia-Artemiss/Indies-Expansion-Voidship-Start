@@ -1,0 +1,475 @@
+id,trigger,conditions,script,text,options,notes
+uwMarketAddOptionRestoreOrUpgrade,PopulateOptions,"$hasMarket
+$menuState == main
+$tradeMode == OPEN
+UW_RestoreOrUpgradeAvailable","SetTooltip uwMarketRestoreOrUpgrade ""$global.uwRestoreOrUpgradeTooltip""
+SetTooltipHighlightColors uwMarketRestore buttonShortcut
+SetTooltipHighlights uwMarketRestore $global.uwRestoreShip",,16:uwMarketRestoreOrUpgrade:$global.uwRestoreOrUpgradeStr $global.uwRestoreShip,
+uwMarketOptionRestoreOrUpgradeMenu,DialogOptionSelected,$option == uwMarketRestoreOrUpgrade,"$menuState = uwRestoreOrUpgrade
+FireAll UWPopulateRestoreOrUpgradeOptions",,,
+uwMarketAddOptionRestoreOrUpgradeBack,UWPopulateRestoreOrUpgradeOptions,,SetShortcut uwRestoreOrUpgradeBack ESCAPE,,25:uwRestoreOrUpgradeBack:Back,
+uwMarketRestoreOrUpgradeBack,DialogOptionSelected,$option == uwRestoreOrUpgradeBack,"$menuState = main 0
+FireAll PopulateOptions",,,
+uwMarketAddOptionRestore1,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_RestoreAvailable
+UW_RestoreEnoughCredits","SetTooltip uwMarketRestore ""Cleaing $global.uwRestoreModsStr d-mod from $global.uwRestoreShip requires $global.uwRestoreCostStr credits. $player.creditsStr credits are available.""
+SetTooltipHighlightColors uwMarketRestore buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights uwMarketRestore $global.uwRestoreShip $global.uwRestoreCostStr $player.creditsStr
+UW_AddConfirmation uwMarketRestore ""Cleaing $global.uwRestoreModsStr d-mod from $global.uwRestoreShip requires $global.uwRestoreCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,1:uwMarketRestore:Clear a d-mod from the hull,
+uwMarketAddOptionRestore2,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_RestoreAvailable
+!UW_RestoreEnoughCredits","SetTooltip uwMarketRestore ""Clearing $global.uwRestoreModsStr d-mod from $global.uwRestoreShip requires $global.uwRestoreCostStr credits. Only $player.creditsStr credits are available.""
+SetTooltipHighlightColors uwMarketRestore buttonShortcut buttonShortcut bad
+SetTooltipHighlights uwMarketRestore $global.uwRestoreShip $global.uwRestoreCostStr $player.creditsStr
+SetEnabled uwMarketRestore false",,1:uwMarketRestore:Clear a d-mod from the hull,
+uwMarketOptionRestoreShip,DialogOptionSelected,$option == uwMarketRestore,"UW_RestoreShip
+AddText ""$global.uwRestoreShip is $global.uwRestoreAfterStr by clearing $global.uwRestoreRemovedDMod from the hull, at the cost of $global.uwRestoreCostStr credits. $global.uwRestoreNumDModsStr""
+SetTextHighlightColors hColor bad hColor hColor
+SetTextHighlights $global.uwRestoreShip $global.uwRestoreRemovedDMod $global.uwRestoreCostStr $global.uwRestoreNumDModsStrHighlight
+FireAll UWPopulateRestoreOrUpgradeOptions",,,
+uwMarketAddOptionUpgradeU1_1,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable U1
+UW_UpgradeEnoughCredits U1","SetTooltip uwMarketUpgradeU1 ""Installing this upgrade into $global.uwUpgradeShip requires $global.uwUpgradeU1CostStr credits. $player.creditsStr credits are available.""
+SetTooltipHighlightColors uwMarketUpgradeU1 buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights uwMarketUpgradeU1 $global.uwUpgradeShip $global.uwUpgradeU1CostStr $player.creditsStr
+UW_AddConfirmation uwMarketUpgradeU1 ""Installing a pair of built-in Borer Drone wings into $global.uwUpgradeShip requires $global.uwUpgradeU1CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,2:uwMarketUpgradeU1:Install a pair of built-in Borer Drone wings,
+uwMarketAddOptionUpgradeU1_2,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable U1
+!UW_UpgradeEnoughCredits U1","SetTooltip uwMarketUpgradeU1 ""Installing this upgrade into $global.uwUpgradeShip requires $global.uwUpgradeU1CostStr credits. Only $player.creditsStr credits are available.""
+SetTooltipHighlightColors uwMarketUpgradeU1 buttonShortcut buttonShortcut bad
+SetTooltipHighlights uwMarketUpgradeU1 $global.uwUpgradeShip $global.uwUpgradeU1CostStr $player.creditsStr
+SetEnabled uwMarketUpgradeU1 false",,2:uwMarketUpgradeU1:Install a pair of built-in Borer Drone wings,
+uwMarketOptionUpgradeU1,DialogOptionSelected,$option == uwMarketUpgradeU1,"UW_UpgradeShip U1
+AddText ""Installed a pair of built-in Borer Drone wings into $global.uwUpgradeShip, at the cost of $global.uwUpgradeU1CostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeU1CostStr
+FireAll UWPopulateRestoreOrUpgradeOptions",,,
+uwMarketAddOptionUpgradeU2_1,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable U2
+UW_UpgradeEnoughCredits U2","SetTooltip uwMarketUpgradeU2 ""Installing this upgrade into $global.uwUpgradeShip requires $global.uwUpgradeU2CostStr credits. $player.creditsStr credits are available.""
+SetTooltipHighlightColors uwMarketUpgradeU2 buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights uwMarketUpgradeU2 $global.uwUpgradeShip $global.uwUpgradeU2CostStr $player.creditsStr
+UW_AddConfirmation uwMarketUpgradeU2 ""Installing a built-in Operations Center into $global.uwUpgradeShip requires $global.uwUpgradeU2CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,3:uwMarketUpgradeU2:Install a built-in Operations Center,
+uwMarketAddOptionUpgradeU2_2,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable U2
+!UW_UpgradeEnoughCredits U2","SetTooltip uwMarketUpgradeU2 ""Installing this upgrade into $global.uwUpgradeShip requires $global.uwUpgradeU2CostStr credits. Only $player.creditsStr credits are available.""
+SetTooltipHighlightColors uwMarketUpgradeU2 buttonShortcut buttonShortcut bad
+SetTooltipHighlights uwMarketUpgradeU2 $global.uwUpgradeShip $global.uwUpgradeU2CostStr $player.creditsStr
+SetEnabled uwMarketUpgradeU2 false",,3:uwMarketUpgradeU2:Install a built-in Operations Center,
+uwMarketOptionUpgradeU2,DialogOptionSelected,$option == uwMarketUpgradeU2,"UW_UpgradeShip U2
+AddText ""Installed a built-in Operations Center into $global.uwUpgradeShip, at the cost of $global.uwUpgradeU2CostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeU2CostStr
+FireAll UWPopulateRestoreOrUpgradeOptions",,,
+uwMarketAddOptionUpgradeU3_1,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable U3
+UW_UpgradeEnoughCredits U3","SetTooltip uwMarketUpgradeU3 ""Installing this upgrade into $global.uwUpgradeShip requires $global.uwUpgradeU3CostStr credits. $player.creditsStr credits are available.""
+SetTooltipHighlightColors uwMarketUpgradeU3 buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights uwMarketUpgradeU3 $global.uwUpgradeShip $global.uwUpgradeU3CostStr $player.creditsStr
+UW_AddConfirmation uwMarketUpgradeU3 ""Installing a built-in Hellfire Cannon into $global.uwUpgradeShip requires $global.uwUpgradeU3CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,4:uwMarketUpgradeU3:Install a built-in Hellfire Cannon,
+uwMarketAddOptionUpgradeU3_2,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable U3
+!UW_UpgradeEnoughCredits U3","SetTooltip uwMarketUpgradeU3 ""Installing this upgrade into $global.uwUpgradeShip requires $global.uwUpgradeU3CostStr credits. Only $player.creditsStr credits are available.""
+SetTooltipHighlightColors uwMarketUpgradeU3 buttonShortcut buttonShortcut bad
+SetTooltipHighlights uwMarketUpgradeU3 $global.uwUpgradeShip $global.uwUpgradeU3CostStr $player.creditsStr
+SetEnabled uwMarketUpgradeU3 false",,4:uwMarketUpgradeU3:Install a built-in Hellfire Cannon,
+uwMarketOptionUpgradeU3,DialogOptionSelected,$option == uwMarketUpgradeU3,"UW_UpgradeShip U3
+AddText ""Installed a built-in Hellfire Cannon into $global.uwUpgradeShip, at the cost of $global.uwUpgradeU3CostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeU3CostStr
+FireAll UWPopulateRestoreOrUpgradeOptions",,,
+uwMarketAddOptionUpgradeU4_1,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable U4
+UW_UpgradeEnoughCredits U4","SetTooltip uwMarketUpgradeU4 ""Installing this upgrade into $global.uwUpgradeShip requires $global.uwUpgradeU4CostStr credits. $player.creditsStr credits are available. Weapon slot upgrades: one medium slot is increased to large and three small slots are increased to medium.""
+SetTooltipHighlightColors uwMarketUpgradeU4 buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights uwMarketUpgradeU4 $global.uwUpgradeShip $global.uwUpgradeU4CostStr $player.creditsStr
+UW_AddConfirmation uwMarketUpgradeU4 ""Upgrading modular weapon slots and increasing maximum ordnance points by 25 for $global.uwUpgradeShip requires $global.uwUpgradeU4CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,5:uwMarketUpgradeU4:Upgrade modular weapon slots (+25 OP),
+uwMarketAddOptionUpgradeU4_2,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable U4
+!UW_UpgradeEnoughCredits U4","SetTooltip uwMarketUpgradeU4 ""Installing this upgrade into $global.uwUpgradeShip requires $global.uwUpgradeU4CostStr credits. Only $player.creditsStr credits are available. Weapon slot upgrades: one medium slot is increased to large and three small slots are increased to medium.""
+SetTooltipHighlightColors uwMarketUpgradeU4 buttonShortcut buttonShortcut bad
+SetTooltipHighlights uwMarketUpgradeU4 $global.uwUpgradeShip $global.uwUpgradeU4CostStr $player.creditsStr
+SetEnabled uwMarketUpgradeU4 false",,5:uwMarketUpgradeU4:Upgrade modular weapon slots (+25 OP),
+uwMarketOptionUpgradeU4,DialogOptionSelected,$option == uwMarketUpgradeU4,"UW_UpgradeShip U4
+AddText ""Upgraded modular weapon slots and increased maximum ordnance points by 25 for $global.uwUpgradeShip, at the cost of $global.uwUpgradeU4CostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeU4CostStr
+FireAll UWPopulateRestoreOrUpgradeOptions",,,
+uwMarketAddOptionUpgradeF1_1,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable F1
+!UW_UpgradeInstalled F2
+UW_UpgradeEnoughCredits F1","SetTooltip uwMarketUpgradeF1 ""Installing this upgrade into $global.uwUpgradeShip requires $global.uwUpgradeF1CostStr credits. $player.creditsStr credits are available.""
+SetTooltipHighlightColors uwMarketUpgradeF1 buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights uwMarketUpgradeF1 $global.uwUpgradeShip $global.uwUpgradeF1CostStr $player.creditsStr
+UW_AddConfirmation uwMarketUpgradeF1 ""Replacing the built-in Borer Drones with a pair of Terminator Drone wings for $global.uwUpgradeShip requires $global.uwUpgradeF1CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,6:uwMarketUpgradeF1:Replace built-in Borer Drones with Terminator Drones,
+uwMarketAddOptionUpgradeF1_2,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable F1
+!UW_UpgradeInstalled F2
+!UW_UpgradeEnoughCredits F1","SetTooltip uwMarketUpgradeF1 ""Installing this upgrade into $global.uwUpgradeShip requires $global.uwUpgradeF1CostStr credits. Only $player.creditsStr credits are available.""
+SetTooltipHighlightColors uwMarketUpgradeF1 buttonShortcut buttonShortcut bad
+SetTooltipHighlights uwMarketUpgradeF1 $global.uwUpgradeShip $global.uwUpgradeF1CostStr $player.creditsStr
+SetEnabled uwMarketUpgradeF1 false",,6:uwMarketUpgradeF1:Replace built-in Borer Drones with Terminator Drones,
+uwMarketOptionUpgradeF1,DialogOptionSelected,"!UW_UpgradeInstalled F2
+$option == uwMarketUpgradeF1","UW_UpgradeShip F1
+AddText ""Replaced the built-in Borer Drones with a pair of Terminator Drone wings for $global.uwUpgradeShip, at the cost of $global.uwUpgradeF1CostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeF1CostStr
+FireAll UWPopulateRestoreOrUpgradeOptions",,,
+uwMarketAddOptionSwapF1_1,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable F1
+UW_UpgradeInstalled F2
+UW_UpgradeEnoughCredits F1","SetTooltip uwMarketSwapF1 ""Swapping to this upgrade for $global.uwUpgradeShip requires $global.uwUpgradeF1SwapCostStr credits. $player.creditsStr credits are available.""
+SetTooltipHighlightColors uwMarketSwapF1 buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights uwMarketSwapF1 $global.uwUpgradeShip $global.uwUpgradeF1SwapCostStr $player.creditsStr
+UW_AddConfirmation uwMarketSwapF1 ""Replacing the fighter bays with a pair of built-in Terminator Drone wings and decreasing maximum ordnance points by 20 for $global.uwUpgradeShip requires $global.uwUpgradeF1SwapCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,6:uwMarketSwapF1:Replace fighter bays with a pair of built-in Terminator Drone wings (-20 OP),
+uwMarketAddOptionSwapF1_2,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable F1
+UW_UpgradeInstalled F2
+!UW_UpgradeEnoughCredits F1","SetTooltip uwMarketSwapF1 ""Swapping to this upgrade for $global.uwUpgradeShip requires $global.uwUpgradeF1SwapCostStr credits. Only $player.creditsStr credits are available.""
+SetTooltipHighlightColors uwMarketSwapF1 buttonShortcut buttonShortcut bad
+SetTooltipHighlights uwMarketSwapF1 $global.uwUpgradeShip $global.uwUpgradeF1SwapCostStr $player.creditsStr
+SetEnabled uwMarketSwapF1 false",,6:uwMarketSwapF1:Replace fighter bays with a pair of built-in Terminator Drone wings (-20 OP),
+uwMarketOptionSwapF1,DialogOptionSelected,"UW_UpgradeInstalled F2
+$option == uwMarketSwapF1","UW_UpgradeShip F1
+AddText ""Replaced the fighter bays with a pair of built-in Terminator Drone wings and decreased maximum ordnance points by 20 for $global.uwUpgradeShip, at the cost of $global.uwUpgradeF1SwapCostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeF1SwapCostStr
+FireAll UWPopulateRestoreOrUpgradeOptions",,,
+uwMarketAddOptionUpgradeF2_1,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable F2
+!UW_UpgradeInstalled F1
+UW_UpgradeEnoughCredits F2","SetTooltip uwMarketUpgradeF2 ""Installing this upgrade into $global.uwUpgradeShip requires $global.uwUpgradeF2CostStr credits. $player.creditsStr credits are available.""
+SetTooltipHighlightColors uwMarketUpgradeF2 buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights uwMarketUpgradeF2 $global.uwUpgradeShip $global.uwUpgradeF2CostStr $player.creditsStr
+UW_AddConfirmation uwMarketUpgradeF2 ""Replacing the built-in Borer Drone wings with a pair of fighter bays and increasing maximum ordnance points by 20 for $global.uwUpgradeShip requires $global.uwUpgradeF2CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,7:uwMarketUpgradeF2:Replace built-in Borer Drone wings with a pair of fighter bays (+20 OP),
+uwMarketAddOptionUpgradeF2_2,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable F2
+!UW_UpgradeInstalled F1
+!UW_UpgradeEnoughCredits F2","SetTooltip uwMarketUpgradeF2 ""Installing this upgrade into $global.uwUpgradeShip requires $global.uwUpgradeF2CostStr credits. Only $player.creditsStr credits are available.""
+SetTooltipHighlightColors uwMarketUpgradeF2 buttonShortcut buttonShortcut bad
+SetTooltipHighlights uwMarketUpgradeF2 $global.uwUpgradeShip $global.uwUpgradeF2CostStr $player.creditsStr
+SetEnabled uwMarketUpgradeF2 false",,7:uwMarketUpgradeF2:Replace built-in Borer Drone wings with a pair of fighter bays (+20 OP),
+uwMarketOptionUpgradeF2,DialogOptionSelected,"!UW_UpgradeInstalled F1
+$option == uwMarketUpgradeF2","UW_UpgradeShip F2
+AddText ""Replaced the built-in Borer Drone wings with a pair of fighter bays and increased maximum ordnance points by 20 for $global.uwUpgradeShip, at the cost of $global.uwUpgradeF2CostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeF2CostStr
+FireAll UWPopulateRestoreOrUpgradeOptions",,,
+uwMarketAddOptionSwapF2_1,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable F2
+UW_UpgradeInstalled F1
+UW_UpgradeEnoughCredits F2","SetTooltip uwMarketSwapF2 ""Swapping to this upgrade for $global.uwUpgradeShip requires $global.uwUpgradeF2SwapCostStr credits. $player.creditsStr credits are available.""
+SetTooltipHighlightColors uwMarketSwapF2 buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights uwMarketSwapF2 $global.uwUpgradeShip $global.uwUpgradeF2SwapCostStr $player.creditsStr
+UW_AddConfirmation uwMarketSwapF2 ""Replacing the built-in Terminator Drone wings with a pair of fighter bays and increasing maximum ordnance points by 20 for $global.uwUpgradeShip requires $global.uwUpgradeF2SwapCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,7:uwMarketSwapF2:Replace built-in Terminator Drone wings with a pair of fighter bays (+20 OP),
+uwMarketAddOptionSwapF2_2,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable F2
+UW_UpgradeInstalled F1
+!UW_UpgradeEnoughCredits F2","SetTooltip uwMarketSwapF2 ""Swapping to this upgrade for $global.uwUpgradeShip requires $global.uwUpgradeF2SwapCostStr credits. Only $player.creditsStr credits are available.""
+SetTooltipHighlightColors uwMarketSwapF2 buttonShortcut buttonShortcut bad
+SetTooltipHighlights uwMarketSwapF2 $global.uwUpgradeShip $global.uwUpgradeF2SwapCostStr $player.creditsStr
+SetEnabled uwMarketSwapF2 false",,7:uwMarketSwapF2:Replace built-in Terminator Drone wings with a pair of fighter bays (+20 OP),
+uwMarketOptionSwapF2,DialogOptionSelected,"UW_UpgradeInstalled F1
+$option == uwMarketSwapF2","UW_UpgradeShip F2
+AddText ""Replaced the built-in Terminator Drone wings with a pair of fighter bays and increased maximum ordnance points by 20 for $global.uwUpgradeShip, at the cost of $global.uwUpgradeF2SwapCostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeF2SwapCostStr
+FireAll UWPopulateRestoreOrUpgradeOptions",,,
+uwMarketAddOptionUpgradeS1_1,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable S1
+!UW_UpgradeInstalled S2
+UW_UpgradeEnoughCredits S1","SetTooltip uwMarketUpgradeS1 ""Installing this upgrade into $global.uwUpgradeShip requires $global.uwUpgradeS1CostStr credits. $player.creditsStr credits are available.""
+SetTooltipHighlightColors uwMarketUpgradeS1 buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights uwMarketUpgradeS1 $global.uwUpgradeShip $global.uwUpgradeS1CostStr $player.creditsStr
+UW_AddConfirmation uwMarketUpgradeS1 ""Installing a built-in Advanced Targeting Core into $global.uwUpgradeShip requires $global.uwUpgradeS1CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,8:uwMarketUpgradeS1:Install a built-in Advanced Targeting Core,
+uwMarketAddOptionUpgradeS1_2,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable S1
+!UW_UpgradeInstalled S2
+!UW_UpgradeEnoughCredits S1","SetTooltip uwMarketUpgradeS1 ""Installing this upgrade into $global.uwUpgradeShip requires $global.uwUpgradeS1CostStr credits. Only $player.creditsStr credits are available.""
+SetTooltipHighlightColors uwMarketUpgradeS1 buttonShortcut buttonShortcut bad
+SetTooltipHighlights uwMarketUpgradeS1 $global.uwUpgradeShip $global.uwUpgradeS1CostStr $player.creditsStr
+SetEnabled uwMarketUpgradeS1 false",,8:uwMarketUpgradeS1:Install a built-in Advanced Targeting Core,
+uwMarketOptionUpgradeS1,DialogOptionSelected,"!UW_UpgradeInstalled S2
+$option == uwMarketUpgradeS1","UW_UpgradeShip S1
+AddText ""Installed a built-in Advanced Targeting Core into $global.uwUpgradeShip, at the cost of $global.uwUpgradeS1CostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeS1CostStr
+FireAll UWPopulateRestoreOrUpgradeOptions",,,
+uwMarketAddOptionSwapS1_1,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable S1
+UW_UpgradeInstalled S2
+UW_UpgradeEnoughCredits S1","SetTooltip uwMarketSwapS1 ""Swapping to this upgrade for $global.uwUpgradeShip requires $global.uwUpgradeS1SwapCostStr credits. $player.creditsStr credits are available.""
+SetTooltipHighlightColors uwMarketSwapS1 buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights uwMarketSwapS1 $global.uwUpgradeShip $global.uwUpgradeS1SwapCostStr $player.creditsStr
+UW_AddConfirmation uwMarketSwapS1 ""Replacing the Maneuvering Jets system with Burn Drive and replacing the built-in Auxiliary Thrusters and Unstable Injector with an Advanced Targeting Core for $global.uwUpgradeShip requires $global.uwUpgradeS1SwapCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,8:uwMarketSwapS1:Replace Maneuvering Jets system with Burn Drive and built-in Aux. Thrusters/U. Injector with Advanced Targeting Core,
+uwMarketAddOptionSwapS1_2,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable S1
+UW_UpgradeInstalled S2
+!UW_UpgradeEnoughCredits S1","SetTooltip uwMarketSwapS1 ""Swapping to this upgrade for $global.uwUpgradeShip requires $global.uwUpgradeS1SwapCostStr credits. Only $player.creditsStr credits are available.""
+SetTooltipHighlightColors uwMarketSwapS1 buttonShortcut buttonShortcut bad
+SetTooltipHighlights uwMarketSwapS1 $global.uwUpgradeShip $global.uwUpgradeS1SwapCostStr $player.creditsStr
+SetEnabled uwMarketSwapS1 false",,8:uwMarketSwapS1:Replace Maneuvering Jets system with Burn Drive and built-in Aux. Thrusters/U. Injector with Advanced Targeting Core,
+uwMarketOptionSwapS1,DialogOptionSelected,"UW_UpgradeInstalled S2
+$option == uwMarketSwapS1","UW_UpgradeShip S1
+AddText ""Replaced the Maneuvering Jets system with Burn Drive and replaced the built-in Auxiliary Thrusters and Unstable Injector with an Advanced Targeting Core for $global.uwUpgradeShip, at the cost of $global.uwUpgradeS1SwapCostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeS1SwapCostStr
+FireAll UWPopulateRestoreOrUpgradeOptions",,,
+uwMarketAddOptionUpgradeS2_1,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable S2
+!UW_UpgradeInstalled S1
+UW_UpgradeEnoughCredits S2","SetTooltip uwMarketUpgradeS2 ""Installing this upgrade into $global.uwUpgradeShip requires $global.uwUpgradeS2CostStr credits. $player.creditsStr credits are available.""
+SetTooltipHighlightColors uwMarketUpgradeS2 buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights uwMarketUpgradeS2 $global.uwUpgradeShip $global.uwUpgradeS2CostStr $player.creditsStr
+UW_AddConfirmation uwMarketUpgradeS2 ""Replacing the Burn Drive system with Maneuvering Jets and installing built-in Auxiliary Thrusters and Unstable Injector into $global.uwUpgradeShip requires $global.uwUpgradeS2CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,9:uwMarketUpgradeS2:Replace Burn Drive system with Maneuvering Jets and install built-in Aux. Thrusters and U. Injector,
+uwMarketAddOptionUpgradeS2_2,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable S2
+!UW_UpgradeInstalled S1
+!UW_UpgradeEnoughCredits S2","SetTooltip uwMarketUpgradeS2 ""Installing this upgrade into $global.uwUpgradeShip requires $global.uwUpgradeS2CostStr credits. Only $player.creditsStr credits are available.""
+SetTooltipHighlightColors uwMarketUpgradeS2 buttonShortcut buttonShortcut bad
+SetTooltipHighlights uwMarketUpgradeS2 $global.uwUpgradeShip $global.uwUpgradeS2CostStr $player.creditsStr
+SetEnabled uwMarketUpgradeS2 false",,9:uwMarketUpgradeS2:Replace Burn Drive system with Maneuvering Jets and install built-in Aux. Thrusters and U. Injector,
+uwMarketOptionUpgradeS2,DialogOptionSelected,"!UW_UpgradeInstalled S1
+$option == uwMarketUpgradeS2","UW_UpgradeShip S2
+AddText ""Replaced the Burn Drive system with Maneuvering Jets and installed built-in Auxiliary Thrusters and Unstable Injector into $global.uwUpgradeShip, at the cost of $global.uwUpgradeS2CostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeS2CostStr
+FireAll UWPopulateRestoreOrUpgradeOptions",,,
+uwMarketAddOptionSwapS2_1,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable S2
+UW_UpgradeInstalled S1
+UW_UpgradeEnoughCredits S2","SetTooltip uwMarketSwapS2 ""Swapping to this upgrade for $global.uwUpgradeShip requires $global.uwUpgradeS2SwapCostStr credits. $player.creditsStr credits are available.""
+SetTooltipHighlightColors uwMarketSwapS2 buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights uwMarketSwapS2 $global.uwUpgradeShip $global.uwUpgradeS2SwapCostStr $player.creditsStr
+UW_AddConfirmation uwMarketSwapS2 ""Replacing the Burn Drive system with Maneuvering Jets and replacing the built-in Advanced Targeting Core with Auxiliary Thrusters and Unstable Injector for $global.uwUpgradeShip requires $global.uwUpgradeS2SwapCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,9:uwMarketSwapS2:Replace Burn Drive system with Maneuvering Jets and built-in Advanced Targeting Core with Aux. Thrusters/U. Injector,
+uwMarketAddOptionSwapS2_2,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable S2
+UW_UpgradeInstalled S1
+!UW_UpgradeEnoughCredits S2","SetTooltip uwMarketSwapS2 ""Swapping to this upgrade for $global.uwUpgradeShip requires $global.uwUpgradeS2SwapCostStr credits. Only $player.creditsStr credits are available.""
+SetTooltipHighlightColors uwMarketSwapS2 buttonShortcut buttonShortcut bad
+SetTooltipHighlights uwMarketSwapS2 $global.uwUpgradeShip $global.uwUpgradeS2SwapCostStr $player.creditsStr
+SetEnabled uwMarketSwapS2 false",,9:uwMarketSwapS2:Replace Burn Drive system with Maneuvering Jets and built-in Advanced Targeting Core with Aux. Thrusters/U. Injector,
+uwMarketOptionSwapS2,DialogOptionSelected,"UW_UpgradeInstalled S1
+$option == uwMarketSwapS2","UW_UpgradeShip S2
+AddText ""Replaced the Burn Drive system with Maneuvering Jets and replaced the built-in Advanced Targeting Core with Auxiliary Thrusters and Unstable Injector for $global.uwUpgradeShip, at the cost of $global.uwUpgradeS2SwapCostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeS2SwapCostStr
+FireAll UWPopulateRestoreOrUpgradeOptions",,,
+uwMarketAddOptionUpgradeW1_1,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable W1
+!UW_UpgradeInstalled W2
+UW_UpgradeEnoughCredits W1","SetTooltip uwMarketUpgradeW1 ""Installing this upgrade into $global.uwUpgradeShip requires $global.uwUpgradeW1CostStr credits. $player.creditsStr credits are available. The Diablo Cannon has the same sustained damage, but five times the burst damage of a Hellfire Cannon.""
+SetTooltipHighlightColors uwMarketUpgradeW1 buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights uwMarketUpgradeW1 $global.uwUpgradeShip $global.uwUpgradeW1CostStr $player.creditsStr
+UW_AddConfirmation uwMarketUpgradeW1 ""Upgrading the built-in Hellfire Cannon to the Diablo Cannon for $global.uwUpgradeShip requires $global.uwUpgradeW1CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,10:uwMarketUpgradeW1:Upgrade built-in Hellfire Cannon to Diablo Cannon,
+uwMarketAddOptionUpgradeW1_2,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable W1
+!UW_UpgradeInstalled W2
+!UW_UpgradeEnoughCredits W1","SetTooltip uwMarketUpgradeW1 ""Installing this upgrade into $global.uwUpgradeShip requires $global.uwUpgradeW1CostStr credits. Only $player.creditsStr credits are available. The Diablo Cannon has the same sustained damage, but five times the burst damage of a Hellfire Cannon.""
+SetTooltipHighlightColors uwMarketUpgradeW1 buttonShortcut buttonShortcut bad
+SetTooltipHighlights uwMarketUpgradeW1 $global.uwUpgradeShip $global.uwUpgradeW1CostStr $player.creditsStr
+SetEnabled uwMarketUpgradeW1 false",,10:uwMarketUpgradeW1:Upgrade built-in Hellfire Cannon to Diablo Cannon,
+uwMarketOptionUpgradeW1,DialogOptionSelected,"!UW_UpgradeInstalled W2
+$option == uwMarketUpgradeW1","UW_UpgradeShip W1
+AddText ""Upgraded the built-in Hellfire Cannon to the Diablo Cannon for $global.uwUpgradeShip, at the cost of $global.uwUpgradeW1CostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeW1CostStr
+FireAll UWPopulateRestoreOrUpgradeOptions",,,
+uwMarketAddOptionSwapW1_1,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable W1
+UW_UpgradeInstalled W2
+UW_UpgradeEnoughCredits W1","SetTooltip uwMarketSwapW1 ""Swapping to this upgrade for $global.uwUpgradeShip requires $global.uwUpgradeW1SwapCostStr credits. $player.creditsStr credits are available. The Diablo Cannon has the same sustained damage, but five times the burst damage of a Hellfire Cannon.""
+SetTooltipHighlightColors uwMarketSwapW1 buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights uwMarketSwapW1 $global.uwUpgradeShip $global.uwUpgradeW1SwapCostStr $player.creditsStr
+UW_AddConfirmation uwMarketSwapW1 ""Reverting modular weapon slot upgrades, decreasing maximum ordnance points by 20, and upgrading the built-in Hellfire Cannon to the Diablo Cannon for $global.uwUpgradeShip requires $global.uwUpgradeW1SwapCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,10:uwMarketSwapW1:Revert modular weapon slots and upgrade built-in Hellfire Cannon to Diablo Cannon (-20 OP),
+uwMarketAddOptionSwapW1_2,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable W1
+UW_UpgradeInstalled W2
+!UW_UpgradeEnoughCredits W1","SetTooltip uwMarketSwapW1 ""Swapping to this upgrade for $global.uwUpgradeShip requires $global.uwUpgradeW1SwapCostStr credits. Only $player.creditsStr credits are available. The Diablo Cannon has the same sustained damage, but five times the burst damage of a Hellfire Cannon.""
+SetTooltipHighlightColors uwMarketSwapW1 buttonShortcut buttonShortcut bad
+SetTooltipHighlights uwMarketSwapW1 $global.uwUpgradeShip $global.uwUpgradeW1SwapCostStr $player.creditsStr
+SetEnabled uwMarketSwapW1 false",,10:uwMarketSwapW1:Revert modular weapon slots and upgrade built-in Hellfire Cannon to Diablo Cannon (-20 OP),
+uwMarketOptionSwapW1,DialogOptionSelected,"UW_UpgradeInstalled W2
+$option == uwMarketSwapW1","UW_UpgradeShip W1
+AddText ""Reverted modular weapon slot upgrades, decreased maximum ordnance points by 20, and upgraded the built-in Hellfire Cannon to the Diablo Cannon for $global.uwUpgradeShip, at the cost of $global.uwUpgradeW1SwapCostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeW1SwapCostStr
+FireAll UWPopulateRestoreOrUpgradeOptions",,,
+uwMarketAddOptionUpgradeW2_1,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable W2
+!UW_UpgradeInstalled W1
+UW_UpgradeEnoughCredits W2","SetTooltip uwMarketUpgradeW2 ""Installing this upgrade into $global.uwUpgradeShip requires $global.uwUpgradeW2CostStr credits. $player.creditsStr credits are available. Weapon slot upgrades: two medium slots are increased to large, twelve ballistic slots are changed to hybrid/composite/universal, and the Hellfire Cannon arc is increased to 360 degrees.""
+SetTooltipHighlightColors uwMarketUpgradeW2 buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights uwMarketUpgradeW2 $global.uwUpgradeShip $global.uwUpgradeW2CostStr $player.creditsStr
+UW_AddConfirmation uwMarketUpgradeW2 ""Further upgrading modular weapon slots and increasing maximum ordnance points by 20 for $global.uwUpgradeShip requires $global.uwUpgradeW2CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,11:uwMarketUpgradeW2:Further upgrade modular weapon slots (+20 OP),
+uwMarketAddOptionUpgradeW2_2,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable W2
+!UW_UpgradeInstalled W1
+!UW_UpgradeEnoughCredits W2","SetTooltip uwMarketUpgradeW2 ""Installing this upgrade into $global.uwUpgradeShip requires $global.uwUpgradeW2CostStr credits. Only $player.creditsStr credits are available. Weapon slot upgrades: two medium slots are increased to large, twelve ballistic slots are changed to hybrid/composite/universal, and the Hellfire Cannon arc is increased to 360 degrees.""
+SetTooltipHighlightColors uwMarketUpgradeW2 buttonShortcut buttonShortcut bad
+SetTooltipHighlights uwMarketUpgradeW2 $global.uwUpgradeShip $global.uwUpgradeW2CostStr $player.creditsStr
+SetEnabled uwMarketUpgradeW2 false",,11:uwMarketUpgradeW2:Further upgrade modular weapon slots (+20 OP),
+uwMarketOptionUpgradeW2,DialogOptionSelected,"!UW_UpgradeInstalled W1
+$option == uwMarketUpgradeW2","UW_UpgradeShip W2
+AddText ""Further upgraded modular weapon slots and increased maximum ordnance points by 20 for $global.uwUpgradeShip, at the cost of $global.uwUpgradeW2CostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeW2CostStr
+FireAll UWPopulateRestoreOrUpgradeOptions",,,
+uwMarketAddOptionSwapW2_1,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable W2
+UW_UpgradeInstalled W1
+UW_UpgradeEnoughCredits W2","SetTooltip uwMarketSwapW2 ""Swapping to this upgrade for $global.uwUpgradeShip requires $global.uwUpgradeW2SwapCostStr credits. $player.creditsStr credits are available. Weapon slot upgrades: two medium slots are increased to large, twelve ballistic slots are changed to hybrid/composite/universal, and the Hellfire Cannon arc is increased to 360 degrees.""
+SetTooltipHighlightColors uwMarketSwapW2 buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights uwMarketSwapW2 $global.uwUpgradeShip $global.uwUpgradeW2SwapCostStr $player.creditsStr
+UW_AddConfirmation uwMarketSwapW2 ""Reverting the built-in Diablo Cannon to a Hellfire Cannon, further upgrading modular weapon slots, and increasing maximum ordnance points by 20 for $global.uwUpgradeShip requires $global.uwUpgradeW2SwapCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,11:uwMarketSwapW2:Revert built-in Diablo Cannon to Hellfire Cannon and further upgrade modular weapon slots (+20 OP),
+uwMarketAddOptionSwapW2_2,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable W2
+UW_UpgradeInstalled W1
+!UW_UpgradeEnoughCredits W2","SetTooltip uwMarketSwapW2 ""Swapping to this upgrade for $global.uwUpgradeShip requires $global.uwUpgradeW2SwapCostStr credits. Only $player.creditsStr credits are available. Weapon slot upgrades: two medium slots are increased to large, twelve ballistic slots are changed to hybrid/composite/universal, and the Hellfire Cannon arc is increased to 360 degrees.""
+SetTooltipHighlightColors uwMarketSwapW2 buttonShortcut buttonShortcut bad
+SetTooltipHighlights uwMarketSwapW2 $global.uwUpgradeShip $global.uwUpgradeW2SwapCostStr $player.creditsStr
+SetEnabled uwMarketSwapW2 false",,11:uwMarketSwapW2:Revert built-in Diablo Cannon to Hellfire Cannon and further upgrade modular weapon slots (+20 OP),
+uwMarketOptionSwapW2,DialogOptionSelected,"UW_UpgradeInstalled W1
+$option == uwMarketSwapW2","UW_UpgradeShip W2
+AddText ""Reverted the built-in Diablo Cannon to a Hellfire Cannon, further upgraded modular weapon slots, and increased maximum ordnance points by 20 for $global.uwUpgradeShip, at the cost of $global.uwUpgradeW2SwapCostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeW2SwapCostStr
+FireAll UWPopulateRestoreOrUpgradeOptions",,,
+uwMarketAddOptionUpgradeA1_1,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable A1
+!UW_UpgradeInstalled A2
+UW_UpgradeEnoughCredits A1","SetTooltip uwMarketUpgradeA1 ""Installing this upgrade into $global.uwUpgradeShip requires $global.uwUpgradeA1CostStr credits. $player.creditsStr credits are available. Infernal Minefield causes mines to attack enemy ships during battle.""
+SetTooltipHighlightColors uwMarketUpgradeA1 buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights uwMarketUpgradeA1 $global.uwUpgradeShip $global.uwUpgradeA1CostStr $player.creditsStr
+UW_AddConfirmation uwMarketUpgradeA1 ""Installing built-in Infernal Minefield into $global.uwUpgradeShip requires $global.uwUpgradeA1CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,12:uwMarketUpgradeA1:Install built-in Infernal Minefield,
+uwMarketAddOptionUpgradeA1_2,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable A1
+!UW_UpgradeInstalled A2
+!UW_UpgradeEnoughCredits A1","SetTooltip uwMarketUpgradeA1 ""Installing this upgrade into $global.uwUpgradeShip requires $global.uwUpgradeA1CostStr credits. Only $player.creditsStr credits are available. Infernal Minefield causes mines to attack enemy ships during battle.""
+SetTooltipHighlightColors uwMarketUpgradeA1 buttonShortcut buttonShortcut bad
+SetTooltipHighlights uwMarketUpgradeA1 $global.uwUpgradeShip $global.uwUpgradeA1CostStr $player.creditsStr
+SetEnabled uwMarketUpgradeA1 false",,12:uwMarketUpgradeA1:Install built-in Infernal Minefield,
+uwMarketOptionUpgradeA1,DialogOptionSelected,"!UW_UpgradeInstalled A2
+$option == uwMarketUpgradeA1","UW_UpgradeShip A1
+AddText ""Installed built-in Infernal Minefield into $global.uwUpgradeShip, at the cost of $global.uwUpgradeA1CostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeA1CostStr
+FireAll UWPopulateRestoreOrUpgradeOptions",,,
+uwMarketAddOptionSwapA1_1,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable A1
+UW_UpgradeInstalled A2
+UW_UpgradeEnoughCredits A1","SetTooltip uwMarketSwapA1 ""Swapping to this upgrade for $global.uwUpgradeShip requires $global.uwUpgradeA1SwapCostStr credits. $player.creditsStr credits are available. Infernal Minefield causes mines to attack enemy ships during battle.""
+SetTooltipHighlightColors uwMarketSwapA1 buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights uwMarketSwapA1 $global.uwUpgradeShip $global.uwUpgradeA1SwapCostStr $player.creditsStr
+UW_AddConfirmation uwMarketSwapA1 ""Replacing the built-in Infernal Shield with Infernal Minefield for $global.uwUpgradeShip requires $global.uwUpgradeA1SwapCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,12:uwMarketSwapA1:Replace built-in Infernal Shield with Infernal Minefield,
+uwMarketAddOptionSwapA1_2,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable A1
+UW_UpgradeInstalled A2
+!UW_UpgradeEnoughCredits A1","SetTooltip uwMarketSwapA1 ""Swapping to this upgrade for $global.uwUpgradeShip requires $global.uwUpgradeA1SwapCostStr credits. Only $player.creditsStr credits are available. Infernal Minefield causes mines to attack enemy ships during battle.""
+SetTooltipHighlightColors uwMarketSwapA1 buttonShortcut buttonShortcut bad
+SetTooltipHighlights uwMarketSwapA1 $global.uwUpgradeShip $global.uwUpgradeA1SwapCostStr $player.creditsStr
+SetEnabled uwMarketSwapA1 false",,12:uwMarketSwapA1:Replace built-in Infernal Shield with Infernal Minefield,
+uwMarketOptionSwapA1,DialogOptionSelected,"UW_UpgradeInstalled A2
+$option == uwMarketSwapA1","UW_UpgradeShip A1
+AddText ""Replaced the built-in Infernal Shield with Infernal Minefield for $global.uwUpgradeShip, at the cost of $global.uwUpgradeA1SwapCostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeA1SwapCostStr
+FireAll UWPopulateRestoreOrUpgradeOptions",,,
+uwMarketAddOptionUpgradeA2_1,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable A2
+!UW_UpgradeInstalled A1
+UW_UpgradeEnoughCredits A2","SetTooltip uwMarketUpgradeA2 ""Installing this upgrade into $global.uwUpgradeShip requires $global.uwUpgradeA2CostStr credits. $player.creditsStr credits are available. Infernal Shield allows dissipation of hard flux while shields are up, converts shield to 360-degree omni, increases shield turn rate and extension speed, and reduces damage taken by shields.""
+SetTooltipHighlightColors uwMarketUpgradeA2 buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights uwMarketUpgradeA2 $global.uwUpgradeShip $global.uwUpgradeA2CostStr $player.creditsStr
+UW_AddConfirmation uwMarketUpgradeA2 ""Installing built-in Infernal Shield for $global.uwUpgradeShip requires $global.uwUpgradeA2CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,13:uwMarketUpgradeA2:Install built-in Infernal Shield,
+uwMarketAddOptionUpgradeA2_2,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable A2
+!UW_UpgradeInstalled A1
+!UW_UpgradeEnoughCredits A2","SetTooltip uwMarketUpgradeA2 ""Installing this upgrade into $global.uwUpgradeShip requires $global.uwUpgradeA2CostStr credits. Only $player.creditsStr credits are available. Infernal Shield allows dissipation of hard flux while shields are up, converts shield to 360-degree omni, increases shield turn rate and extension speed, and reduces damage taken by shields.""
+SetTooltipHighlightColors uwMarketUpgradeA2 buttonShortcut buttonShortcut bad
+SetTooltipHighlights uwMarketUpgradeA2 $global.uwUpgradeShip $global.uwUpgradeA2CostStr $player.creditsStr
+SetEnabled uwMarketUpgradeA2 false",,13:uwMarketUpgradeA2:Install built-in Infernal Shield,
+uwMarketOptionUpgradeA2,DialogOptionSelected,"!UW_UpgradeInstalled A1
+$option == uwMarketUpgradeA2","UW_UpgradeShip A2
+AddText ""Installed built-in Infernal Shield for $global.uwUpgradeShip, at the cost of $global.uwUpgradeA2CostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeA2CostStr
+FireAll UWPopulateRestoreOrUpgradeOptions",,,
+uwMarketAddOptionSwapA2_1,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable A2
+UW_UpgradeInstalled A1
+UW_UpgradeEnoughCredits A2","SetTooltip uwMarketSwapA2 ""Swapping to this upgrade for $global.uwUpgradeShip requires $global.uwUpgradeA2SwapCostStr credits. $player.creditsStr credits are available. Infernal Shield allows dissipation of hard flux while shields are up, converts shield to 360-degree omni, increases shield turn rate and extension speed, and reduces damage taken by shields.""
+SetTooltipHighlightColors uwMarketSwapA2 buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights uwMarketSwapA2 $global.uwUpgradeShip $global.uwUpgradeA2SwapCostStr $player.creditsStr
+UW_AddConfirmation uwMarketSwapA2 ""Replacing the built-in Infernal Minefield with Infernal Shield for $global.uwUpgradeShip requires $global.uwUpgradeA2SwapCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,13:uwMarketSwapA2:Replace built-in Infernal Minefield with Infernal Shield,
+uwMarketAddOptionSwapA2_2,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
+$menuState == uwRestoreOrUpgrade
+UW_UpgradeAvailable A2
+UW_UpgradeInstalled A1
+!UW_UpgradeEnoughCredits A2","SetTooltip uwMarketSwapA2 ""Swapping to this upgrade for $global.uwUpgradeShip requires $global.uwUpgradeA2SwapCostStr credits. Only $player.creditsStr credits are available. Infernal Shield allows dissipation of hard flux while shields are up, converts shield to 360-degree omni, increases shield turn rate and extension speed, and reduces damage taken by shields.""
+SetTooltipHighlightColors uwMarketSwapA2 buttonShortcut buttonShortcut bad
+SetTooltipHighlights uwMarketSwapA2 $global.uwUpgradeShip $global.uwUpgradeA2SwapCostStr $player.creditsStr
+SetEnabled uwMarketSwapA2 false",,13:uwMarketSwapA2:Replace built-in Infernal Minefield with Infernal Shield,
+uwMarketOptionSwapA2,DialogOptionSelected,"UW_UpgradeInstalled A1
+$option == uwMarketSwapA2","UW_UpgradeShip A2
+AddText ""Replaced the built-in Infernal Minefield with Infernal Shield for $global.uwUpgradeShip, at the cost of $global.uwUpgradeA2SwapCostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeA2SwapCostStr
+FireAll UWPopulateRestoreOrUpgradeOptions",,,
+,,,,,,
+uwEncounterFamousCancer,BeginFleetEncounter,"$stillAlive
+!$talked
+$faction.id == famous_bounty score:100
+$stageName == STAGE_CANCER","unset $entity.ignorePlayerCommRequests
+AddText ""You're being hailed by $personName."" $faction.baseColor
+$talked = true 7
+MakeOtherFleetPreventDisengage tOff true
+MakeOtherFleetAggressive tOff true
+OpenComms","Your tech officer screams incoherently as the tactical displays flash through horrifying, alien symbols before rebooting. Your comms officer starts praying to any gods that will listen. You look out through the viewscreen.
+
+They loom before you, a cancer upon the vacuum of space. The hulls are gnarled, bent, twisted as if caught writhing in endless agony. The scored armor panels scream of sickness, rather than battle. A shadow seems to creep from the enemy fleet, spreading towards you like a veil of corruption.
+
+Something dies inside of you, wrenching your soul. The abominations arrayed before you lack some crucial aspect of humanity, like a cup with no bottom.",,
+uwGreetingFamousCancer,OpenCommLink,"$faction.id == famous_bounty score:100
+$entity.stageName == STAGE_CANCER",$entity.ignorePlayerCommRequests = true 1,"A deranged figure appears on the communicator, muttering obscenities and blasphemies.",cutCommLink:Cut the comm link,

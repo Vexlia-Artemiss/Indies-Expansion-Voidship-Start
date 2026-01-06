@@ -1,0 +1,28 @@
+{
+  "id": "Vexlia_JunkhubStart", # For the convenience of troubleshooters, include your name and the mod name, not just an acronym.
+  "name": "Junkhub Start - Testing", # Displayed to the player
+  "author": "Vexlia Artemiss",
+  "utility": false,
+  "version": { "major": '1', "minor": '0', "patch": '0' },
+  "description": "Junkhub Start Base.",
+  "gameVersion": "0.98a-RC5",
+  "jars": [ "jars/JunkHubStart.jar" ],
+  "modPlugin": "Vexlia.JunkHubStart.TemplateModPlugin",
+  "dependencies": [
+   {
+		"id": "nexerelin",
+        "name": "Nexerelin", # Optional (recommended)
+        #"version": "2.7b" # Optional
+   },
+   {
+       "id": "aerialcombatsuit",
+        "name": "Indies Expansion Pack", # Optional (recommended)
+        #"version": "0.34" # Optional
+   },
+   # {
+   #     "id": "shaderLib",
+   #     "name": "GraphicsLib", # Optional (recommended)
+   #     #"version": "1.5.1" # Optional
+   # }
+  ],
+}

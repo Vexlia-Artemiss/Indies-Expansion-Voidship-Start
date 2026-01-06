@@ -1,0 +1,18 @@
+{
+	"starts":[
+		{
+			"id":"JHS_JunkhubStart",
+			"name":"The JunkHub (Base Indies Expansion Version)",
+			"difficulty":"Normal",
+			"desc":"Start with Djoeng Voidfaring Hubship.\n\nYou have managed to find wreckage of the Djoeng Voidfaring Hubship, spending your fortunes to repair the hull and bring it online as your own flagship.",
+			"className":"Vexlia.JunkHubStart.campaign.customstart.JHS_JunkhubStart",
+		},
+		{
+			"id":"JHS_UnltraJunkhubStart",
+			"name":"The JunkHub (Unique ship with upgrade mechanic)",
+			"difficulty":"Normal",
+			"desc":"The Junk Machine is covered in myths, it hull said to be destroyed dozens of times, but always returned to avenge itself. And as many know is just spacer horror story, or at least you believed to it be so until you found it yourself. Hull weathered and battle-worn, most major system broken, and with massive crack down the middle, you spend fortune to restore it to functional state, going in to debt and cutting shady deals for rare parts.\n\nYou have managed to unearth the wreckage of the Infernal Machine, spending your fortunes to repair the hull and bring it online as your own flagship. \n\nSpecial: Restore and upgrade the Infernal Machine, one step at a time, at any friendly dockyard. There are multiple upgrade paths to choose from!",
+			"className":"Vexlia.JunkHubStart.campaign.customstart.JHS_UltraJunkhubStart",
+		},
+	],
+}

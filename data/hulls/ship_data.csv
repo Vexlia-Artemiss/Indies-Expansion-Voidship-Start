@@ -1,0 +1,9 @@
+name,id,designation,tech/manufacturer,system id,fleet pts,hitpoints,armor rating,max flux,8/6/5/4%,flux dissipation,ordnance points,fighter bays,max speed,acceleration,deceleration,max turn rate,turn acceleration,mass,shield type,defense id,shield arc,shield upkeep,shield efficiency,phase cost,phase upkeep,min crew,max crew,cargo,fuel,fuel/ly,range,max burn,base value,cr %/day,CR to deploy,peak CR sec,CR loss/sec,supplies/rec,supplies/mo,c/s,c/f,f/s,f/f,crew/s,crew/f,hints,tags,logistics n/a reason,codex variant id,rarity,breakProb,minPieces,maxPieces,travel drive,number
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#Junk Engine Starting hull,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+The Big Chungus,JHS_junkhubship_core_m3,Voidfaring Hubship,Unknown,burndrive,50,20000,1700,30000,12500,1150,440,6,20,15,15,4,4,10000,NONE,,0,0,0,,,2000,10000,12000,12000,20,40,7,2500000,3,12,1200,0.25,75,75,,,,,,,SHIP_WITH_MODULES,,,,,0.2,2,2,,
+,JHS_junkhubship_module_left,Left Barge Module,,ammofeed,12,10000,1200,10000,5000,600,200,,0,0,0,10,10,1500,NONE,,0,0,0,,,0,0,0,0,1,0,,250000,,1,1500,0.25,0,0,,,,,,,"UNBOARDABLE, HIDE_IN_CODEX",,,,,1,2,3,,2100
+,JHS_junkhubship_module_right,Right Barge Module,,ammofeed,12,10000,1200,10000,5000,600,220,6,0,0,0,10,10,1500,NONE,,0,0,0,,,0,0,0,0,1,0,,250000,,1,1500,0.25,0,0,,,,,,,"UNBOARDABLE, HIDE_IN_CODEX",,,,,1,2,3,,2100
+,JHS_junkhubship_shield_module,Shield Module,,,12,9000,800,8000,,800,50,,0,0,0,10,10,1500,OMNI,,180,0.6,0.5,,,0,0,0,0,1,0,,250000,,1,1500,0.25,0,0,,,,,,,"UNBOARDABLE, HIDE_IN_CODEX",,,,,1,2,3,,2100
+#Dummy shield module to avoid crush,#On module swap,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,JHS_junkhubship_shield_module_broken,Broken Shield Module,,,12,1000,800,0,,0,0,,0,0,0,10,10,1500,NONE,,0,0.6,0.5,,,0,0,0,0,1,0,,250000,,1,1500,0.25,0,0,,,,,,,"UNBOARDABLE, HIDE_IN_CODEX",,,,,1,2,3,,2100

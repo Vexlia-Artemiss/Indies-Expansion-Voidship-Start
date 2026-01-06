@@ -1,0 +1,19 @@
+{
+  "variantId": "JHS_junkhubship_shield_module_Basic",
+  "hullId": "JHS_junkhubship_shield_module",
+  "displayName": "Standard",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "fluxbreakers",
+    "fluxcoil",
+    "fluxdistributor",
+    "hardenedshieldemitter"
+  ],
+  "weaponGroups": [],
+  "modules": [],
+  "wings": []
+}

@@ -1,0 +1,36 @@
+{
+  "variantId": "JHS_junkhubship_core_Start",
+  "hullId": "JHS_junkhubship_core_m3",
+  "displayName": "Restored Junk",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        #"WS0005": "acs_bigmookrailslauncher",
+        #"WS0006": "acs_bigmookrailslauncher",
+        #"WS0007": "acs_watchtowerrailslauncher",
+        #"WS0008": "acs_watchtowerrailslauncher",
+        #"WS0010": "acs_angrymookrailslauncher"
+      }
+    }
+  ],
+  "modules": [
+  		{
+			"WS0001": "JHS_junkhubship_module_left_empty"
+		},  
+		{
+			"WS0002": "JHS_junkhubship_module_right_empty"
+		},
+		{
+			"WS0009": "JHS_junkhubship_shield_module_broken_std"
+		}
+  ],
+  "wings": []
+}

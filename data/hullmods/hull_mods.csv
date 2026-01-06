@@ -1,0 +1,34 @@
+name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sModDesc,sprite
+# Accelerated Shields,advancedshieldemitter,0,,,"defensive, shields, merc, standard",Shields,3000,,,,3,6,9,15,data.hullmods.AcceleratedShieldEmitter,Increases the turn rate of the ship's shields by %s and the rate at which the shields are raised by %s.,Increases shield turn rate and extension speed.,Increases the shield's turn rate and raise rate by an additional %s.,graphics/hullmods/accelerated_shields.png
+,,,,,,,,,,,,,,,,,,,
+#Hidden and not so Dmods,,,,,,,,,,,,,,,,,,,
+Collapsed Fleet Gantry,JHS_collapsedFleetGantry,0,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_collapsedFleetGantry,"Dedicated onboard gantry and fleet servicing facility collapsed due to damages and able to provide only limited range of logistical bonuses for ship's fleet.
+
+Provide %s supply use per month reduction bonus and %s recovery and DP reduction bonus to all ships member of the fleets. 
+
+Its vast bulk and hangar consumed by hastly repairs and makeshift supports making it unable to maintain and store frigates inside.
+
+its dedicated fleetwide drive field stabilizer lies uncallibrated and underpowered unable to provide any effect to ship's fleet.","Provide supply use, DP, after combat supplies recovery and max burn bonust to all ships within the fleets ",,graphics/hullmods/JHS_fleetlogistic_icon.png
+Remove Decks,JHS_RemoveDecks,,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_RemoveDecks,Removes all flight decks.,,,graphics/hullmods/converted_hangar.png
+,,,,,,,,,,,,,,,,,,,
+#Upgrades,,,,,,,,,,,,,,,,,,,
+Voidship Command Center,JHS_VoidshipCommand,,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_VoidshipCommand,"Comprehensive overhaul to basic operation center designed to coordinate crew on big capital ship and provide captain with best fleetwide communications.
+
+Increases the command point recovery rate by %s when installed on the flagship.
+
+When deployed in combat, grants %s ECM rating and reduces the weapon range reduction due to enemy ECM by %s.
+
+Coorinates wings on ship's modules to priritise attacking target of core hull.","Increases command point recovery rate when on flagship, reduces effects of enemy ECM on range, provide ECM rating and coorinates module's wings.",,graphics/hullmods/operations_center.png
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+Left module converted to Carrier,JHS_L_Module_CarrierConvert,,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_L_Module_CarrierConvert,"Comprehensive overhaul to basic operation center designed to coordinate crew on big capital ship and provide captain with best fleetwide communications.
+
+Increases the command point recovery rate by %s when installed on the flagship.
+
+Reduces the weapon range reduction due to enemy ECM by %s.
+
+When deployed in combat, grants %s ECM rating.
+
+Coorinates wings on ship's modules to priritise targeting main hull's target","Increases command point recovery rate when on flagship, reduces effects of enemy ECM on range, provide ECM rating and coorinates module's wings.",,graphics/hullmods/operations_center.png
+Converted to Carrier,JHS_AddDecksModule,,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_AddDecksModule,[Hidden Everywhere] Convert Left module to carrier by adding wing slots and swaping sprite.,,,graphics/hullmods/converted_hangar.png
+Converted to Cargo,JHS_RemoveDecksModule,,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_RemoveDecksModule,[Hidden Everywhere] Convert Right module to cargo by removing wing slots and swaping sprite.,,,graphics/hullmods/converted_hangar.png
