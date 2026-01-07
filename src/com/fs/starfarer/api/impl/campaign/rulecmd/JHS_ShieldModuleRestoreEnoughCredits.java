@@ -38,7 +38,7 @@ public class JHS_ShieldModuleRestoreEnoughCredits extends BaseCommandPlugin {
             return false;
         }
 
-        float needed = 100000; //Shield module credit cost
+        float needed = 1; //Shield module credit cost
         float credits = playerFleet.getCargo().getCredits().get();
         return credits >= needed;
     }

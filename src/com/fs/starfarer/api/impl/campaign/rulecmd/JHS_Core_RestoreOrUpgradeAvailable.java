@@ -535,21 +535,20 @@ public class JHS_Core_RestoreOrUpgradeAvailable extends BaseCommandPlugin {
 
             String VoidhubFeared = "The Big Chungus... Only few remember what a space scrap it was, as now hull instills fear and respect as it unique signature gets caught on radars. Surpassing any of it's Djoeng cousins, Big Chungus represent pristine and unreachable superiority in combat and exploration. Shining example of best sector has to offer.";
 
-            if(!upgrades.contains(U1_FIXED_ALL_WINGS) || !upgrades.contains(U2_FIXED_DRONE_LAUNCHERS) || !upgrades.contains(U3_FIXED_FLEET_GANTRY)
-                    ||!upgrades.contains(U4_FIXED_WEAPON_SLOTS_40_OP) || !upgrades.contains(U5_FIXED_TARGETING_CORE)){
+            if (!upgrades.contains(U1_FIXED_ALL_WINGS) || !upgrades.contains(U2_FIXED_DRONE_LAUNCHERS) || !upgrades.contains(U3_FIXED_FLEET_GANTRY)
+                    || !upgrades.contains(U4_FIXED_WEAPON_SLOTS_40_OP) || !upgrades.contains(U5_FIXED_TARGETING_CORE)) {
                 dynamic_desc = BrokenJunk;
-            }
-            else {
+            } else {
                 dynamic_desc = FunctionalJunk;
             }
 
             //All restoration upgrades plus "default" module upgrade
-            if(upgrades.size() >= 6){
+            if (upgrades.size() >= 6) {
                 dynamic_desc = HubshipRestored;
             }
 
             //All upgrades installed, no matter the which swithed type
-            if(upgrades.size() >= 9){
+            if (upgrades.size() >= 9) {
                 dynamic_desc = VoidhubFeared;
             }
 
@@ -557,8 +556,47 @@ public class JHS_Core_RestoreOrUpgradeAvailable extends BaseCommandPlugin {
                 return dynamic_desc;
             }
 
+
+            //Debug string to see which upgrades are active
+            dynamic_desc += "\n\nU";
+            if (upgrades.contains(U1_FIXED_ALL_WINGS)) {
+                dynamic_desc += "1";
+            }
+            if (upgrades.contains(U2_FIXED_DRONE_LAUNCHERS)) {
+                dynamic_desc += "2";
+            }
+            if (upgrades.contains(U3_FIXED_FLEET_GANTRY)) {
+                dynamic_desc += "3";
+            }
+            if (upgrades.contains(U4_FIXED_WEAPON_SLOTS_40_OP)) {
+                dynamic_desc += "4";
+            }
+            if (upgrades.contains(U5_FIXED_TARGETING_CORE)) {
+                dynamic_desc += "5";
+            }
+            if (upgrades.contains(P1_ADDED_LOGISTICS)) {
+                dynamic_desc += "+P1";
+            }
+            if (upgrades.contains(P2_ADDED_VOIDSHIP_COMMAND)) {
+                dynamic_desc += "+P2";
+            }
+            if (upgrades.contains(W1_CHOOSE_MODERNISED_WEAPON_SLOTS)) {
+                dynamic_desc += "+W1";
+            } else if (upgrades.contains(W2_CHOOSE_MODERNISED_WING_SLOTS)) {
+                dynamic_desc += "+W2";
+            }
+
+            if (upgrades.contains(M1_CHOOSE_CARRIER_LEFT_MODULE)) {
+                dynamic_desc += "+M1";
+            } else if (upgrades.contains(M2_CHOOSE_LOGISTIC_RIGHT_MODULE)) {
+                dynamic_desc += "+M2";
+            } else if (upgrades.contains(M3_CHOOSE_BALANCED_MODULES)) {
+                dynamic_desc += "+M3";
+            }
+
+
             //Logic to list individual upgrades in description
-            if(upgrades.size() <= 6) {
+            if (upgrades.size() <= 6) {
                 dynamic_desc += "\n\nThe Big Chungus been modified from its decrepit state with following upgrades: ";
 
                 if (upgrades.contains(U1_FIXED_ALL_WINGS)) {

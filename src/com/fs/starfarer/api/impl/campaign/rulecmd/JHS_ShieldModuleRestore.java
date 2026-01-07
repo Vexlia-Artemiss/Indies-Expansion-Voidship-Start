@@ -59,7 +59,7 @@ public class JHS_ShieldModuleRestore extends BaseCommandPlugin {
         targetMember.setVariant(v, false, false);
         targetMember.setStatUpdateNeeded(true);
 
-        float needed = 100000; //Shield module credit cost
+        float needed = 1; //Shield module credit cost
 
         //For credits
         if (needed > 0) {
