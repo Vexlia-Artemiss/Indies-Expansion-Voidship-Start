@@ -12,13 +12,13 @@ its dedicated fleetwide drive field stabilizer lies uncallibrated and underpower
 Remove Decks,JHS_RemoveDecks,,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_RemoveDecks,Removes all flight decks.,,,graphics/hullmods/converted_hangar.png
 ,,,,,,,,,,,,,,,,,,,
 #Upgrades,,,,,,,,,,,,,,,,,,,
-Voidship Command Center,JHS_VoidshipCommand,,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_VoidshipCommand,"Comprehensive overhaul to basic operation center designed to coordinate crew on big capital ship and provide captain with best fleetwide communications.
+Voidfaring Hubship Command Center,JHS_VoidshipCommand,,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_VoidshipCommand,"Comprehensive overhaul to basic operation center designed to coordinate crew on big capital ship and provide captain with best fleetwide communications.
 
 Increases the command point recovery rate by %s when installed on the flagship.
 
 When deployed in combat, grants %s ECM rating and reduces the weapon range reduction due to enemy ECM by %s.
 
-Coorinates wings on ship's modules to priritise attacking target of core hull.","Increases command point recovery rate when on flagship, reduces effects of enemy ECM on range, provide ECM rating and coorinates module's wings.",,graphics/hullmods/operations_center.png
+Coorinates wings on ship's modules to prioritize targeting main hull's target. This effect work even if core hull don't have fighter bays but Don't forget to press engage button (default Z)!!!","Increases command point recovery rate when on flagship, reduces effects of enemy ECM on range, provide ECM rating and coorinates module's wings.",,graphics/hullmods/operations_center.png
 ,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,
 Left module converted to Carrier,JHS_L_Module_CarrierConvert,,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_L_Module_CarrierConvert,"Comprehensive overhaul to basic operation center designed to coordinate crew on big capital ship and provide captain with best fleetwide communications.
@@ -29,6 +29,6 @@ Reduces the weapon range reduction due to enemy ECM by %s.
 
 When deployed in combat, grants %s ECM rating.
 
-Coorinates wings on ship's modules to priritise targeting main hull's target","Increases command point recovery rate when on flagship, reduces effects of enemy ECM on range, provide ECM rating and coorinates module's wings.",,graphics/hullmods/operations_center.png
+Coorinates wings on ship's modules to pririotise targeting main hull's target. This effect work even if core hull don't have fighter bays but Don't forget to press engage button (default Z)!!!","Increases command point recovery rate when on flagship, reduces effects of enemy ECM on range, provide ECM rating and coorinates module's wings.",,graphics/hullmods/operations_center.png
 Converted to Carrier,JHS_AddDecksModule,,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_AddDecksModule,[Hidden Everywhere] Convert Left module to carrier by adding wing slots and swaping sprite.,,,graphics/hullmods/converted_hangar.png
 Converted to Cargo,JHS_RemoveDecksModule,,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_RemoveDecksModule,[Hidden Everywhere] Convert Right module to cargo by removing wing slots and swaping sprite.,,,graphics/hullmods/converted_hangar.png
