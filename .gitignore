@@ -53,7 +53,7 @@ src/
 .idea/
 .run/
 .getattributes
-.github/
+.git/
 Junkhub_Start.iml
 starsector-intellij-template.iml
 
