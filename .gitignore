@@ -49,6 +49,13 @@ cmake-build-*/
 # IntelliJ
 out/
 
+src/
+.idea/
+.run/
+.getattributes
+Junkhub_Start.iml
+starsector-intellij-template.iml
+
 # mpeltonen/sbt-idea plugin
 .idea_modules/
 
