@@ -1,6 +1,6 @@
 {
 	"baseHullId":"JHS_junkhubship_core_m3",
-	"skinHullId":"JHS_junkhubship_core_u34_m3",
+	"skinHullId":"JHS_junkhubship_core_u12345_p1_p2_m2",
 	"hullName":"Cripled Hubship",
 	"descriptionId":"JHS_junkhubship_core",
 	"descriptionPrefix":"U1 + M3", #Set in code
@@ -8,21 +8,32 @@
 	"addHints":[HIDE_IN_CODEX],
 	"tech":"Unknown",
 	"fleetPoints":50,
-	"ordnancePoints":400,
+	"ordnancePoints":440,
 	"baseValueMult":.8,
 	"suppliesToRecover":75,
 	"suppliesPerMonth":75,
 	"spriteName":"graphics/junkhubship_Ultra/JHS_junkhubship_main.png",
 	"removeWeaponSlots":[], 		# ids
 	"removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
-	"removeBuiltInMods":[JHS_collapsedFleetGantry], 		# hullmod ids
+	"removeBuiltInMods":[JHS_RemoveDecks, JHS_collapsedFleetGantry, targetingunit], 		# hullmod ids
 	"removeBuiltInWeapons":[], 		# weapon slot ids
-	"builtInWeapons":{
-    },
+	"builtInWeapons": {
+		"WS0005": "acs_bigmookrailslauncher",
+		"WS0006": "acs_bigmookrailslauncher",
+		"WS0007": "acs_watchtowerrailslauncher",
+		"WS0008": "acs_watchtowerrailslauncher",
+		"WS0010": "acs_angrymookrailslauncher"
+	},
 	"builtInMods": [
 		"acs_fleetlogistic2",
+		"advancedcore",
+		"JHS_VoidshipCommand",
+		"solar_shielding",
+		"insulatedengine"
 	],
 	"builtInWings": [
+		"acs_mook_r_wing",
+		"acs_smallderelicdrone_wing"
 	],
 	"weaponSlotChanges":{
         "WS0011":{

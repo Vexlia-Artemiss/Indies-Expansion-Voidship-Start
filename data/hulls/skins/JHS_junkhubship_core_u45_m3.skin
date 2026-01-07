@@ -1,6 +1,6 @@
 {
 	"baseHullId":"JHS_junkhubship_core_m3",
-	"skinHullId":"JHS_junkhubship_core_u4_m3",
+	"skinHullId":"JHS_junkhubship_core_u45_m3",
 	"hullName":"Cripled Hubship",
 	"descriptionId":"JHS_junkhubship_core",
 	"descriptionPrefix":"U1 + M3", #Set in code

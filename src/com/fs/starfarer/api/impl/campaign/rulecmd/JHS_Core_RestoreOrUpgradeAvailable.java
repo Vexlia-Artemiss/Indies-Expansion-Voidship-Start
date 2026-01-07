@@ -229,12 +229,12 @@ public class JHS_Core_RestoreOrUpgradeAvailable extends BaseCommandPlugin {
         P2_ADDED_VOIDSHIP_COMMAND("P2", 1, 0),
 
         //SWAPPABLE UPGRADES
+        W1_CHOOSE_MODERNISED_WEAPON_SLOTS("W1", 1, 0),
+        W2_CHOOSE_MODERNISED_WING_SLOTS("W2", 1, 0),
+
         M1_CHOOSE_CARRIER_LEFT_MODULE("M1", 1, 0),
         M2_CHOOSE_LOGISTIC_RIGHT_MODULE("M2", 1, 0),
-        M3_CHOOSE_BALANCED_MODULES("M3", 1, 0),
-
-        W1_CHOOSE_MODERNISED_WEAPON_SLOTS("W1", 1, 0),
-        W2_CHOOSE_MODERNISED_WING_SLOTS("W2", 1, 0);
+        M3_CHOOSE_BALANCED_MODULES("M3", 1, 0);
 
 
         public final String id;
@@ -282,6 +282,22 @@ public class JHS_Core_RestoreOrUpgradeAvailable extends BaseCommandPlugin {
                 upgrades.add(U5_FIXED_TARGETING_CORE);
             }
 
+            if (name.startsWith(token + "_p1")) {
+                token += "_p1";
+                upgrades.add(P1_ADDED_LOGISTICS);
+            }
+            if (name.startsWith(token + "_p2")) {
+                token += "_p2";
+                upgrades.add(P2_ADDED_VOIDSHIP_COMMAND);
+            }
+
+            if (name.startsWith(token + "_w1")) {
+                token += "_w1";
+                upgrades.add(W1_CHOOSE_MODERNISED_WEAPON_SLOTS);
+            } else if (name.startsWith(token + "_w2")) {
+                token += "_w2";
+                upgrades.add(W2_CHOOSE_MODERNISED_WING_SLOTS);
+            }
 
             if (name.startsWith(token + "_m1")) {
                 token += "_m1";
@@ -360,6 +376,13 @@ public class JHS_Core_RestoreOrUpgradeAvailable extends BaseCommandPlugin {
             upgrades.add(P1_ADDED_LOGISTICS);
             upgrades.add(P2_ADDED_VOIDSHIP_COMMAND);
 
+            upgrades.add(W1_CHOOSE_MODERNISED_WEAPON_SLOTS);
+            upgrades.add(W2_CHOOSE_MODERNISED_WING_SLOTS);
+
+            upgrades.add(M1_CHOOSE_CARRIER_LEFT_MODULE);
+            upgrades.add(M2_CHOOSE_LOGISTIC_RIGHT_MODULE);
+            upgrades.add(M3_CHOOSE_BALANCED_MODULES);
+
             if (name.startsWith(token + "_p1")) {
                 token += "_p1";
                 upgrades.remove(P1_ADDED_LOGISTICS);
@@ -370,8 +393,6 @@ public class JHS_Core_RestoreOrUpgradeAvailable extends BaseCommandPlugin {
                 upgrades.remove(P2_ADDED_VOIDSHIP_COMMAND);
             }
 
-            upgrades.add(W1_CHOOSE_MODERNISED_WEAPON_SLOTS);
-            upgrades.add(W2_CHOOSE_MODERNISED_WING_SLOTS);
 
             if (name.startsWith(token + "_w1")) {
                 token += "_w1";
@@ -381,9 +402,7 @@ public class JHS_Core_RestoreOrUpgradeAvailable extends BaseCommandPlugin {
                 upgrades.remove(W2_CHOOSE_MODERNISED_WING_SLOTS);
             }
 
-            upgrades.add(M1_CHOOSE_CARRIER_LEFT_MODULE);
-            upgrades.add(M2_CHOOSE_LOGISTIC_RIGHT_MODULE);
-            upgrades.add(M3_CHOOSE_BALANCED_MODULES);
+
             if (name.startsWith(token + "_m1")) {
                 token += "_m1";
                 upgrades.remove(M1_CHOOSE_CARRIER_LEFT_MODULE);
@@ -431,7 +450,9 @@ public class JHS_Core_RestoreOrUpgradeAvailable extends BaseCommandPlugin {
 
             if (upgrades.contains(P1_ADDED_LOGISTICS)) {
                 name += "_p1";
-            } else if (upgrades.contains(P2_ADDED_VOIDSHIP_COMMAND)) {
+            }
+
+            if (upgrades.contains(P2_ADDED_VOIDSHIP_COMMAND)) {
                 name += "_p2";
             }
 
@@ -502,7 +523,7 @@ public class JHS_Core_RestoreOrUpgradeAvailable extends BaseCommandPlugin {
             return type.credits;
         }
 
-        //My own addition, to have dinamic getDescriptionPrefix string, instead of setting it throught skin files.
+        //My own addition, to have dynamic getDescriptionPrefix string, instead of setting it through skin files.
         public static String getDescriptionString(EnumSet<UpgradeType> upgrades) {
             String dynamic_desc = null;
 
@@ -563,10 +584,26 @@ public class JHS_Core_RestoreOrUpgradeAvailable extends BaseCommandPlugin {
 
                 dynamic_desc += "\n\nThe Big Chungus is brought on level with Djoeng Class Voidfaring Hubship and exceeds it with following additional upgrades: ";
 
+                if (upgrades.contains(P1_ADDED_LOGISTICS)) {
+                    dynamic_desc += "\n\nP1";
+                }
+
+                if (upgrades.contains(P2_ADDED_VOIDSHIP_COMMAND)) {
+                    dynamic_desc += "\n\nP2";
+                }
+
                 if (upgrades.contains(W1_CHOOSE_MODERNISED_WEAPON_SLOTS)) {
                     dynamic_desc += "\n\nHeavily upgraded weapon mounts to use more weapon types, and added build-in hullmod, at cost of wing slots";
                 } else if (upgrades.contains(W2_CHOOSE_MODERNISED_WING_SLOTS)) {
                     dynamic_desc += "\n\nFreed up build-in wing slots and added build-in B-Deck, at cost of increased DP";
+                }
+
+                if (upgrades.contains(M1_CHOOSE_CARRIER_LEFT_MODULE)) {
+                    dynamic_desc += "\n\nM1";
+                } else if (upgrades.contains(M2_CHOOSE_LOGISTIC_RIGHT_MODULE)) {
+                    dynamic_desc += "\n\nM2";
+                } else if (upgrades.contains(M3_CHOOSE_BALANCED_MODULES)) {
+                    dynamic_desc += "\n\nM3";
                 }
 
             }

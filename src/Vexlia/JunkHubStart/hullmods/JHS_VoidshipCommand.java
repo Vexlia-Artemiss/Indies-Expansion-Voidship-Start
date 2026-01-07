@@ -65,7 +65,7 @@ public class JHS_VoidshipCommand extends BaseHullMod {
     // Mirror parent's fighter commands
     void SyncWings(ShipAPI child, ShipAPI parent){
 
-        if (child.hasLaunchBays()) {
+        if (!child.getLaunchBaysCopy().isEmpty()) {
             if (parent.getAllWings().isEmpty() && (Global.getCombatEngine().getPlayerShip() != parent || !Global.getCombatEngine().isUIAutopilotOn()))
                 parent.setPullBackFighters(false); // otherwise module fighters will only defend if AI parent has no bays
             if (child.isPullBackFighters() ^ parent.isPullBackFighters()) {

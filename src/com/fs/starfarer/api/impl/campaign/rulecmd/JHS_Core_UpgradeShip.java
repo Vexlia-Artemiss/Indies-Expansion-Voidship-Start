@@ -204,17 +204,15 @@ public class JHS_Core_UpgradeShip extends BaseCommandPlugin {
 
         //hullSpec used to set mounts and track upgrades
         targetMember.getVariant().setHullSpecAPI(hullSpec);
+        targetMember.getHullSpec().setDescriptionPrefix(UpgradeType.getDescriptionString(currentUpgrades));
 
         ShipVariantAPI leftModule = targetMember.getVariant().getModuleVariant("WS0001").clone();
-
-
         leftModule.setSource(VariantSource.REFIT);
         leftModule.setHullVariantId(Misc.genUID());
 
         ShipVariantAPI rightModule = targetMember.getVariant().getModuleVariant("WS0002").clone();
         rightModule.setSource(VariantSource.REFIT);
         rightModule.setHullVariantId(Misc.genUID());
-        targetMember.getHullSpec().setDescriptionPrefix(UpgradeType.getDescriptionString(currentUpgrades));
 
         if (upgrade == UpgradeType.U1_FIXED_ALL_WINGS) {
             targetMember.getVariant().removePermaMod("JHS_RemoveDecks");
@@ -242,9 +240,17 @@ public class JHS_Core_UpgradeShip extends BaseCommandPlugin {
             targetMember.getVariant().removeMod(HullMods.INTEGRATED_TARGETING_UNIT);
             targetMember.getVariant().addPermaMod(HullMods.ADVANCED_TARGETING_CORE);
 
+
+            rightModule.getPermaMods().remove(HullMods.INTEGRATED_TARGETING_UNIT);
+            rightModule.getHullMods().remove(HullMods.INTEGRATED_TARGETING_UNIT);
             rightModule.removePermaMod(HullMods.INTEGRATED_TARGETING_UNIT);
+            rightModule.removeMod(HullMods.INTEGRATED_TARGETING_UNIT);
             rightModule.addPermaMod(HullMods.ADVANCED_TARGETING_CORE);
+
+            leftModule.getPermaMods().remove(HullMods.INTEGRATED_TARGETING_UNIT);
+            leftModule.getHullMods().remove(HullMods.INTEGRATED_TARGETING_UNIT);
             leftModule.removePermaMod(HullMods.INTEGRATED_TARGETING_UNIT);
+            leftModule.removeMod(HullMods.INTEGRATED_TARGETING_UNIT);
             leftModule.addPermaMod(HullMods.ADVANCED_TARGETING_CORE);
         }
 
@@ -257,6 +263,9 @@ public class JHS_Core_UpgradeShip extends BaseCommandPlugin {
         }
 
         if (upgrade == UpgradeType.W1_CHOOSE_MODERNISED_WEAPON_SLOTS) {
+            if (swapped) {
+                targetMember.getVariant().removePermaMod("bdeck");
+            }
             targetMember.getVariant().setWingId(0, null);
             targetMember.getVariant().setWingId(1, null);
             targetMember.getVariant().addPermaMod("JHS_RemoveDecks");
@@ -265,8 +274,9 @@ public class JHS_Core_UpgradeShip extends BaseCommandPlugin {
         }
         if (upgrade == UpgradeType.W2_CHOOSE_MODERNISED_WING_SLOTS) {
             if (swapped) {
-                targetMember.getVariant().addPermaMod(HullMods.ARMOREDWEAPONS);
-                targetMember.getVariant().addPermaMod(HullMods.AUTOREPAIR);
+                targetMember.getVariant().removePermaMod(HullMods.ARMOREDWEAPONS);
+                targetMember.getVariant().removePermaMod(HullMods.AUTOREPAIR);
+                targetMember.getVariant().removePermaMod("JHS_RemoveDecks");
             }
             targetMember.getVariant().setWingId(0, null);
             targetMember.getVariant().setWingId(1, null);
@@ -299,8 +309,6 @@ public class JHS_Core_UpgradeShip extends BaseCommandPlugin {
                 rightModule.removePermaMod(JHS_IDs.R_Module_RemoveDecks);
                 rightModule.removeMod(JHS_IDs.R_Module_RemoveDecks);
             }
-            targetMember.getVariant().addMod(HullMods.AUXILIARY_THRUSTERS);
-            targetMember.getVariant().addMod(HullMods.UNSTABLE_INJECTOR);
         }
         targetMember.getVariant().setModuleVariant("WS0001", leftModule);
         targetMember.getVariant().setModuleVariant("WS0002", rightModule);

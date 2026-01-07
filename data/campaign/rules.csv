@@ -5,25 +5,25 @@ id,trigger,conditions,script,text,options,notes
 JHS_marketPopulateOptions,PopulateOptions,"$hasMarket
 $menuState == main
 $tradeMode == OPEN
-JHS_Core_RestoreOrUpgradeAvailable",,,16:JHS_MarketRestoreOrUpgrade:Open options for restoring or upgrading The Junkhub Ultra,
+JHS_Core_RestoreOrUpgradeAvailable",,,"16:JHS_MarketRestoreOrUpgrade:See options for restoring or upgrading ""The Grand Chungus""",
 JHS_MarketOptionSelected,DialogOptionSelected,$option == JHS_MarketRestoreOrUpgrade,"$menuState = 16:JHS_MarketRestoreOrUpgrade
 FireAll JNS_huboptions",,,
 ,,,,,,
-JHS_MainHullhub_AddOption,JNS_huboptions,,,,"1:JHS_MainHullhub_option:Restore or Upgrade ""The Junkhub Ultra"" Main hull",
+JHS_MainHullhub_AddOption,JNS_huboptions,,,,"1:JHS_MainHullhub_option:Restore or Upgrade ""The Grand Chungus"" Main hull",
 JHS_MainHullhub,DialogOptionSelected,$option == JHS_MainHullhub_option,FireAll JNS_MainHullOptions,,,
 ,,,,,,
-JHS_LeftModuleHub_AddOption,JNS_huboptions,,,,"2:JHS_LeftModuleHub_option:Restore or Upgrade ""The Junkhub Ultra"" Left Module",
+JHS_LeftModuleHub_AddOption,JNS_huboptions,,,,"2:JHS_LeftModuleHub_option:[Not implemeted yet] Restore or Upgrade ""The Grand Chungus"" Left Module",
 JHS_LeftModuleHub,DialogOptionSelected,$option == JHS_LeftModuleHub_option,FireAll JNS_L_ModuleOptions,,,
 ,,,,,,
-JHS_RightModuleHub_AddOption,JNS_huboptions,,,,"3:JHS_RightModuleHub_option:Restore or Upgrade ""The Junkhub Ultra"" Right module",
+JHS_RightModuleHub_AddOption,JNS_huboptions,,,,"3:JHS_RightModuleHub_option:[Not implemeted yet] Restore or Upgrade ""The Grand Chungus"" Right module",
 JHS_RightModuleHub,DialogOptionSelected,$option == JHS_RightModuleHub_option,FireAll JNS_R_ModuleOptions,,,
 ,,,,,,
-JHS_AddShieldModule_AddOption,JNS_huboptions,JHS_ShieldModuleRestoreAvailable,"SetTooltip JHS_AddShieldModule_option ""Restores Functionality to shield You have enought credits""",,4:JHS_AddShieldModule_option:Install independent shild module,
+JHS_AddShieldModule_AddOption,JNS_huboptions,JHS_ShieldModuleRestoreAvailable,"SetTooltip JHS_AddShieldModule_option ""Restores Functionality to shield You have enought credits""",,"4:JHS_AddShieldModule_option:Restore independent shield module of ""The Grand Chungus""",
 JHS_AddShieldModule,DialogOptionSelected,$option == JHS_AddShieldModule_option,"JHS_ShieldModuleRestore
 FireAll JNS_huboptions
 ",,,
 ,,,,,,
-JHS_ShieldModuleHub_AddOption,JNS_huboptions,!JHS_ShieldModuleRestoreAvailable,,,"4:JHS_ShieldModuleHub_option:Upgrade ""The Junkhub Ultra"" Shield module",
+JHS_ShieldModuleHub_AddOption,JNS_huboptions,!JHS_ShieldModuleRestoreAvailable,,,"4:JHS_ShieldModuleHub_option:Upgrade ""The Grand Chungus"" Shield module",
 JHS_ShieldModuleHub,DialogOptionSelected,$option == JHS_ShieldModuleHub_option,FireAll JNS_S_ModuleOptions,,,
 ,,,,,,
 JHS_BacktoMarket_Add,JNS_huboptions,,SetShortcut JHS_BackToMarket_option ESCAPE,,99:JHS_BackToMarket_option:Back to the market,
@@ -109,32 +109,49 @@ FireAll JNS_MainHullOptions",,,
 #---------------------,#---------------------,#---------------------,#---------------------,,,
 JHS_MainHull_P1_Add1,JNS_MainHullOptions,"$hasMarket
 JHS_Core_UpgradeAvailable P1
-JHS_Core_UpgradeEnoughCredits P1",,,7:JHS_MainHull_Upgrade_P1_option:Install build-in Voidship Command,
+JHS_Core_UpgradeEnoughCredits P1",,,7:JHS_MainHull_Upgrade_P1_option:Rewamp ship logistics,
 JHS_MainHull_P1_Add2,JNS_MainHullOptions,"$hasMarket
 JHS_Core_UpgradeAvailable P1
-!JHS_Core_UpgradeEnoughCredits P1",SetEnabled JHS_MainHull_Upgrade_P1_option false,,7:JHS_MainHull_Upgrade_P1_option:Install build-in Voidship Command,
-,,,,,,
+!JHS_Core_UpgradeEnoughCredits P1",SetEnabled JHS_MainHull_Upgrade_P1_option false,,7:JHS_MainHull_Upgrade_P1_option:Rewamp ship logistics,
+JHS_MainHull_P1,DialogOptionSelected,$option == JHS_MainHull_Upgrade_P1_option,"JHS_Core_UpgradeShip P1
+AddText ""Rewamped $global.uwUpgradeShip to use two carrier modules at the cost of $global.uwUpgradeU1CostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeU1CostStr
+FireAll JNS_MainHullOptions",,,
 JHS_MainHull_P2_Add1,JNS_MainHullOptions,"$hasMarket
 JHS_Core_UpgradeAvailable P2
-JHS_Core_UpgradeEnoughCredits P2",,,8:JHS_MainHull_Upgrade_P2_option:Rewamp ship logistics,
+JHS_Core_UpgradeEnoughCredits P2",,,8:JHS_MainHull_Upgrade_P2_option:Install build-in Voidship Command,
 JHS_MainHull_P2_Add2,JNS_MainHullOptions,"$hasMarket
 JHS_Core_UpgradeAvailable P2
-!JHS_Core_UpgradeEnoughCredits P2",SetEnabled JHS_MainHull_Upgrade_P2_option false,,8:JHS_MainHull_Upgrade_P2_option:Rewamp ship logistics,
+!JHS_Core_UpgradeEnoughCredits P2",SetEnabled JHS_MainHull_Upgrade_P2_option false,,8:JHS_MainHull_Upgrade_P2_option:Install build-in Voidship Command,
+JHS_MainHull_P2,DialogOptionSelected,$option == JHS_MainHull_Upgrade_P2_option,"JHS_Core_UpgradeShip P2
+AddText ""Rewamped $global.uwUpgradeShip to use two carrier modules at the cost of $global.uwUpgradeU1CostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeU1CostStr
+FireAll JNS_MainHullOptions",,,
 ,,,,,,
 JHS_MainHull_W1_Add1,JNS_MainHullOptions,"$hasMarket
 JHS_Core_UpgradeAvailable W1
-JHS_Core_UpgradeEnoughCredits P2",,,9:JHS_MainHull_Upgrade_W1_option:Modernise Weapon Slots,
+JHS_Core_UpgradeEnoughCredits W1",,,9:JHS_MainHull_Upgrade_W1_option:Modernise Weapon Slots,
 JHS_MainHull_W1_Add2,JNS_MainHullOptions,"$hasMarket
 JHS_Core_UpgradeAvailable W1
 !JHS_Core_UpgradeEnoughCredits W1",SetEnabled JHS_MainHull_Upgrade_W1_option false,,9:JHS_MainHull_Upgrade_W1_option:Modernise Weapon Slots,
-,,,,,,
+JHS_MainHull_W1,DialogOptionSelected,$option == JHS_MainHull_Upgrade_W1_option,"JHS_Core_UpgradeShip W1
+AddText ""Rewamped $global.uwUpgradeShip to use two carrier modules at the cost of $global.uwUpgradeU1CostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeU1CostStr
+FireAll JNS_MainHullOptions",,,
 JHS_MainHull_W2_Add1,JNS_MainHullOptions,"$hasMarket
 JHS_Core_UpgradeAvailable W2
 JHS_Core_UpgradeEnoughCredits W2",,,10:JHS_MainHull_Upgrade_W2_option:Modernise Wing Bays,
 JHS_MainHull_W2_Add2,JNS_MainHullOptions,"$hasMarket
 JHS_Core_UpgradeAvailable W2
 !JHS_Core_UpgradeEnoughCredits W2",SetEnabled JHS_MainHull_Upgrade_W2_option false,,10:JHS_MainHull_Upgrade_W2_option:Modernise Wing Bays,
-,,,,,,
+JHS_MainHull_W2,DialogOptionSelected,$option == JHS_MainHull_Upgrade_W2_option,"JHS_Core_UpgradeShip W2
+AddText ""Rewamped $global.uwUpgradeShip to use two carrier modules at the cost of $global.uwUpgradeU1CostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeU1CostStr
+FireAll JNS_MainHullOptions",,,
 ,,,,,,
 JHS_MainHull_M1_Add1,JNS_MainHullOptions,"$hasMarket
 JHS_Core_UpgradeAvailable M1
@@ -178,23 +195,21 @@ FireAll JNS_MainHullOptions",,,
 #---------------------,#---------------------,#---------------------,#---------------------,,#---------------------,
 JHS_L_Module_ReturnToHub_Add,JNS_L_ModuleOptions,$hasMarket,SetShortcut JHS_ReturnToHub_option ESCAPE,,99:JHS_ReturnToHub_option:Return.,
 ,,,,,,
-JHS_L_ModuleRestore_1,JNS_L_ModuleOptions,,,,1:JHS_L_Module_Restore_option: Remove random D-mod.,
-JHS_L_ModuleRestore_2,JNS_L_ModuleOptions,,,,1:JHS_L_Module_Restore_option: Remove random D-mod.,
-JNS_L_Module_U1,JNS_L_ModuleOptions,,,,2:JHS_MainHull_Upgrade_U1_option: Add upgrade 1,
-JNS_L_Module_U2,JNS_L_ModuleOptions,,,,3:JHS_MainHull_Upgrade_U2_option: Add upgrade 2,
-JNS_L_Module_U3,JNS_L_ModuleOptions,,,,4:JHS_MainHull_Upgrade_U3_option: Add upgrade 3,
-JNS_L_Module_U4,JNS_L_ModuleOptions,,,,5:JHS_MainHull_Upgrade_U4_option: Add upgrade 4,
+JHS_L_ModuleRestore_1,JNS_L_ModuleOptions,,,,1:JHS_L_Module_Restore_option:[Not implemeted yet] Remove random D-mod.,
+JNS_L_Module_U1,JNS_L_ModuleOptions,,,,2:JHS_MainHull_Upgrade_U1_option:[Not implemeted yet] Add upgrade 1,
+JNS_L_Module_U2,JNS_L_ModuleOptions,,,,3:JHS_MainHull_Upgrade_U2_option:[Not implemeted yet] Add upgrade 2,
+JNS_L_Module_U3,JNS_L_ModuleOptions,,,,4:JHS_MainHull_Upgrade_U3_option:[Not implemeted yet] Add upgrade 3,
+JNS_L_Module_U4,JNS_L_ModuleOptions,,,,5:JHS_MainHull_Upgrade_U4_option:[Not implemeted yet] Add upgrade 4,
 ,,,,,,
 #Right Module's options,#---------------------,#---------------------,#---------------------,,#---------------------,
 #---------------------,#---------------------,#---------------------,#---------------------,,#---------------------,
 JHS_R_Module_ReturnToHub_Add,JNS_R_ModuleOptions,$hasMarket,SetShortcut JHS_ReturnToHub_option ESCAPE,,99:JHS_ReturnToHub_option:Return.,
 ,,,,,,
-JHS_R_ModuleRestore_1,JNS_R_ModuleOptions,,,,1:JHS_MainHull_Restore_option: Remove random D-mod.,
-JHS_R_ModuleRestore_2,JNS_R_ModuleOptions,,,,1:JHS_MainHull_Restore_option: Remove random D-mod.,
-JHS_R_Module_U1,JNS_R_ModuleOptions,,,,1:JHS_R_Module_U1_option:Add upgrade 1,
-JHS_R_Module_U2,JNS_R_ModuleOptions,,,,3:JHS_R_Module_U2_option:Add upgrade 2,
-JHS_R_Module_U3,JNS_R_ModuleOptions,,,,4:JHS_R_Module_U3_option:Add upgrade 3,
-JHS_R_Module_U4,JNS_R_ModuleOptions,,,,5:JHS_R_Module_U4_option:Add upgrade 4,
+JHS_R_ModuleRestore_1,JNS_R_ModuleOptions,,,,1:JHS_MainHull_Restore_option:[Not implemeted yet] Remove random D-mod.,
+JHS_R_Module_U1,JNS_R_ModuleOptions,,,,1:JHS_R_Module_U1_option:[Not implemeted yet] Add upgrade 1,
+JHS_R_Module_U2,JNS_R_ModuleOptions,,,,3:JHS_R_Module_U2_option:[Not implemeted yet] Add upgrade 2,
+JHS_R_Module_U3,JNS_R_ModuleOptions,,,,4:JHS_R_Module_U3_option:[Not implemeted yet] Add upgrade 3,
+JHS_R_Module_U4,JNS_R_ModuleOptions,,,,5:JHS_R_Module_U4_option:[Not implemeted yet] Add upgrade 4,
 ,,,,,,
 #Shield Module's options,#---------------------,#---------------------,#---------------------,,#---------------------,
 #---------------------,#---------------------,#---------------------,#---------------------,,#---------------------,
