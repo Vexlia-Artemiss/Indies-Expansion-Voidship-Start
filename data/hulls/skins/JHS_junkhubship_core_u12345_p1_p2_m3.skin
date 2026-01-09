@@ -15,7 +15,7 @@
 	"spriteName":"graphics/junkhubship_Ultra/JHS_junkhubship_main.png",
 	"removeWeaponSlots":[], 		# ids
 	"removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
-	"removeBuiltInMods":[JHS_RemoveDecks, JHS_collapsedFleetGantry, targetingunit], 		# hullmod ids
+	"removeBuiltInMods":[JHS_RemoveDecks, JHS_collapsedFleetGantry, targetingunit, operations_center, operations_center], 	# hullmod ids
 	"removeBuiltInWeapons":[], 		# weapon slot ids
 	"builtInWeapons": {
 		"WS0005": "acs_bigmookrailslauncher",

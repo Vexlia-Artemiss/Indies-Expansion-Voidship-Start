@@ -1,7 +1,7 @@
 {
 	"baseHullId":"JHS_junkhubship_core_m3",
 	"skinHullId":"JHS_junkhubship_core_u235_m3",
-	"hullName":"Cripled Hubship",
+	"hullName":"Recovered Voidfaring Hubship",
 	"descriptionId":"JHS_junkhubship_core",
 	"descriptionPrefix":"U1 + M3", #Set in code
 	"tags":[],
