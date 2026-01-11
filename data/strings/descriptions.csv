@@ -1,6 +1,21 @@
 id,type,text1,text2,text3,text4,notes,Column 08,Column 09,Column 10
 # Types: WEAPON,SHIP,RESOURCE,CUSTOM,ACTION_TOOLTIP,ASTEROID,PLANET,SHIP_SYSTEM,FACTION,TERRAIN
 #astral,SHIP,Text goes here,,,,,,,
+JHS_junkhubship_core_m3,SHIP,"There is a legend of unique hubship built by greatest minds and lost in their hubris. It is said to be filled with potential beyond most reason and bring blessings on its captain. But to you the legend of The Grand Chungus aren?t as much of legend as for most. As you stand on its recently restored bridge you can feel its future lying in your hands. Now barely more than junk, it can become so much more soon enough.
+
+A lumbering behemoth of bygone era, cherished and maintained to modern standard by those who call this vessel their home.
+
+Voidfaring ships, as the name implies, is a type of ship that designed to cross the abyss of space without the help of gates system. likely derived from ship of the era where convenient long range transportation device such as gates havent invented. Djoeng Class Voidfaring Hubship is designed to be a traveling colony or pioneering vessels first and foremost, carrying with them the entire colony and its people to set out to the unknown to find their new home, or simply living their entire lives as travelling colony fleet, never stay too long in one place and always moving alone.",,,,,,,
+,,,,,,,,,
 JHS_junkhubship_core,SHIP,"A lumbering behemoth of bygone era, cherished and maintained to modern standard by those who call this vessel their home.
 
 Voidfaring ships, as the name implies, is a type of ship that designed to cross the abyss of space without the help of gates system. likely derived from ship of the era where convenient long range transportation device such as gates havent invented. Djoeng Class Voidfaring Hubship is designed to be a traveling colony or pioneering vessels first and foremost, carrying with them the entire colony and its people to set out to the unknown to find their new home, or simply living their entire lives as travelling colony fleet, never stay too long in one place and always moving alone.",,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+JHS_OffenceFocus,SHIP_SYSTEM,"Slows down ship to temporary overcloak ammoloading mechanism and boost energy suplied to weapons, resulting in significant increase od wepons rate of fire and damage dealt by all energy weapons. Special capacitors allow to overcloak 2 times in short succession before requiring lenghty recharge.",Offensive,"Provides a flux cost reduction and a brief boost to the rate of fire of all ballistic weapons.
+
+Briefly increases the damage dealt by all energy weapons.",,"Increases ballistic weapon rate of fire by {{80%}}, and reduces the flux generation of ballistic weapons by {{40%}}.
+The damage dealt by all energy weapons is increased by {{30%}}. 
+Max speed reduced by {{10}}.",,,

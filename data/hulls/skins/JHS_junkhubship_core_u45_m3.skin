@@ -1,9 +1,9 @@
 {
 	"baseHullId":"JHS_junkhubship_core_m3",
 	"skinHullId":"JHS_junkhubship_core_u45_m3",
-	"hullName":"Crippled Voidfaring Hubship",
+	"hullName":"Tarnished Voidfaring Hubship",
 	"descriptionId":"JHS_junkhubship_core",
-	"descriptionPrefix":"U1 + M3", #Set in code
+	"descriptionPrefix":"There is a legend of unique hubship built by greatest minds and lost in their hubris. It is said to be filled with potential beyond most reason and bring blessings on its captain. But to you the legend of “The Grand Chungus”  Voidfaring Hubships aren’t as much of legend as for most. As you stand on its recently restored bridge you can feel its future lying in your hands. Now barely more than junk, it can become so much more soon enough.\n\nThe Grand Chungus has been upgraded with ",
 	"tags":[],
 	"addHints":[HIDE_IN_CODEX],
 	"tech":"Unknown",

@@ -1,9 +1,9 @@
 {
 	"baseHullId":"JHS_junkhubship_core_m3",
 	"skinHullId":"JHS_junkhubship_core_u1235_m3",
-	"hullName":"Cripled Hubship",
+	"hullName":"Tarnished Voidfaring Hubship",
 	"descriptionId":"JHS_junkhubship_core",
-	"descriptionPrefix":"U1 + M3", #Set in code
+	"descriptionPrefix":"The Grand Chungus shines with a new coat of paint as it has been partially restored and upgraded. Still below in power to the more known Djoeng Class, it is nonetheless a formidable capital capable of taking on a small fleet all by itself. There is a strange sense of expectation filling every sound ship makes, but anyone you ask, don’t know what you mean. There is only one path forward, you need to restore it fully, surely it’ll help with weird sounds you hear.\n\nThe Grand Chungus has been upgraded with ",
 	"tags":[],
 	"addHints":[HIDE_IN_CODEX],
 	"tech":"Unknown",

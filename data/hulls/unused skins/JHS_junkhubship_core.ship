@@ -10,6 +10,8 @@
   "collisionRadius": 601,
   "shieldCenter": [0, 0],
   "shieldRadius": 448.5,
+  "descriptionPrefix":"There is a legend of unique hubship built by greatest minds and lost in their hubris. It is said to be filled with potential beyond most reason and bring blessings on its captain. But to you the legend of “The Grand Chungus”  Voidfaring Hubships aren’t as much of legend as for most. As you stand on its recently restored bridge you can feel its future lying in your hands. Now barely more than junk, it can become so much more soon enough.\n\nThe Grand Chungus has been upgraded with ",
+
   "viewOffset": 0,
   "builtInMods": [
     "acs_remotedroneshipcommand",

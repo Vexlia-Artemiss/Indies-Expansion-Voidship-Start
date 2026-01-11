@@ -9,8 +9,9 @@ Provide %s supply use per month reduction bonus and %s recovery and DP reduction
 Its vast bulk and hangar consumed by hastly repairs and makeshift supports making it unable to maintain and store frigates inside.
 
 its dedicated fleetwide drive field stabilizer lies uncallibrated and underpowered unable to provide any effect to ship's fleet.","Provide supply use, DP, after combat supplies recovery and max burn bonust to all ships within the fleets ",,graphics/hullmods/JHS_fleetlogistic_icon.png
-Remove Decks,JHS_RemoveDecks,,,,,,,,TRUE,TRUE,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_RemoveDecks,Removes all flight decks.,,,graphics/hullmods/converted_hangar.png
-Shield Module Breaker,,,,,,,,,,,,,,,,,,,
+Remove Decks,JHS_RemoveDecks,,,,hide_in_codex,,,,TRUE,TRUE,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_RemoveDecks,[Hidden Everywhere] Removes all flight decks.,[Hidden Everywhere] Removes all flight decks.,,graphics/hullmods/converted_hangar.png
+Remove Some Decks,JHS_RemoveSomeDecks,,,,hide_in_codex,,,,TRUE,TRUE,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_RemoveSomeDecks,[Hidden Everywhere] Remove some of flight decks (4).,[Hidden Everywhere] Remove some of flight decks (4).,,graphics/hullmods/converted_hangar.png
+Unstable Shield,JHS_Unstable_Shield,,,,"hide_in_codex, dmod",,,TRUE,,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_Unstable_Shield,Long exposure to elements and deep damage had adverce and not easily repaired damade to shield's power supply. While emitar itself seems to be stable power fluctuation force unpredictable behaviour of shield in combat.,,,graphics/hullmods/converted_hangar.png
 ,,,,,,,,,,,,,,,,,,,
 #Upgrades,,,,,,,,,,,,,,,,,,,
 Voidfaring Hubship Command,JHS_VoidshipCommand,,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_VoidshipCommand,"Comprehensive overhaul to basic operation center designed to coordinate crew on big capital ship and provide captain with best fleetwide communications.
@@ -22,14 +23,8 @@ When deployed in combat, grants %s ECM rating and reduces the weapon range reduc
 Coorinates wings on ship's modules to prioritize targeting main hull's target. This effect work even if core hull don't have fighter bays but Don't forget to press engage button (default Z)!!!","Increases command point recovery rate when on flagship, reduces effects of enemy ECM on range, provide ECM rating and coorinates module's wings.",,graphics/hullmods/operations_center.png
 ,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,
-Left module converted to Carrier,JHS_L_Module_CarrierConvert,,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_L_Module_CarrierConvert,"Comprehensive overhaul to basic operation center designed to coordinate crew on big capital ship and provide captain with best fleetwide communications.
-
-Increases the command point recovery rate by %s when installed on the flagship.
-
-Reduces the weapon range reduction due to enemy ECM by %s.
-
-When deployed in combat, grants %s ECM rating.
-
-Coorinates wings on ship's modules to pririotise targeting main hull's target. This effect work even if core hull don't have fighter bays but Don't forget to press engage button (default Z)!!!","Increases command point recovery rate when on flagship, reduces effects of enemy ECM on range, provide ECM rating and coorinates module's wings.",,graphics/hullmods/operations_center.png
-Converted to Carrier,JHS_AddDecksModule,,,,,,,,TRUE,TRUE,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_AddDecksModule,[Hidden Everywhere] Convert Left module to carrier by adding wing slots and swaping sprite.,,,graphics/hullmods/converted_hangar.png
-Converted to Cargo,JHS_RemoveDecksModule,,,,,,,,TRUE,TRUE,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_RemoveDecksModule,[Hidden Everywhere] Convert Right module to cargo by removing wing slots and swaping sprite.,,,graphics/hullmods/converted_hangar.png
+Left module converted to Carrier,JHS_Core_Logistics_Harmed,,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_Core_Logistics_Harmed,Debuff for having more wings on modules,Debuff for having more wings on modules,,graphics/hullmods/converted_hangar.png
+Right module converted to Cargo,JHS_Core_Logistics_Buffed,,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_Core_Logistics_Buffed,Buff for removing wings on modules,Buff for removing wings on modules,,graphics/hullmods/converted_hangar.png
+,,,,,,,,,,,,,,,,,,,
+Converted to Carrier,JHS_AddDecksModule,,,,hide_in_codex,,,,TRUE,TRUE,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_AddDecksModule,[Hidden Everywhere] Convert Left module to carrier by adding wing slots and swaping sprite.,[Hidden Everywhere] Convert Left module to carrier by adding wing slots and swaping sprite.,,graphics/hullmods/converted_hangar.png
+Converted to Cargo,JHS_RemoveDecksModule,,,,hide_in_codex,,,,TRUE,TRUE,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_RemoveDecksModule,[Hidden Everywhere] Convert Right module to cargo by removing wing slots and swaping sprite.,[Hidden Everywhere] Convert Right module to cargo by removing wing slots and swaping sprite.,,graphics/hullmods/converted_hangar.png

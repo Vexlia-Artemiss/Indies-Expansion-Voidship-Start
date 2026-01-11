@@ -29,6 +29,8 @@ AddText ""$global.uwRestoreShip is $global.uwRestoreAfterStr by clearing $global
 SetTextHighlightColors hColor bad hColor hColor
 SetTextHighlights $global.uwRestoreShip $global.uwRestoreRemovedDMod $global.uwRestoreCostStr $global.uwRestoreNumDModsStrHighlight
 FireAll UWPopulateRestoreOrUpgradeOptions",,,
+,,,,,,
+,,,,,,
 uwMarketAddOptionUpgradeU1_1,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
 $menuState == uwRestoreOrUpgrade
 UW_UpgradeAvailable U1
@@ -105,6 +107,8 @@ AddText ""Upgraded modular weapon slots and increased maximum ordnance points by
 SetTextHighlightColors hColor hColor
 SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeU4CostStr
 FireAll UWPopulateRestoreOrUpgradeOptions",,,
+,,,,,,
+,,,,,,
 uwMarketAddOptionUpgradeF1_1,UWPopulateRestoreOrUpgradeOptions,"$hasMarket
 $menuState == uwRestoreOrUpgrade
 UW_UpgradeAvailable F1

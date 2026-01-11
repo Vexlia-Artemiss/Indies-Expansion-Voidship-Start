@@ -3,12 +3,12 @@
 	"skinHullId":"JHS_junkhubship_core_u12345_w1_m2",
 	"hullName":"Cripled Hubship",
 	"descriptionId":"JHS_junkhubship_core",
-	"descriptionPrefix":"U1 + M3", #Set in code
+	"descriptionPrefix":"The Grand Chungus, its power has grown considerably and it is now a worthy rival to any “normal” hubship, which you can’t help but despise for their weakness and lack of ambition. You catch yourself smiling thinking about the ship, about its loadouts, coming battles. There still so much to strive for, possibilities of power waiting for one ready to take it. The Grand Chungus is already capable of crumbling fleets, but why stop now?\n\nThe Grand Chungus has been upgraded with ",
 	"tags":[],
 	"addHints":[HIDE_IN_CODEX],
 	"tech":"Unknown",
 	"fleetPoints":50,
-	"ordnancePoints":440,
+	"ordnancePoints":460,
 	"baseValueMult":.8,
 	"suppliesToRecover":75,
 	"suppliesPerMonth":75,
@@ -26,7 +26,8 @@
 	},
 	"builtInMods": [
 		"acs_fleetlogistic2",
-		"advancedcore"
+		"advancedcore",
+		"JHS_RemoveSomeDecks"
 	],
 	"builtInWings": [
 		"acs_mook_r_wing",
