@@ -219,9 +219,9 @@ FireAll JNS_huboptions",,,
 #Technically module upgrades always swaps,,,,,,
 JHS_MainHull_M1_Add1,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeAvailable M1
-JHS_Core_UpgradeEnoughCredits M1","SetTooltip JHS_MainHull_Upgrade_M1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeM1SwapCostStr credits. $player.creditsStr credits are available.""
+JHS_Core_UpgradeEnoughCredits M1","SetTooltip JHS_MainHull_Upgrade_M1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeM1CostStr credits. $player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_MainHull_Upgrade_M1_option buttonShortcut buttonShortcut buttonShortcut
-SetTooltipHighlights JHS_MainHull_Upgrade_M1_option $global.JHS_UpgradeShip $global.JHS_UpgradeM1SwapCostStr$player.creditsStr
+SetTooltipHighlights JHS_MainHull_Upgrade_M1_option $global.JHS_UpgradeShip $global.JHS_UpgradeM1CostStr $player.creditsStr
 JHS_AddConfirmation JHS_MainHull_Upgrade_M1_option ""Rewamping both modules of $global.JHS_UpgradeShip to be cargo modules requires $global.JHS_UpgradeM1CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,11:JHS_MainHull_Upgrade_M1_option:[Modules] Convert both modules to have 6 fighter bays.,
 JHS_MainHull_M1_Add2,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeAvailable M1
