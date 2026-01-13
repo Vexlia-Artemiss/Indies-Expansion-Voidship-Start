@@ -8,7 +8,7 @@
 	"addHints":[HIDE_IN_CODEX],
 	"tech":"Unknown",
 	"fleetPoints":50,
-	"ordnancePoints":440,
+	"ordnancePoints":460,
 	"baseValueMult":.8,
 	"suppliesToRecover":75,
 	"suppliesPerMonth":75,
