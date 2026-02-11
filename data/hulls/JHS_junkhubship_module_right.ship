@@ -4,15 +4,15 @@
   "hullSize": "CRUISER",
   "spriteName": "graphics/junkhubship_Ultra/acs_junkhubship_right.png",
   "style": "LOW_TECH",
-  "height": 418,
-  "width": 118,
-  "center": [59, 209],
+  "height": 439,
+  "width": 139,
+  "center": [75, 213],
   "collisionRadius": 275.5,
-  "shieldCenter": [0, 0],
+  "shieldCenter": [0, -0],
   "shieldRadius": 228,
   "viewOffset": 0,
   "builtInMods": [
-    "always_detaches",
+    "always_detaches"
   ],
   "weaponSlots": [
     {
@@ -22,7 +22,7 @@
       "mount": "TURRET",
       "arc": 206,
       "angle": -80,
-      "locations": [85, -6]
+      "locations": [98, 3]
     },
     {
       "id": "WS0007",
@@ -31,7 +31,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -90,
-      "locations": [-39, 20]
+      "locations": [-26, 29]
     },
     {
       "id": "WS0009",
@@ -40,7 +40,7 @@
       "mount": "TURRET",
       "arc": 90,
       "angle": -90,
-      "locations": [-69, 20]
+      "locations": [-56, 29]
     },
     {
       "id": "WS0013",
@@ -49,7 +49,7 @@
       "mount": "HARDPOINT",
       "arc": 10,
       "angle": -90,
-      "locations": [-3, -34]
+      "locations": [10, -25]
     },
     {
       "id": "WS0015",
@@ -58,7 +58,7 @@
       "mount": "HARDPOINT",
       "arc": 10,
       "angle": -90,
-      "locations": [-32, -30]
+      "locations": [-19, -21]
     },
     {
       "id": "WS0035",
@@ -67,7 +67,7 @@
       "mount": "TURRET",
       "arc": 72,
       "angle": -125,
-      "locations": [30, 11.5]
+      "locations": [42, 20.5]
     },
     {
       "id": "WS0037",
@@ -76,7 +76,7 @@
       "mount": "TURRET",
       "arc": 135,
       "angle": -100,
-      "locations": [-18, -9]
+      "locations": [-5, 0]
     },
     {
       "id": "WS0039",
@@ -85,7 +85,7 @@
       "mount": "TURRET",
       "arc": 124,
       "angle": -89.5,
-      "locations": [-101, 3]
+      "locations": [-88, 12]
     },
     {
       "id": "WS0041",
@@ -94,7 +94,7 @@
       "mount": "TURRET",
       "arc": 95,
       "angle": -65.5,
-      "locations": [-146, -1.5]
+      "locations": [-133, 7]
     },
     {
       "id": "LB 1",
@@ -104,8 +104,8 @@
       "arc": 360,
       "angle": 0,
       "locations": [
-        -88, -13,
-        -82, -12
+        -92, 3,
+        -86, 4
       ]
     },
     {
@@ -115,16 +115,15 @@
       "mount": "HARDPOINT",
       "arc": 10,
       "angle": -90,
-      "locations": [-159, -40]
+      "locations": [-146, -31]
     }
   ],
   "engineSlots": [],
   "bounds": [
-    -120.5, -24,
-    -203.5, -53.5,
-    -203.5, 25.5,
-    -51.5, 41.5,
-    191, 25,
-    177, -42
+    -79, -24,
+    -195, -42,
+    -195, 41,
+    207, 43,
+    193, -32
   ]
 }

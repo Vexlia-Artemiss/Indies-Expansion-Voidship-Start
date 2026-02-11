@@ -1,0 +1,122 @@
+{
+  "hullName": "Watchtower",
+  "hullId": "acs_watchtowerfrig",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/acs_watchtower.png",
+  "style": "LOW_TECH",
+  "height": 89,
+  "width": 152,
+  "center": [76, 44.5],
+  "collisionRadius": 142.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 114.5,
+  "viewOffset": 0,
+  "builtInWeapons": {
+    "WS0005": "acs_medium_squall"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": 135,
+      "locations": [-15.5, 43]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 242,
+      "angle": 45,
+      "locations": [21.5, 43]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -45,
+      "locations": [20.5, -43]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 240,
+      "angle": 90,
+      "locations": [2.5, 18]
+    },
+    {
+      "id": "WS0005",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 180,
+      "locations": [-33.5, 23]
+    },
+    {
+      "id": "LB 1",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-26.5, -3]
+    },
+    {
+      "id": "LB 2",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-26.5, -7.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-28.5, 67.5],
+      "length": 27.728621,
+      "width": 12.549676,
+      "angle": 140,
+      "contrailSize": 12.549676,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-28.5, -67.5],
+      "length": 27.728621,
+      "width": 12.549676,
+      "angle": -140,
+      "contrailSize": 12.549676,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [36, 67.5],
+      "length": 27.728621,
+      "width": 12.549676,
+      "angle": 40,
+      "contrailSize": 12.549676,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [36, -67.5],
+      "length": 27.728621,
+      "width": 12.549676,
+      "angle": -40,
+      "contrailSize": 12.549676,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    35, -65.5,
+    -28, -64,
+    -28, 64,
+    35, 65.5
+  ]
+}

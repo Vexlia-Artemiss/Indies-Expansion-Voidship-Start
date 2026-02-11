@@ -1,118 +1,129 @@
 {
-  "hullName": "Left Barge Module",
+  "hullName": "right Barge Module",
   "hullId": "JHS_junkhubship_module_left",
   "hullSize": "CRUISER",
   "spriteName": "graphics/junkhubship_Ultra/acs_junkhubship_left.png",
   "style": "LOW_TECH",
-  "height": 418,
-  "width": 118,
-  "center": [59, 209],
+  "height": 439,
+  "width": 139,
+  "center": [64, 213],
   "collisionRadius": 275.5,
-  "shieldCenter": [0, 0],
+  "shieldCenter": [0, -0],
   "shieldRadius": 228,
   "viewOffset": 0,
   "builtInMods": [
-    "always_detaches",
+    "always_detaches"
   ],
   "weaponSlots": [
     {
-      "id": "WS0001",
+      "id": "WS0002",
       "size": "LARGE",
       "type": "HYBRID",
       "mount": "TURRET",
       "arc": 206,
       "angle": 80,
-      "locations": [85, 6]
+      "locations": [98, -3]
     },
     {
-      "id": "WS0006",
+      "id": "WS0007",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 90,
+      "locations": [-26, -29]
+    },
+    {
+      "id": "WS0009",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 90,
+      "locations": [-56, -29]
+    },
+    {
+      "id": "WS0013",
+      "size": "LARGE",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 90,
+      "locations": [10, 24]
+    },
+    {
+      "id": "WS0015",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 90,
+      "locations": [-19, 21]
+    },
+    {
+      "id": "WS0035",
       "size": "MEDIUM",
       "type": "BALLISTIC",
       "mount": "TURRET",
       "arc": 72,
       "angle": 125,
-      "locations": [30, -11.5]
+      "locations": [42, -21]
     },
     {
-      "id": "WS0008",
-      "size": "MEDIUM",
-      "type": "BALLISTIC",
-      "mount": "TURRET",
-      "arc": 90,
-      "angle": 90,
-      "locations": [-39, -20]
-    },
-    {
-      "id": "WS0010",
-      "size": "MEDIUM",
-      "type": "BALLISTIC",
-      "mount": "TURRET",
-      "arc": 90,
-      "angle": 90,
-      "locations": [-69, -20]
-    },
-    {
-      "id": "WS0014",
-      "size": "LARGE",
-      "type": "MISSILE",
-      "mount": "HARDPOINT",
-      "arc": 10,
-      "angle": 90,
-      "locations": [-3, 34]
-    },
-    {
-      "id": "WS0016",
-      "size": "MEDIUM",
-      "type": "MISSILE",
-      "mount": "HARDPOINT",
-      "arc": 10,
-      "angle": 90,
-      "locations": [-32, 30]
-    },
-    {
-      "id": "WS0038",
+      "id": "WS0037",
       "size": "SMALL",
       "type": "BALLISTIC",
       "mount": "TURRET",
       "arc": 135,
-      "angle": 100,
-      "locations": [-18, 9]
+      "angle": 110,
+      "locations": [-5, -0]
     },
     {
-      "id": "WS0040",
+      "id": "WS0039",
       "size": "SMALL",
       "type": "BALLISTIC",
       "mount": "TURRET",
       "arc": 124,
-      "angle": 89.5,
-      "locations": [-101, -3]
+      "angle": 90,
+      "locations": [-88, -12]
     },
     {
-      "id": "WS0042",
+      "id": "WS0041",
       "size": "SMALL",
       "type": "BALLISTIC",
       "mount": "TURRET",
       "arc": 95,
-      "angle": 65.5,
-      "locations": [-146, 1.5]
+      "angle": 65,
+      "locations": [-133, -7]
     },
     {
-      "id": "WS0002",
+      "id": "LB 1",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        -92, -8,
+        -86, -7
+      ]
+    },
+    {
+      "id": "WS0001",
       "size": "LARGE",
       "type": "MISSILE",
       "mount": "HARDPOINT",
       "arc": 10,
       "angle": 90,
-      "locations": [-159, 40]
+      "locations": [-146, 30]
     }
   ],
   "engineSlots": [],
   "bounds": [
-    -50, -42.5,
-    -203.5, -25.5,
-    -203.5, 53.5,
-    -121, 22,
-    177, 42,
-    191, -25
+    -195, -41,
+    -195, 44,
+    -75, 14.5,
+    194, 31,
+    212, -40
   ]
 }

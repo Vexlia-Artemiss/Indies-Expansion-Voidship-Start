@@ -13,21 +13,33 @@ JHS_BacktoMarket_Add,JNS_huboptions,,SetShortcut JHS_BackToMarket_option ESCAPE,
 JHS_BacktoMarket,DialogOptionSelected,$option == JHS_BackToMarket_option,"$menuState = main 0
 FireAll PopulateOptions",,,
 ,,,,,,
-#Main hull options,#---------------------,#---------------------,#---------------------,,#---------------------,
+,,,,,,
+JHS_market_Fix_Chungus,PopulateOptions,"$hasMarket
+$menuState == main
+$tradeMode == OPEN
+JHS_hasChungus","SetTooltip JHS_MarketFixChungus ""Failsafe if tracked fleet member of Big Chungus somehow get lost. Likely only matters if you lost ship, and tried to get it again with console command.""",,16:JHS_MarketFixChungus:Examine newly acquired Big Chungus class Voidfaring Hubship.,
+JHS_Market_Fix_Chungus_Selected,DialogOptionSelected,$option == JHS_MarketFixChungus,"JHS_makeChungusUpgradable
+AddText ""Your technical team and local engineers thoroughly examine the strange class of Voidfaring Hubship you found. Due to unexpected collapse of passage deep inside the ship one of your technicians perish in blaze of electric fire. After subduing the fire, the team discovers a secret compartment containing highly detailed blueprints, datashards and diaries from hubship construction. Quick pass over them reveals multiple points designed with upgrades in mind, as well as data how to implement them seamlessly. Your technical team presents you with an array of possible upgrades you can install on any starport. When you ask about the process, they start to describe upgrades in too many technical and minor details. After a few minutes you space out, deciding to unload handling of upgrade logistics to one of your officers.""
+$menuState = main 0
+FireAll PopulateOptions
+",,,
+,,,,,,
+,,,,,,
+#Main hull options edit,#---------------------,#---------------------,#---------------------,,#---------------------,
 #---------------------,#---------------------,#---------------------,#---------------------,,#---------------------,
 ,,,,,,
 JHS_MainHull_Restore_Add1,JNS_huboptions,"$hasMarket
 JHS_Core_RestoreAvailable
-JHS_Core_RestoreEnoughCredits","SetTooltip JHS_MainHull_Restore_option ""Cleaing $global.JHS_RestoreModsStr d-mod from $global.JHS_RestoreShip requires $global.JHS_RestoreCostStr credits. $player.creditsStr credits are available.""
+JHS_Core_RestoreEnoughCredits","SetTooltip JHS_MainHull_Restore_option ""Clearing $global.JHS_RestoreModsStr d-mod from $global.JHS_RestoreShip requires $global.JHS_RestoreCostStr credits.\n\n$player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_MainHull_Restore_option buttonShortcut buttonShortcut buttonShortcut
 SetTooltipHighlights JHS_MainHull_Restore_option $global.JHS_RestoreShip $global.JHS_RestoreCostStr $player.creditsStr
-JHS_AddConfirmation JHS_MainHull_Restore_option ""Cleaing $global.JHS_RestoreModsStr d-mod from $global.JHS_RestoreShip requires $global.JHS_RestoreCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,1:JHS_MainHull_Restore_option:Clear a d-mod from the hull,
+JHS_AddConfirmation JHS_MainHull_Restore_option ""Clearing $global.JHS_RestoreModsStr d-mod from $global.JHS_RestoreShip requires $global.JHS_RestoreCostStr credits.\n\n$player.creditsStr credits are available.\n\nDo you want to proceed?""",,1:JHS_MainHull_Restore_option:Clear $global.JHS_RestoreModsStr d-mod from the hull.,
 JHS_MainHull_Restore_Add2,JNS_huboptions,"$hasMarket
 JHS_Core_RestoreAvailable
-!JHS_Core_RestoreEnoughCredits","SetTooltip JHS_MainHull_Restore_option ""Clearing $global.JHS_RestoreModsStr d-mod from $global.JHS_RestoreShip requires $global.JHS_RestoreCostStr credits. Only $player.creditsStr credits are available.""
+!JHS_Core_RestoreEnoughCredits","SetTooltip JHS_MainHull_Restore_option ""Clearing $global.JHS_RestoreModsStr d-mod from $global.JHS_RestoreShip requires $global.JHS_RestoreCostStr credits.\n\nOnly $player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_MainHull_Restore_option buttonShortcut buttonShortcut bad
 SetTooltipHighlights JHS_MainHull_Restore_option $global.JHS_RestoreShip $global.JHS_RestoreCostStr $player.creditsStr
-SetEnabled JHS_MainHull_Restore_option false",,1:JHS_MainHull_Restore_option:Clear a d-mod from the hull,
+SetEnabled JHS_MainHull_Restore_option false",,1:JHS_MainHull_Restore_option:Clear $global.JHS_RestoreModsStr d-mod from the hull.,
 JHS_MainHull_Restore,DialogOptionSelected,$option == JHS_MainHull_Restore_option,"JHS_Core_RestoreShip
 AddText ""$global.JHS_RestoreShip is $global.JHS_RestoreAfterStr by clearing $global.JHS_RestoreRemovedDMod from the hull, at the cost of $global.JHS_RestoreCostStr credits. $global.JHS_RestoreNumDModsStr""
 SetTextHighlightColors hColor bad hColor hColor
@@ -36,86 +48,90 @@ FireAll JNS_huboptions",,,
 ,,,,,,
 JHS_MainHull_U1_Add1,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeAvailable U1
-JHS_Core_UpgradeEnoughCredits U1","SetTooltip JHS_MainHull_Upgrade_U1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU1CostStr credits. $player.creditsStr credits are available.""
+JHS_Core_UpgradeEnoughCredits U1","SetTooltip JHS_MainHull_Upgrade_U1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU1CostStr credits.\n\n$player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_MainHull_Upgrade_U1_option buttonShortcut buttonShortcut buttonShortcut
 SetTooltipHighlights JHS_MainHull_Upgrade_U1_option $global.JHS_UpgradeShip $global.JHS_UpgradeU1CostStr $player.creditsStr
-JHS_AddConfirmation JHS_MainHull_Upgrade_U1_option ""Installing a pair of built-in drone wings and 4 fighter bays into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU1CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,2:JHS_MainHull_Upgrade_U1_option:Install pair of build-in drone wings and 4 fighter bays,
+JHS_AddConfirmation JHS_MainHull_Upgrade_U1_option ""Installing the 2 built-in Sarissa wings and 4 modular fighter bays into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU1CostStr credits.\n\n$player.creditsStr credits are available.\n\nDo you want to proceed?""",,2:JHS_MainHull_Upgrade_U1_option:Install 2 build-in Sarrisa wings and 4 fighter bays.,
 JHS_MainHull_U1_Add2,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeAvailable U1
-!JHS_Core_UpgradeEnoughCredits U1","SetTooltip JHS_MainHull_Upgrade_U1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU1CostStr credits. Only $player.creditsStr credits are available.""
+!JHS_Core_UpgradeEnoughCredits U1","SetTooltip JHS_MainHull_Upgrade_U1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU1CostStr credits.\n\nOnly $player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_MainHull_Upgrade_U1_option buttonShortcut buttonShortcut bad
-SetTooltipHighlights JHS_MainHull_Upgrade_U1_option $global.JHS_UpgradeShip $global.uwUpgradeU1CostStr $player.creditsStr
-SetEnabled JHS_MainHull_Upgrade_U1_option false",,2:JHS_MainHull_Upgrade_U1_option:Install pair of build-in drone wings and 4 fighter bays,
+SetTooltipHighlights JHS_MainHull_Upgrade_U1_option $global.JHS_UpgradeShip $global.JHS_UpgradeU1CostStr $player.creditsStr
+SetEnabled JHS_MainHull_Upgrade_U1_option false",,2:JHS_MainHull_Upgrade_U1_option:Install 2 build-in Sarrisa wings and 4 fighter bays.,
 JHS_MainHull_U1,DialogOptionSelected,$option == JHS_MainHull_Upgrade_U1_option,"JHS_Core_UpgradeShip U1
-AddText ""Installed a pair of built-in drone wings and 4 fighter bays into $global.JHS_UpgradeShip, at the cost of $global.JHS_UpgradeU1CostStr credits.""
+AddText ""Installed the 2 built-in Sarissa wings and 4 modular fighter bays into $global.JHS_UpgradeShip, at the cost of $global.JHS_UpgradeU1CostStr credits.""
 SetTextHighlightColors hColor hColor
 SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeU1CostStr
 FireAll JNS_huboptions",,,
+,,,,,,
 JHS_MainHull_U2_Add1,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeAvailable U2
-JHS_Core_UpgradeEnoughCredits U2","SetTooltip JHS_MainHull_Upgrade_U2_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU2CostStr credits. $player.creditsStr credits are available.""
+JHS_Core_UpgradeEnoughCredits U2","SetTooltip JHS_MainHull_Upgrade_U2_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU2CostStr credits.\n\n$player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_MainHull_Upgrade_U2_option buttonShortcut buttonShortcut buttonShortcut
 SetTooltipHighlights JHS_MainHull_Upgrade_U2_option $global.JHS_UpgradeShip $global.JHS_UpgradeU2CostStr $player.creditsStr
-JHS_AddConfirmation JHS_MainHull_Upgrade_U2_option ""Installing a pair of built-in Borer Drone wings into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU2CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,3:JHS_MainHull_Upgrade_U2_option:Install build-in drone launchers,
+JHS_AddConfirmation JHS_MainHull_Upgrade_U2_option ""Installing the 4 built-in \""Amookgus\"" Drone Launchers and a built-in \""Chungmook\"" Drone Launcher into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU2CostStr credits.\n\n$player.creditsStr credits are available.\n\nDo you want to proceed?""",,3:JHS_MainHull_Upgrade_U2_option:Install array of build-in drone launchers.,
 JHS_MainHull_U2_Add2,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeAvailable U2
-!JHS_Core_UpgradeEnoughCredits U2","SetTooltip JHS_MainHull_Upgrade_U2_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU2CostStr credits. Only $player.creditsStr credits are available.""
+!JHS_Core_UpgradeEnoughCredits U2","SetTooltip JHS_MainHull_Upgrade_U2_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU2CostStr credits.\n\nOnly $player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_MainHull_Upgrade_U2_option buttonShortcut buttonShortcut bad
 SetTooltipHighlights JHS_MainHull_Upgrade_U2_option $global.JHS_UpgradeShip $global.JHS_UpgradeU2CostStr $player.creditsStr
-SetEnabled JHS_MainHull_Upgrade_U2_option false",,3:JHS_MainHull_Upgrade_U2_option:Install build-in drone launchers,
+SetEnabled JHS_MainHull_Upgrade_U2_option false",,3:JHS_MainHull_Upgrade_U2_option:Install array of build-in drone launchers.,
 JHS_MainHull_U2,DialogOptionSelected,$option == JHS_MainHull_Upgrade_U2_option,"JHS_Core_UpgradeShip U2
-AddText ""Installed a vast array of build-in launchers for self assembling drones on $global.JHS_UpgradeShip, at the cost of $global.JHS_UpgradeU2CostStr credits.""
+AddText ""Installed the 4 built-in \""Amookgus\"" Drone Launchers and a built-in \""Chungmook\"" Drone Launcher into $global.JHS_UpgradeShip, at the cost of $global.JHS_UpgradeU2CostStr credits.""
 SetTextHighlightColors hColor hColor
 SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeU2CostStr
 FireAll JNS_huboptions",,,
+,,,,,,
 JHS_MainHull_U3_Add1,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeAvailable U3
-JHS_Core_UpgradeEnoughCredits U3","SetTooltip JHS_MainHull_Upgrade_U3_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU3CostStr credits. $player.creditsStr credits are available.""
+JHS_Core_UpgradeEnoughCredits U3","SetTooltip JHS_MainHull_Upgrade_U3_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU3CostStr credits.\n\n$player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_MainHull_Upgrade_U3_option buttonShortcut buttonShortcut buttonShortcut
 SetTooltipHighlights JHS_MainHull_Upgrade_U3_option $global.JHS_UpgradeShip $global.JHS_UpgradeU3CostStr $player.creditsStr
-JHS_AddConfirmation JHS_MainHull_Upgrade_U3_option ""Fixing Fleet Gantry hullmod for $global.JHS_UpgradeShip requires $global.JHS_UpgradeU3CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,4:JHS_MainHull_Upgrade_U3_option:Fix broken build-in fleet gantry,
+JHS_AddConfirmation JHS_MainHull_Upgrade_U3_option ""Fixing Fleet Gantry for $global.JHS_UpgradeShip requires $global.JHS_UpgradeU3CostStr credits.\n\n$player.creditsStr credits are available.\n\nDo you want to proceed?""",,4:JHS_MainHull_Upgrade_U3_option:Fix broken build-in Fleet Gantry.,
 JHS_MainHull_U3_Add2,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeAvailable U3
-!JHS_Core_UpgradeEnoughCredits U3","SetTooltip JHS_MainHull_Upgrade_U3_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU3CostStr credits. Only $player.creditsStr credits are available.""
+!JHS_Core_UpgradeEnoughCredits U3","SetTooltip JHS_MainHull_Upgrade_U3_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU3CostStr credits.\n\nOnly $player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_MainHull_Upgrade_U3_option buttonShortcut buttonShortcut bad
-SetTooltipHighlights JHS_MainHull_Upgrade_U3_option $global.JHS_UpgradeShip $global.uwUpgradeU3CostStr $player.creditsStr
-SetEnabled JHS_MainHull_Upgrade_U3_option false",,4:JHS_MainHull_Upgrade_U3_option:Fix broken build-in fleet gantry,
+SetTooltipHighlights JHS_MainHull_Upgrade_U3_option $global.JHS_UpgradeShip $global.JHS_UpgradeU3CostStr $player.creditsStr
+SetEnabled JHS_MainHull_Upgrade_U3_option false",,4:JHS_MainHull_Upgrade_U3_option:Fix broken build-in Fleet Gantry.,
 JHS_MainHull_U3,DialogOptionSelected,$option == JHS_MainHull_Upgrade_U3_option,"JHS_Core_UpgradeShip U3
-AddText ""Fixed Fleet Gantry Hullmod for $global.JHS_UpgradeShip, at the cost of $global.JHS_UpgradeU3CostStr credits.""
+AddText ""Fixed Fleet Gantry for $global.JHS_UpgradeShip, at the cost of $global.JHS_UpgradeU3CostStr credits.""
 SetTextHighlightColors hColor hColor
 SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeU3CostStr
 FireAll JNS_huboptions",,,
+,,,,,,
 JHS_MainHull_U4_Add1,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeAvailable U4
-JHS_Core_UpgradeEnoughCredits U4","SetTooltip JHS_MainHull_Upgrade_U4_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU4CostStr credits. $player.creditsStr credits are available. /n/nWeapon slot upgrades: two medium slots is increased to medium, 2 meduim slots are increased to large and 2 large slots type set to Universal""
+JHS_Core_UpgradeEnoughCredits U4","SetTooltip JHS_MainHull_Upgrade_U4_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU4CostStr credits.\n\n$player.creditsStr credits are available.\n\nWeapon slot upgrades: 2 Small mounts are changed to Medium, 1 Medium mount is changed to Large, 1 Medium mount changed to Large Universal and 1 Large mount type changed to Universal""
 SetTooltipHighlightColors JHS_MainHull_Upgrade_U4_option buttonShortcut buttonShortcut buttonShortcut
 SetTooltipHighlights JHS_MainHull_Upgrade_U4_option $global.JHS_UpgradeShip $global.JHS_UpgradeU4CostStr $player.creditsStr
-JHS_AddConfirmation JHS_MainHull_Upgrade_U4_option ""Upgrading modular weapon slots on $global.JHS_UpgradeShip requires $global.JHS_UpgradeU4CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,5:JHS_MainHull_Upgrade_U4_option:Upgrade modular weapon slots (+40 OP) and add build-in Heavy Ballistics Integration,
+JHS_AddConfirmation JHS_MainHull_Upgrade_U4_option ""Upgrading modular weapon slots and adding Heavy Ballistics Integration on $global.JHS_UpgradeShip requires $global.JHS_UpgradeU4CostStr credits. Combat modules also will get Heavy Ballistics Integration.\n\n$player.creditsStr credits are available.\n\nDo you want to proceed?""",,5:JHS_MainHull_Upgrade_U4_option:Upgrade modular weapon slots (+40 OP) and add Heavy Ballistics Integration.,
 JHS_MainHull_U4_Add2,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeAvailable U4
-!JHS_Core_UpgradeEnoughCredits U4","SetTooltip JHS_MainHull_Upgrade_U4_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU4CostStr credits. Only $player.creditsStr credits are available.""
+!JHS_Core_UpgradeEnoughCredits U4","SetTooltip JHS_MainHull_Upgrade_U4_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU4CostStr credits.\n\nOnly $player.creditsStr credits are available.\n\nWeapon slot upgrades: 2 Small mounts are changed to Medium, 1 Medium mount is changed to Large, 1 Medium mount changed to Large Universal, and 1 Large mount type changed to Universal""
 SetTooltipHighlightColors JHS_MainHull_Upgrade_U4_option buttonShortcut buttonShortcut bad
-SetTooltipHighlights JHS_MainHull_Upgrade_U4_option $global.JHS_UpgradeShip $global.uwUpgradeU4CostStr $player.creditsStr
-SetEnabled JHS_MainHull_Upgrade_U4_option false",,5:JHS_MainHull_Upgrade_U4_option:Upgrade modular weapon slots (+40 OP) and add build-in Heavy Ballistics Integration,
+SetTooltipHighlights JHS_MainHull_Upgrade_U4_option $global.JHS_UpgradeShip $global.JHS_UpgradeU4CostStr $player.creditsStr
+SetEnabled JHS_MainHull_Upgrade_U4_option false",,5:JHS_MainHull_Upgrade_U4_option:Upgrade modular weapon slots (+40 OP) and add Heavy Ballistics Integration.,
 JHS_MainHull_U4,DialogOptionSelected,$option == JHS_MainHull_Upgrade_U4_option,"JHS_Core_UpgradeShip U4
-AddText ""Upgraded modular weapon slots on $global.JHS_UpgradeShip, at the cost of $global.JHS_UpgradeU4CostStr credits.""
+AddText ""Upgraded modular weapon slots and added Heavy Ballistics Integration on $global.JHS_UpgradeShip, at the cost of $global.JHS_UpgradeU4CostStr credits.\n\nAdded Heavy Ballistics Integration on combat modules.""
 SetTextHighlightColors hColor hColor
 SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeU4CostStr
 FireAll JNS_huboptions",,,
+,,,,,,
 JHS_MainHull_U5_Add1,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeAvailable U5
-JHS_Core_UpgradeEnoughCredits U5","SetTooltip JHS_MainHull_Upgrade_U5_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU5CostStr credits. $player.creditsStr credits are available.""
+JHS_Core_UpgradeEnoughCredits U5","SetTooltip JHS_MainHull_Upgrade_U5_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU5CostStr credits.\n\n$player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_MainHull_Upgrade_U5_option buttonShortcut buttonShortcut buttonShortcut
 SetTooltipHighlights JHS_MainHull_Upgrade_U5_option $global.JHS_UpgradeShip $global.JHS_UpgradeU5CostStr $player.creditsStr
-JHS_AddConfirmation JHS_MainHull_Upgrade_U5_option ""Replaced a built-in Intergrated Targeting Unit with Advanced Targeting Core on $global.JHS_UpgradeShip requires $global.JHS_UpgradeU5CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,6:JHS_MainHull_Upgrade_U5_option:Replace a built-in Intergrated Targeting Unit with Advanced Targeting Core,
+JHS_AddConfirmation JHS_MainHull_Upgrade_U5_option ""Replacing a built-in Intergrated Targeting Unit with Advanced Targeting Core on $global.JHS_UpgradeShip requires $global.JHS_UpgradeU5CostStr credits. Combat modules will get the same upgrade.\n\n$player.creditsStr credits are available.\n\nDo you want to proceed?""",,6:JHS_MainHull_Upgrade_U5_option:Replace a built-in Intergrated Targeting Unit with Advanced Targeting Core.,
 JHS_MainHull_U5_Add2,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeAvailable U5
-!JHS_Core_UpgradeEnoughCredits U5","SetTooltip JHS_MainHull_Upgrade_U5_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU5CostStr credits. Only $player.creditsStr credits are available.""
+!JHS_Core_UpgradeEnoughCredits U5","SetTooltip JHS_MainHull_Upgrade_U5_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU5CostStr credits.\n\nOnly $player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_MainHull_Upgrade_U5_option buttonShortcut buttonShortcut bad
-SetTooltipHighlights JHS_MainHull_Upgrade_U5_option $global.JHS_UpgradeShip $global.uwUpgradeU5CostStr $player.creditsStr
-SetEnabled JHS_MainHull_Upgrade_U5_option false",,6:JHS_MainHull_Upgrade_U5_option:Replace a built-in Intergrated Targeting Unit with Advanced Targeting Core,
+SetTooltipHighlights JHS_MainHull_Upgrade_U5_option $global.JHS_UpgradeShip $global.JHS_UpgradeU5CostStr $player.creditsStr
+SetEnabled JHS_MainHull_Upgrade_U5_option false",,6:JHS_MainHull_Upgrade_U5_option:Replace a built-in Intergrated Targeting Unit with Advanced Targeting Core.,
 JHS_MainHull_U5,DialogOptionSelected,$option == JHS_MainHull_Upgrade_U5_option,"JHS_Core_UpgradeShip U5
-AddText ""Replaced a built-in Intergrated Targeting Unit with Advanced Targeting Core on $global.JHS_UpgradeShip, at the cost of $global.JHS_UpgradeU5CostStr credits.""
+AddText ""Replaced a built-in Intergrated Targeting Unit with Advanced Targeting Core on $global.JHS_UpgradeShip, at the cost of $global.JHS_UpgradeU5CostStr credits.\n\nReplaced a built-in Intergrated Targeting Unit with Advanced Targeting Core on combat modules.""
 SetTextHighlightColors hColor hColor
 SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeU5CostStr
 FireAll JNS_huboptions",,,
@@ -123,195 +139,368 @@ FireAll JNS_huboptions",,,
 #---------------------,#---------------------,#---------------------,#---------------------,,,
 JHS_MainHull_P1_Add1,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeAvailable P1
-JHS_Core_UpgradeEnoughCredits P1","SetTooltip JHS_MainHull_Upgrade_P1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeP1CostStr credits. $player.creditsStr credits are available.""
+JHS_Core_UpgradeEnoughCredits P1","SetTooltip JHS_MainHull_Upgrade_P1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeP1CostStr credits.\n\n$player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_MainHull_Upgrade_P1_option buttonShortcut buttonShortcut buttonShortcut
 SetTooltipHighlights JHS_MainHull_Upgrade_P1_option $global.JHS_UpgradeShip $global.JHS_UpgradeP1CostStr $player.creditsStr
-JHS_AddConfirmation JHS_MainHull_Upgrade_P1_option ""Installing a pair of built-in Borer Drone wings into $global.JHS_UpgradeShip requires $global.JHS_UpgradeP1CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,7:JHS_MainHull_Upgrade_P1_option:Rewamp ship logistics,
+JHS_AddConfirmation JHS_MainHull_Upgrade_P1_option ""Installing build-in Solar Shielding and Efficency Overhaul into $global.JHS_UpgradeShip requires $global.JHS_UpgradeP1CostStr credits.\n\n$player.creditsStr credits are available.\n\nDo you want to proceed?""",,7:JHS_MainHull_Upgrade_P1_option:Optimise frontier logistics with build-in Solar Shielding and Efficency Overhaul.,
 JHS_MainHull_P1_Add2,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeAvailable P1
-!JHS_Core_UpgradeEnoughCredits P1","SetTooltip JHS_MainHull_Upgrade_P1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeP1CostStr credits. Only $player.creditsStr credits are available.""
+!JHS_Core_UpgradeEnoughCredits P1","SetTooltip JHS_MainHull_Upgrade_P1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeP1CostStr credits.\n\nOnly $player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_MainHull_Upgrade_P1_option buttonShortcut buttonShortcut bad
-SetTooltipHighlights JHS_MainHull_Upgrade_P1_option $global.JHS_UpgradeShip $global.uwUpgradeP1CostStr $player.creditsStr
-SetEnabled JHS_MainHull_Upgrade_P1_option false",,7:JHS_MainHull_Upgrade_P1_option:Rewamp ship logistics,
+SetTooltipHighlights JHS_MainHull_Upgrade_P1_option $global.JHS_UpgradeShip $global.JHS_UpgradeP1CostStr $player.creditsStr
+SetEnabled JHS_MainHull_Upgrade_P1_option false",,7:JHS_MainHull_Upgrade_P1_option:Optimise frontier logistics with build-in Solar Shielding and Efficency Overhaul.,
 JHS_MainHull_P1,DialogOptionSelected,$option == JHS_MainHull_Upgrade_P1_option,"JHS_Core_UpgradeShip P1
-AddText ""Rewamped $global.JHS_UpgradeShip to use two carrier modules at the cost of $global.JHS_UpgradeP1CostStr credits.""
+AddText ""Installed build-in build-in Solar Shielding and Efficency Overhaul into $global.JHS_UpgradeShip at the cost of $global.JHS_UpgradeP1CostStr credits.""
 SetTextHighlightColors hColor hColor
 SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeP1CostStr
 FireAll JNS_huboptions",,,
 JHS_MainHull_P2_Add1,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeAvailable P2
-JHS_Core_UpgradeEnoughCredits P2","SetTooltip JHS_MainHull_Upgrade_P2_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeP2CostStr credits. $player.creditsStr credits are available.""
+JHS_Core_UpgradeEnoughCredits P2","SetTooltip JHS_MainHull_Upgrade_P2_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeP2CostStr credits.\n\n$player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_MainHull_Upgrade_P2_option buttonShortcut buttonShortcut buttonShortcut
 SetTooltipHighlights JHS_MainHull_Upgrade_P2_option $global.JHS_UpgradeShip $global.JHS_UpgradeP2CostStr $player.creditsStr
-JHS_AddConfirmation JHS_MainHull_Upgrade_P2_option ""Installing a pair of built-in Borer Drone wings into $global.JHS_UpgradeShip requires $global.JHS_UpgradeP2CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,8:JHS_MainHull_Upgrade_P2_option:Upgrade Operation Center into Voidship Command,
+JHS_AddConfirmation JHS_MainHull_Upgrade_P2_option ""Upgrading Operation Center into Voidship Command for $global.JHS_UpgradeShip requires $global.JHS_UpgradeP2CostStr credits.\n\n$player.creditsStr credits are available.\n\nDo you want to proceed?""",,8:JHS_MainHull_Upgrade_P2_option:Upgrade Operation Center into Voidship Command.,
 JHS_MainHull_P2_Add2,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeAvailable P2
-!JHS_Core_UpgradeEnoughCredits P2","SetTooltip JHS_MainHull_Upgrade_P2_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeP2CostStr credits. Only $player.creditsStr credits are available.""
+!JHS_Core_UpgradeEnoughCredits P2","SetTooltip JHS_MainHull_Upgrade_P2_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeP2CostStr credits.\n\nOnly $player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_MainHull_Upgrade_P2_option buttonShortcut buttonShortcut bad
-SetTooltipHighlights JHS_MainHull_Upgrade_P2_option $global.JHS_UpgradeShip $global.uwUpgradeP2CostStr $player.creditsStr
-SetEnabled JHS_MainHull_Upgrade_P2_option false",,8:JHS_MainHull_Upgrade_P2_option:Upgrade Operation Center into Voidship Command,
+SetTooltipHighlights JHS_MainHull_Upgrade_P2_option $global.JHS_UpgradeShip $global.JHS_UpgradeP2CostStr $player.creditsStr
+SetEnabled JHS_MainHull_Upgrade_P2_option false",,8:JHS_MainHull_Upgrade_P2_option:Upgrade Operation Center into Voidship Command.,
 JHS_MainHull_P2,DialogOptionSelected,$option == JHS_MainHull_Upgrade_P2_option,"JHS_Core_UpgradeShip P2
-AddText ""Rewamped $global.JHS_UpgradeShip to use two carrier modules at the cost of $global.JHS_UpgradeP2CostStr credits.""
+AddText ""Upgraded Operation Center into Voidship Command for $global.JHS_UpgradeShip at the cost of $global.JHS_UpgradeP2CostStr credits.""
 SetTextHighlightColors hColor hColor
 SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeP2CostStr
 FireAll JNS_huboptions",,,
 ,,,,,,
 JHS_MainHull_W1_Add1,JNS_huboptions,"$hasMarket
+!JHS_Core_UpgradeInstalled W2
 JHS_Core_UpgradeAvailable W1
-JHS_Core_UpgradeEnoughCredits W1","SetTooltip JHS_MainHull_Upgrade_W1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeW1CostStr credits. $player.creditsStr credits are available.""
+JHS_Core_UpgradeEnoughCredits W1","SetTooltip JHS_MainHull_Upgrade_W1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeW1CostStr credits.\n\n$player.creditsStr credits are available.\n\nWeapon slot upgrades: type of all Small mounts are changed to Hybrid, type of all Medium mounts is changed to hybrid, type of all Large mounts is changed to Universal.""
 SetTooltipHighlightColors JHS_MainHull_Upgrade_W1_option buttonShortcut buttonShortcut buttonShortcut
 SetTooltipHighlights JHS_MainHull_Upgrade_W1_option $global.JHS_UpgradeShip $global.JHS_UpgradeW1CostStr $player.creditsStr
-JHS_AddConfirmation JHS_MainHull_Upgrade_W1_option ""Installing a pair of built-in Borer Drone wings into $global.JHS_UpgradeShip requires $global.JHS_UpgradeW1CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,9:JHS_MainHull_Upgrade_W1_option:[Armaments] Further upgrade modular weapon slots (+20 OP),
+JHS_AddConfirmation JHS_MainHull_Upgrade_W1_option ""Upgrading modular weapon slots on $global.JHS_UpgradeShip requires $global.JHS_UpgradeW1CostStr credits.\n\n$player.creditsStr credits are available.\n\nDo you want to proceed?""",,"9:JHS_MainHull_Upgrade_W1_option:Further upgrade modular weapon slots, but remove modular fighter bays (+20 OP).",
 JHS_MainHull_W1_Add2,JNS_huboptions,"$hasMarket
+!JHS_Core_UpgradeInstalled W2
 JHS_Core_UpgradeAvailable W1
-!JHS_Core_UpgradeEnoughCredits W1","SetTooltip JHS_MainHull_Upgrade_W1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeW1CostStr credits. Only $player.creditsStr credits are available.""
+!JHS_Core_UpgradeEnoughCredits W1","SetTooltip JHS_MainHull_Upgrade_W1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeW1CostStr credits.\n\nOnly $player.creditsStr credits are available.\n\nWeapon slot upgrades: type of all Small mounts are changed to Hybrid, type of all Medium mounts is changed to hybrid, type of all Large mounts is changed to Universal.""
 SetTooltipHighlightColors JHS_MainHull_Upgrade_W1_option buttonShortcut buttonShortcut bad
-SetTooltipHighlights JHS_MainHull_Upgrade_W1_option $global.JHS_UpgradeShip $global.uwUpgradeW1CostStr $player.creditsStr
-SetEnabled JHS_MainHull_Upgrade_W1_option false",,9:JHS_MainHull_Upgrade_W1_option:[Armaments] Further upgrade modular weapon slots (+20 OP),
+SetTooltipHighlights JHS_MainHull_Upgrade_W1_option $global.JHS_UpgradeShip $global.JHS_UpgradeW1CostStr $player.creditsStr
+SetEnabled JHS_MainHull_Upgrade_W1_option false",,"9:JHS_MainHull_Upgrade_W1_option:Further upgrade modular weapon slots, but remove modular fighter bays (+20 OP).",
 JHS_MainHull_W1,DialogOptionSelected,$option == JHS_MainHull_Upgrade_W1_option,"JHS_Core_UpgradeShip W1
-AddText ""Rewamped $global.JHS_UpgradeShip to have more flexible mounts at the cost of $global.JHS_UpgradeW1CostStr credits and removing fighter bays.""
+AddText ""Rewamped $global.JHS_UpgradeShip to have more flexible mounts at the cost of $global.JHS_UpgradeW1CostStr credits and removing modular fighter bays.""
 SetTextHighlightColors hColor hColor
 SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeU1CostStr
 FireAll JNS_huboptions",,,
 ,,,,,,
-,,,,,,
-JHS_MainHull_W1_Swap_Add1,JNS_huboptions,"$hasMarket
+JHS_Swap_toW1_Add1,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled W2
 JHS_Core_UpgradeAvailable W1
-!JHS_Core_UpgradeEnoughCredits W1
-JHS_Core_UpgradeInstalled W1
-JHS_Core_UpgradeEnoughCredits W2","SetTooltip uwMarketSwapW2 ""Swapping to this upgrade for $global.uwUpgradeShip requires $global.uwUpgradeW2SwapCostStr credits. $player.creditsStr credits are available. Weapon slot upgrades: two medium slots are increased to large, twelve ballistic slots are changed to hybrid/composite/universal, and the Hellfire Cannon arc is increased to 360 degrees.""
-SetTooltipHighlightColors uwMarketSwapW2 buttonShortcut buttonShortcut buttonShortcut
-SetTooltipHighlights uwMarketSwapW2 $global.uwUpgradeShip $global.uwUpgradeW2SwapCostStr $player.creditsStr
-JHS_AddConfirmation uwMarketSwapW2 ""Reverting the built-in Diablo Cannon to a Hellfire Cannon, further upgrading modular weapon slots, and increasing maximum ordnance points by 20 for $global.uwUpgradeShip requires $global.uwUpgradeW2SwapCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,9:JHS_MainHull_SWap_W1_option:[Armaments] Revert modular weapon slots and clear build-in wings and install build-in B-deck,
-JHS_MainHull_W1_Swap_Add2,JNS_huboptions,"$hasMarket
-JHS_Core_UpgradeAvailable W2
-JHS_Core_UpgradeInstalled W1
-!JHS_Core_UpgradeEnoughCredits W2","SetTooltip uwMarketSwapW2 ""Swapping to this upgrade for $global.uwUpgradeShip requires $global.uwUpgradeW2SwapCostStr credits. Only $player.creditsStr credits are available. Weapon slot upgrades: two medium slots are increased to large, twelve ballistic slots are changed to hybrid/composite/universal, and the Hellfire Cannon arc is increased to 360 degrees.""
-SetTooltipHighlightColors uwMarketSwapW2 buttonShortcut buttonShortcut bad
-SetTooltipHighlights uwMarketSwapW2 $global.uwUpgradeShip $global.uwUpgradeW2SwapCostStr $player.creditsStr
-SetEnabled uwMarketSwapW2 false",,9:JHS_MainHull_SWap_W1_option:[Armaments] Revert modular weapon slots and clear build-in wings and install build-in B-deck,
-JHS_MainHull_W1_Swap,DialogOptionSelected,"JHS_Core_UpgradeInstalled W1
-$option == uwMarketSwapW2","JHS_Core_UpgradeShip W2
-AddText ""Reverted the built-in Diablo Cannon to a Hellfire Cannon, further upgraded modular weapon slots, and increased maximum ordnance points by 20 for $global.uwUpgradeShip, at the cost of $global.uwUpgradeW2SwapCostStr credits.""
+JHS_Core_UpgradeEnoughCredits W1","SetTooltip JHS_Swap_W2_to_W1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeW1SwapCostStr credits. $player.creditsStr credits are available.""
+SetTooltipHighlightColors JHS_Swap_W2_to_W1_option buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights JHS_Swap_W2_to_W1_option $global.JHS_UpgradeShip $global.JHS_UpgradeW1SwapCostStr $player.creditsStr
+JHS_AddConfirmation JHS_Swap_W2_to_W1_option ""Installing a pair of built-in Borer Drone wings into $global.JHS_UpgradeShip requires $global.JHS_UpgradeW1CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,"9:JHS_Swap_W2_to_W1_option:Revert upgrades to fighter bays, remove modular fighter bays and upgrade modular weapon slots",
+JHS_Swap_toW1_Add2,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled W2
+JHS_Core_UpgradeAvailable W1
+!JHS_Core_UpgradeEnoughCredits W1","SetTooltip JHS_Swap_W2_to_W1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeW1SwapCostStr credits. Only $player.creditsStr credits are available.""
+SetTooltipHighlightColors JHS_Swap_W2_to_W1_option buttonShortcut buttonShortcut bad
+SetTooltipHighlights JHS_Swap_W2_to_W1_option $global.JHS_UpgradeShip $global.JHS_UpgradeW1SwapCostStr $player.creditsStr
+SetEnabled JHS_Swap_W2_to_W1_option false",,"9:JHS_Swap_W2_to_W1_option:Revert upgrades to fighter bays, remove modular fighter bays and upgrade modular weapon slots",
+JHS_Swap_toW1,DialogOptionSelected,$option == JHS_Swap_W2_to_W1_option,"JHS_Core_UpgradeShip W1
+AddText ""Revert upgrades to fighter bays, to remove modular fighter bays and install upgraded modular weapon slots on $global.JHS_UpgradeShip at the cost of $global.JHS_UpgradeW1SwapCostStr credits and removing fighter bays.""
 SetTextHighlightColors hColor hColor
-SetTextHighlights $global.uwUpgradeShip $global.uwUpgradeW2SwapCostStr
-FireAll UWPopulateRestoreOrUpgradeOptions",,,
+SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeW1SwapCostStr
+FireAll JNS_huboptions",,,
+,,,,,,
 ,,,,,,
 JHS_MainHull_W2_Add1,JNS_huboptions,"$hasMarket
+!JHS_Core_UpgradeInstalled W1
 JHS_Core_UpgradeAvailable W2
 JHS_Core_UpgradeEnoughCredits W2","SetTooltip JHS_MainHull_Upgrade_W2_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeW2CostStr credits. $player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_MainHull_Upgrade_W2_option buttonShortcut buttonShortcut buttonShortcut
 SetTooltipHighlights JHS_MainHull_Upgrade_W2_option $global.JHS_UpgradeShip $global.JHS_Upgradew2CostStr $player.creditsStr
-JHS_AddConfirmation JHS_MainHull_Upgrade_W2_option ""Installing a pair of built-in Borer Drone wings into $global.JHS_UpgradeShip requires $global.JHS_UpgradeW2CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,10:JHS_MainHull_Upgrade_W2_option:[Armaments] Clear build-in wings and instal build-in B-deck (+20 OP),
+JHS_AddConfirmation JHS_MainHull_Upgrade_W2_option ""Installing a pair of built-in Borer Drone wings into $global.JHS_UpgradeShip requires $global.JHS_UpgradeW2CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,10:JHS_MainHull_Upgrade_W2_option:Clear build-in wings and instal build-in B-deck (+20 OP).,
 JHS_MainHull_W2_Add2,JNS_huboptions,"$hasMarket
+!JHS_Core_UpgradeInstalled W1
 JHS_Core_UpgradeAvailable W2
 !JHS_Core_UpgradeEnoughCredits W2","SetTooltip JHS_MainHull_Upgrade_W2_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeW2CostStr credits. Only $player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_MainHull_Upgrade_W2_option buttonShortcut buttonShortcut bad
 SetTooltipHighlights JHS_MainHull_Upgrade_W2_option $global.JHS_UpgradeShip $global.JHS_UpgradeW2CostStr $player.creditsStr
-SetEnabled JHS_MainHull_Upgrade_W2_option false",,10:JHS_MainHull_Upgrade_W2_option:[Armaments] Clear build-in wings and instal build-in B-deck (+20 OP),
+SetEnabled JHS_MainHull_Upgrade_W2_option false",,10:JHS_MainHull_Upgrade_W2_option:Clear build-in wings and instal build-in B-deck (+20 OP).,
 JHS_MainHull_W2,DialogOptionSelected,$option == JHS_MainHull_Upgrade_W2_option,"JHS_Core_UpgradeShip W2
 AddText ""Rewamped $global.JHS_UpgradeShip to use two carrier modules at the cost of $global.JHS_UpgradeW2CostStr credits.""
 SetTextHighlightColors hColor hColor
 SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeW2CostStr
 FireAll JNS_huboptions",,,
 ,,,,,,
+JHS_Swap_toW2_Add1,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled W1
+JHS_Core_UpgradeAvailable W2
+JHS_Core_UpgradeEnoughCredits W2","SetTooltip JHS_Swap_W1_to_W2_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeW2CostStr credits. $player.creditsStr credits are available.""
+SetTooltipHighlightColors JHS_Swap_W1_to_W2_option buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights JHS_Swap_W1_to_W2_option $global.JHS_UpgradeShip $global.JHS_Upgradew2CostStr $player.creditsStr
+JHS_AddConfirmation JHS_Swap_W1_to_W2_option ""Installing a pair of built-in Borer Drone wings into $global.JHS_UpgradeShip requires $global.JHS_UpgradeW2CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,10:JHS_Swap_W1_to_W2_option:Revert advanced mount upgrades and expand fighter bays by clearing build-in wings and installing build-in B-deck (W1 to W2).,
+JHS_Swap_toW2_Add2,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled W1
+JHS_Core_UpgradeAvailable W2
+!JHS_Core_UpgradeEnoughCredits W2","SetTooltip JHS_Swap_W1_to_W2_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeW2CostStr credits. Only $player.creditsStr credits are available.""
+SetTooltipHighlightColors JHS_Swap_W1_to_W2_option buttonShortcut buttonShortcut bad
+SetTooltipHighlights JHS_Swap_W1_to_W2_option $global.JHS_UpgradeShip $global.JHS_UpgradeW2CostStr $player.creditsStr
+SetEnabled JHS_Swap_W1_to_W2_option false",,10:JHS_Swap_W1_to_W2_option:Revert advanced mount upgrades and expand fighter bays by clearing build-in wings and installing build-in B-deck (W1 to W2).,
+JHS_Swap_toW2,DialogOptionSelected,$option == JHS_Swap_W1_to_W2_option,"JHS_Core_UpgradeShip W2
+AddText ""Rewamped $global.JHS_UpgradeShip to use two carrier modules at the cost of $global.JHS_UpgradeW2CostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeW2CostStr
+FireAll JNS_huboptions",,,
+,,,,,,
+,,,,,,
+,,,,,,
 ,,,,,,
 #Technically module upgrades always swaps,,,,,,
-JHS_MainHull_M1_Add1,JNS_huboptions,"$hasMarket
+JHS_Swap_M2_to_M1_Add1,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled M2
 JHS_Core_UpgradeAvailable M1
-JHS_Core_UpgradeEnoughCredits M1","SetTooltip JHS_MainHull_Upgrade_M1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeM1CostStr credits. $player.creditsStr credits are available.""
-SetTooltipHighlightColors JHS_MainHull_Upgrade_M1_option buttonShortcut buttonShortcut buttonShortcut
-SetTooltipHighlights JHS_MainHull_Upgrade_M1_option $global.JHS_UpgradeShip $global.JHS_UpgradeM1CostStr $player.creditsStr
-JHS_AddConfirmation JHS_MainHull_Upgrade_M1_option ""Rewamping both modules of $global.JHS_UpgradeShip to be cargo modules requires $global.JHS_UpgradeM1CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,11:JHS_MainHull_Upgrade_M1_option:[Modules] Convert both modules to have 6 fighter bays.,
-JHS_MainHull_M1_Add2,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeEnoughCredits M1","SetTooltip JHS_Swap_M2_to_M1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeSwapM1CostStr credits.\n\n$player.creditsStr credits are available.\n\nCombat configuration is when both modules have 6 fighter bays.""
+SetTooltipHighlightColors JHS_Swap_M2_to_M1_option buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights JHS_Swap_M2_to_M1_option $global.JHS_UpgradeShip $global.JHS_UpgradeSwapM1CostStr $player.creditsStr
+JHS_AddConfirmation JHS_Swap_M2_to_M1_option ""Restructuring both combat modules of $global.JHS_UpgradeShip to support 6 fighter bays requires $global.JHS_UpgradeSwapM1CostStr credits. Changing modules for more combat power increase ship logistic costs and reduces its cargo and fuel capacity.\n\n$player.creditsStr credits are available.\n\nDo you want to proceed?""",,11:JHS_Swap_M2_to_M1_option:Refit ship's modules from logistic to combat configuration.,
+JHS_Swap_M2_to_M1_Add2,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled M2
 JHS_Core_UpgradeAvailable M1
-!JHS_Core_UpgradeEnoughCredits M1","SetTooltip JHS_MainHull_Upgrade_M1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeM1CostStr credits. Only $player.creditsStr credits are available.""
-SetTooltipHighlightColors JHS_MainHull_Upgrade_M1_option buttonShortcut buttonShortcut bad
-SetTooltipHighlights JHS_MainHull_Upgrade_M1_option $global.JHS_UpgradeShip $global.JHS_UpgradeM1CostStr $player.creditsStr
-SetEnabled JHS_MainHull_Upgrade_M1_option false",,11:JHS_MainHull_Upgrade_M1_option:[Modules] Convert both modules to have 6 fighter bays.,
-JHS_MainHull_M1,DialogOptionSelected,$option == JHS_MainHull_Upgrade_M1_option,"JHS_Core_UpgradeShip M1
+!JHS_Core_UpgradeEnoughCredits M1","SetTooltip JHS_Swap_M2_to_M1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeSwapM1CostStr credits.\n\nOnly $player.creditsStr credits are available.\n\nCombat configuration is when both modules have 6 fighter bays.""
+SetTooltipHighlightColors JHS_Swap_M2_to_M1_option buttonShortcut buttonShortcut bad
+SetTooltipHighlights JHS_Swap_M2_to_M1_option $global.JHS_UpgradeShip $global.JHS_UpgradeSwapM1CostStr $player.creditsStr
+SetEnabled JHS_Swap_M2_to_M1_option false",,11:JHS_Swap_M2_to_M1_option:Refit ship's modules from logistic to combat configuration.,
+JHS_Swap_M2_to_M1,DialogOptionSelected,$option == JHS_Swap_M2_to_M1_option,"JHS_Core_UpgradeShip M1
+AddText ""Restructuring both combat modules of $global.JHS_UpgradeShip to support 6 fighter bays at the cost of $global.JHS_UpgradeSwapM1CostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeSwapM1CostStr
+FireAll JNS_huboptions",,,
+JHS_Swap_M3_to_M1_Add1,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled M3
+JHS_Core_UpgradeAvailable M1
+JHS_Core_UpgradeEnoughCredits M1","SetTooltip JHS_Swap_M3_to_M1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeSwapM1CostStr credits.\n\n$player.creditsStr credits are available.\n\nCombat configuration is when both modules have 6 fighter bays.""
+SetTooltipHighlightColors JHS_Swap_M3_to_M1_option buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights JHS_Swap_M3_to_M1_option $global.JHS_UpgradeShip $global.JHS_UpgradeSwapM1CostStr $player.creditsStr
+JHS_AddConfirmation JHS_Swap_M3_to_M1_option ""Restructuring left combat module of $global.JHS_UpgradeShip to support 6 fighter bays requires $global.JHS_UpgradeSwapM1CostStr credits. Changing modules for more combat power increase ship logistic costs and reduces its cargo and fuel capacity.\n\n$player.creditsStr credits are available.\n\nDo you want to proceed?""",,11:JHS_Swap_M3_to_M1_option:Refit ship's modules from balanced to combat configuration.,
+JHS_Swap_M3_to_M1_Add2,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled M3
+JHS_Core_UpgradeAvailable M1
+!JHS_Core_UpgradeEnoughCredits M1","SetTooltip JHS_Swap_M3_to_M1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeM1CostStr credits.\n\nOnly $player.creditsStr credits are available.\n\nCombat configuration is when both modules have 6 fighter bays.""
+SetTooltipHighlightColors JHS_Swap_M3_to_M1_option buttonShortcut buttonShortcut bad
+SetTooltipHighlights JHS_Swap_M3_to_M1_option $global.JHS_UpgradeShip $global.JHS_UpgradeM1CostStr $player.creditsStr
+SetEnabled JHS_Swap_M3_to_M1_option false",,11:JHS_Swap_M3_to_M1_option:Refit ship's modules from balanced to combat configuration.,
+JHS_Swap_M3_to_M1,DialogOptionSelected,$option == JHS_Swap_M3_to_M1_option,"JHS_Core_UpgradeShip M1
 AddText ""Rewamped $global.JHS_UpgradeShip to use two carrier modules at the cost of $global.JHS_UpgradeM1CostStr credits.""
 SetTextHighlightColors hColor hColor
 SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeM1CostStr
 FireAll JNS_huboptions",,,
-JHS_MainHull_M2_Add1,JNS_huboptions,"$hasMarket
+,,,,,,
+JHS_Swap_M1_to_M2_Add1,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled M1
 JHS_Core_UpgradeAvailable M2
-JHS_Core_UpgradeEnoughCredits M2","SetTooltip JHS_MainHull_Upgrade_M2_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeM2CostStr credits. $player.creditsStr credits are available.""
-SetTooltipHighlightColors JHS_MainHull_Upgrade_M2_option buttonShortcut buttonShortcut buttonShortcut
-SetTooltipHighlights JHS_MainHull_Upgrade_M2_option $global.JHS_UpgradeShip $global.JHS_UpgradeM2CostStr $player.creditsStr
-JHS_AddConfirmation JHS_MainHull_Upgrade_M2_option ""Rewamping both modules of $global.JHS_UpgradeShip to use wing slots requires $global.JHS_UpgradeM2CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,11:JHS_MainHull_Upgrade_M2_option:[Modules] Convert both modules to have dedicated cargo holds,
-JHS_MainHull_M2_Add2,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeEnoughCredits M2","SetTooltip JHS_Swap_M1_to_M2_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeM2CostStr credits.\n\n$player.creditsStr credits are available.""
+SetTooltipHighlightColors JHS_Swap_M1_to_M2_option buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights JHS_Swap_M1_to_M2_option $global.JHS_UpgradeShip $global.JHS_UpgradeM2CostStr $player.creditsStr
+JHS_AddConfirmation JHS_Swap_M1_to_M2_option ""Rewamping both modules of $global.JHS_UpgradeShip to use wing slots requires $global.JHS_UpgradeM2CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,12:JHS_Swap_M1_to_M2_option:Refit ship's modules from combat to logistic configuration.,
+JHS_Swap_M1_to_M2_Add2,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled M1
 JHS_Core_UpgradeAvailable M2
-!JHS_Core_UpgradeEnoughCredits M2","SetTooltip JHS_MainHull_Upgrade_M2_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeM2CostStr credits. Only $player.creditsStr credits are available.""
-SetTooltipHighlightColors JHS_MainHull_Upgrade_M2_option buttonShortcut buttonShortcut bad
-SetTooltipHighlights JHS_MainHull_Upgrade_M2_option $global.JHS_UpgradeShip $global.uwUpgradeM2CostStr $player.creditsStr
-SetEnabled JHS_MainHull_Upgrade_M2_option false",,11:JHS_MainHull_Upgrade_M2_option:[Modules] Convert both modules to have dedicated cargo holds,
-JHS_MainHull_M2,DialogOptionSelected,$option == JHS_MainHull_Upgrade_M2_option,"JHS_Core_UpgradeShip M2
+!JHS_Core_UpgradeEnoughCredits M2","SetTooltip JHS_Swap_M1_to_M2_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeM2CostStr credits.\n\nOnly $player.creditsStr credits are available.""
+SetTooltipHighlightColors JHS_Swap_M1_to_M2_option buttonShortcut buttonShortcut bad
+SetTooltipHighlights JHS_Swap_M1_to_M2_option $global.JHS_UpgradeShip $global.uwUpgradeM2CostStr $player.creditsStr
+SetEnabled JHS_Swap_M1_to_M2_option false",,12:JHS_Swap_M1_to_M2_option:Refit ship's modules from combat to logistic configuration.,
+JHS_Swap_M1_to_M2,DialogOptionSelected,$option == JHS_Swap_M1_to_M2_option,"JHS_Core_UpgradeShip M2
 AddText ""Rewamped $global.JHS_UpgradeShip to use two cargo modules at the cost of $global.JHS_UpgradeM2CostStr credits.""
 SetTextHighlightColors hColor hColor
 SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeU2CostStr
 FireAll JNS_huboptions",,,
-JHS_MainHull_M3_Add1,JNS_huboptions,"$hasMarket
+JHS_Swap_M3_to_M2_Add1,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled M3
+JHS_Core_UpgradeAvailable M2
+JHS_Core_UpgradeEnoughCredits M2","SetTooltip JHS_Swap_M3_to_M2_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeM2CostStr credits.\n\n$player.creditsStr credits are available.""
+SetTooltipHighlightColors JHS_Swap_M3_to_M2_option buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights JHS_Swap_M3_to_M2_option $global.JHS_UpgradeShip $global.JHS_UpgradeM2CostStr $player.creditsStr
+JHS_AddConfirmation JHS_Swap_M3_to_M2_option ""Rewamping both modules of $global.JHS_UpgradeShip to use wing slots requires $global.JHS_UpgradeM2CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,12:JHS_Swap_M3_to_M2_option:Refit ship's modules from balanced to logistic configuration.,
+JHS_Swap_M3_to_M2_Add2,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled M3
+JHS_Core_UpgradeAvailable M2
+!JHS_Core_UpgradeEnoughCredits M2","SetTooltip JHS_Swap_M3_to_M2_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeM2CostStr credits.\n\nOnly $player.creditsStr credits are available.""
+SetTooltipHighlightColors JHS_Swap_M3_to_M2_option buttonShortcut buttonShortcut bad
+SetTooltipHighlights JHS_Swap_M3_to_M2_option $global.JHS_UpgradeShip $global.uwUpgradeM2CostStr $player.creditsStr
+SetEnabled JHS_Swap_M3_to_M2_option false",,12:JHS_Swap_M3_to_M2_option:Refit ship's modules from balanced to logistic configuration.,
+JHS_Swap_M3_to_M2,DialogOptionSelected,$option == JHS_Swap_M3_to_M2_option,"JHS_Core_UpgradeShip M2
+AddText ""Rewamped $global.JHS_UpgradeShip to use two cargo modules at the cost of $global.JHS_UpgradeM2CostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeU2CostStr
+FireAll JNS_huboptions",,,
+,,,,,,
+JHS_Swap_M1_to_M3_Add1,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled M1
 JHS_Core_UpgradeAvailable M3
-JHS_Core_UpgradeEnoughCredits M3","SetTooltip JHS_MainHull_Upgrade_M3_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeM3CostStr credits. $player.creditsStr credits are available.""
-SetTooltipHighlightColors JHS_MainHull_Upgrade_M3_option buttonShortcut buttonShortcut buttonShortcut
-SetTooltipHighlights JHS_MainHull_Upgrade_M3_option $global.JHS_UpgradeShip $global.JHS_UpgradeM3CostStr $player.creditsStr
-JHS_AddConfirmation JHS_MainHull_Upgrade_M3_option ""Rewamping both modules of $global.JHS_UpgradeShip to use wing slots requires $global.JHS_UpgradeM3CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,"11:JHS_MainHull_Upgrade_M3_option:[Modules] Convert modules to use balanced module configuration (1st module has dedicated cargo holds, 2nd has 6 fighter bays).",
-JHS_MainHull_M3_Add2,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeEnoughCredits M3","SetTooltip JHS_Swap_M1_to_M3_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeM3CostStr credits.\n\n$player.creditsStr credits are available.""
+SetTooltipHighlightColors JHS_Swap_M1_to_M3_option buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights JHS_Swap_M1_to_M3_option $global.JHS_UpgradeShip $global.JHS_UpgradeM3CostStr $player.creditsStr
+JHS_AddConfirmation JHS_Swap_M1_to_M3_option ""Rewamping both modules of $global.JHS_UpgradeShip to use wing slots requires $global.JHS_UpgradeM3CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,13:JHS_Swap_M1_to_M3_option:Refit ship's modules from combat to balanced configuration.,
+JHS_Swap_M1_to_M3_Add2,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled M1
 JHS_Core_UpgradeAvailable M3
-!JHS_Core_UpgradeEnoughCredits M3","SetTooltip JHS_MainHull_Upgrade_M3_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeM3CostStr credits. Only $player.creditsStr credits are available.""
-SetTooltipHighlightColors JHS_MainHull_Upgrade_M3_option buttonShortcut buttonShortcut bad
-SetTooltipHighlights JHS_MainHull_Upgrade_M3_option $global.JHS_UpgradeShip $global.uwUpgradeM3CostStr $player.creditsStr
-SetEnabled JHS_MainHull_Upgrade_M3_option false",,"11:JHS_MainHull_Upgrade_M3_option:[Modules] Convert modules to use balanced module configuration (1st module has dedicated cargo holds, 2nd has 6 fighter bays).",
-JHS_MainHull_M3,DialogOptionSelected,$option == JHS_MainHull_Upgrade_M3_option,"JHS_Core_UpgradeShip M3
+!JHS_Core_UpgradeEnoughCredits M3","SetTooltip JHS_Swap_M1_to_M3_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeM3CostStr credits.\n\nOnly $player.creditsStr credits are available.""
+SetTooltipHighlightColors JHS_Swap_M1_to_M3_option buttonShortcut buttonShortcut bad
+SetTooltipHighlights JHS_Swap_M1_to_M3_option $global.JHS_UpgradeShip $global.uwUpgradeM3CostStr $player.creditsStr
+SetEnabled JHS_Swap_M1_to_M3_option false",,13:JHS_Swap_M1_to_M3_option:Refit ship's modules from combat to balanced configuration.,
+JHS_Swap_M1_to_M3,DialogOptionSelected,$option == JHS_Swap_M1_to_M3_option,"JHS_Core_UpgradeShip M3
 AddText ""Rewamped $global.JHS_UpgradeShip to use one cargo and one carrier module at the cost of $global.JHS_UpgradeM3CostStr credits.""
 SetTextHighlightColors hColor hColor
 SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeM3CostStr
 FireAll JNS_huboptions",,,
+JHS_Swap_M2_to_M3_Add1,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled M2
+JHS_Core_UpgradeAvailable M3
+JHS_Core_UpgradeEnoughCredits M3","SetTooltip JHS_Swap_M2_to_M3_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeM3CostStr credits.\n\n$player.creditsStr credits are available.""
+SetTooltipHighlightColors JHS_Swap_M2_to_M3_option buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights JHS_Swap_M2_to_M3_option $global.JHS_UpgradeShip $global.JHS_UpgradeM3CostStr $player.creditsStr
+JHS_AddConfirmation JHS_Swap_M2_to_M3_option ""Rewamping both modules of $global.JHS_UpgradeShip to use wing slots requires $global.JHS_UpgradeM3CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,13:JHS_Swap_M2_to_M3_option:Refit ship's modules from logistic to balanced configuration.,
+JHS_Swap_M2_to_M3_Add2,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled M2
+JHS_Core_UpgradeAvailable M3
+!JHS_Core_UpgradeEnoughCredits M3","SetTooltip JHS_Swap_M2_to_M3_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeM3CostStr credits.\n\nOnly $player.creditsStr credits are available.""
+SetTooltipHighlightColors JHS_Swap_M2_to_M3_option buttonShortcut buttonShortcut bad
+SetTooltipHighlights JHS_Swap_M2_to_M3_option $global.JHS_UpgradeShip $global.uwUpgradeM3CostStr $player.creditsStr
+SetEnabled JHS_Swap_M2_to_M3_option false",,13:JHS_Swap_M2_to_M3_option:Refit ship's modules from logistic to balanced configuration.,
+JHS_Swap_M2_to_M3,DialogOptionSelected,$option == JHS_Swap_M2_to_M3_option,"JHS_Core_UpgradeShip M3
+AddText ""Rewamped $global.JHS_UpgradeShip to use one cargo and one carrier module at the cost of $global.JHS_UpgradeM3CostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeM3CostStr
+FireAll JNS_huboptions",,,
+,,,,,,
 #Technically system upgrades always swaps,,,,,,
 #Last Upgrades added only after ship has all other upgrades,#---------------------,#---------------------,#---------------------,,,
 #---------------------,#---------------------,#---------------------,#---------------------,,,
-JHS_MainHull_S1_Add1,JNS_huboptions,"$hasMarket
+JHS_Swap_S2_to_S1_Add1,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled S2
 JHS_Core_UpgradeAvailable S1
-JHS_Core_UpgradeEnoughCredits S1","SetTooltip JHS_MainHull_Upgrade_S1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeM1CostStr credits. $player.creditsStr credits are available.""
-SetTooltipHighlightColors JHS_MainHull_Upgrade_M1_option buttonShortcut buttonShortcut buttonShortcut
-SetTooltipHighlights JHS_MainHull_Upgrade_M1_option $global.JHS_UpgradeShip $global.JHS_UpgradeM1CostStr $player.creditsStr
-JHS_AddConfirmation JHS_MainHull_Upgrade_M1_option ""Rewamping both modules of $global.JHS_UpgradeShip to be cargo modules requires $global.JHS_UpgradeM1CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,12:JHS_MainHull_Upgrade_S1_option:[System] Change ship system to Burn Drive,
-JHS_MainHull_S1_Add2,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeEnoughCredits S1","SetTooltip JHS_Swap_S2_to_S1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeS1SwapCostStr credits.\n\n$player.creditsStr credits are available.""
+SetTooltipHighlightColors JHS_Swap_S2_to_S1_option buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights JHS_Swap_S2_to_S1_option $global.JHS_UpgradeShip $global.JHS_UpgradeS1SwapCostStr $player.creditsStr
+JHS_AddConfirmation JHS_Swap_S2_to_S1_option ""Changing ship system of $global.JHS_UpgradeShip from Offence Focus to Burn Drive requires $global.JHS_UpgradeS1SwapCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,14:JHS_Swap_S2_to_S1_option:Change ship system from Offence Focus to Burn Drive.,
+JHS_Swap_S2_to_S1_Add2,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled S2
 JHS_Core_UpgradeAvailable S1
-!JHS_Core_UpgradeEnoughCredits S1","SetTooltip JHS_MainHull_Upgrade_S1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeM1CostStr credits. Only $player.creditsStr credits are available.""
-SetTooltipHighlightColors JHS_MainHull_Upgrade_M1_option buttonShortcut buttonShortcut bad
-SetTooltipHighlights JHS_MainHull_Upgrade_M1_option $global.JHS_UpgradeShip $global.JHS_UpgradeM1CostStr $player.creditsStr
-SetEnabled JHS_MainHull_Upgrade_M1_option false",,12:JHS_MainHull_Upgrade_S1_option:[System] Change ship system to Burn Drive,
-JHS_MainHull_S1,DialogOptionSelected,$option == JHS_MainHull_Upgrade_S1_option,"JHS_Core_UpgradeShip S1
+!JHS_Core_UpgradeEnoughCredits S1","SetTooltip JHS_Swap_S2_to_S1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeS1SwapCostStr credits.\n\nOnly $player.creditsStr credits are available.""
+SetTooltipHighlightColors JHS_Swap_S2_to_S1_option buttonShortcut buttonShortcut bad
+SetTooltipHighlights JHS_Swap_S2_to_S1_option $global.JHS_UpgradeShip $global.JHS_UpgradeS1SwapCostStr $player.creditsStr
+SetEnabled JHS_Swap_S2_to_S1_option false",,14:JHS_Swap_S2_to_S1_option:Change ship system from Offence Focus to Burn Drive.,
+JHS_Swap_S2_to_S1,DialogOptionSelected,$option == JHS_Swap_S2_to_S1_option,"JHS_Core_UpgradeShip S1
+AddText ""Changed ship system of $global.JHS_UpgradeShip from Offence Focus to Burn Drive at the cost of $global.JHS_UpgradeS1SwapCostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeS1SwapCostStr
 FireAll JNS_huboptions",,,
-JHS_MainHull_S2_Add1,JNS_huboptions,"$hasMarket
+,,,,,,
+JHS_Swap_S3_to_S1_Add1,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled S3
+JHS_Core_UpgradeAvailable S1
+JHS_Core_UpgradeEnoughCredits S1","SetTooltip JHS_Swap_S3_to_S1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeS1SwapCostStr credits.\n\n$player.creditsStr credits are available.""
+SetTooltipHighlightColors JHS_Swap_S3_to_S1_option buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights JHS_Swap_S3_to_S1_option $global.JHS_UpgradeShip $global.JHS_UpgradeS1SwapCostStr $player.creditsStr
+JHS_AddConfirmation JHS_Swap_S3_to_S1_option ""Changing ship system of $global.JHS_UpgradeShip from Fighter Link to Burn Drive requires $global.JHS_UpgradeS1SwapCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,14:JHS_Swap_S3_to_S1_option:Change ship system from Fighter Link to Burn Drive.,
+JHS_Swap_S3_to_S1_Add2,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled S3
+JHS_Core_UpgradeAvailable S1
+!JHS_Core_UpgradeEnoughCredits S1","SetTooltip JHS_Swap_S3_to_S1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeS1SwapCostStr credits.\n\nOnly $player.creditsStr credits are available.""
+SetTooltipHighlightColors JHS_Swap_S3_to_S1_option buttonShortcut buttonShortcut bad
+SetTooltipHighlights JHS_Swap_S3_to_S1_option $global.JHS_UpgradeShip $global.JHS_UpgradeS1SwapCostStr $player.creditsStr
+SetEnabled JHS_Swap_S3_to_S1_option false",,14:JHS_Swap_S3_to_S1_option:Change ship system from Fighter Link to Burn Drive.,
+JHS_Swap_S3_to_S1,DialogOptionSelected,$option == JHS_Swap_S3_to_S1_option,"JHS_Core_UpgradeShip S1
+AddText ""Changed ship system of $global.JHS_UpgradeShip from Fighter Link to Burn Drive at the cost of $global.JHS_UpgradeS1SwapCostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeS1SwapCostStr
+FireAll JNS_huboptions",,,
+,,,,,,
+#---------------------,#---------------------,#---------------------,#---------------------,,,
+,,,,,,
+JHS_Swap_S1_to_S2_Add1,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled S1
 JHS_Core_UpgradeAvailable S2
-JHS_Core_UpgradeEnoughCredits S2","SetTooltip JHS_MainHull_Upgrade_S2_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeM1CostStr credits. $player.creditsStr credits are available.""
-SetTooltipHighlightColors JHS_MainHull_Upgrade_M1_option buttonShortcut buttonShortcut buttonShortcut
-SetTooltipHighlights JHS_MainHull_Upgrade_S2_option $global.JHS_UpgradeShip $global.JHS_UpgradeM1CostStr $player.creditsStr
-JHS_AddConfirmation JHS_MainHull_Upgrade_S2_option ""Rewamping both modules of $global.JHS_UpgradeShip to be cargo modules requires $global.JHS_UpgradeM1CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,13:JHS_MainHull_Upgrade_S2_option:[System] Change ship system to Offence focus,
-JHS_MainHull_S2_Add2,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeEnoughCredits S2","SetTooltip JHS_Swap_S1_to_S2_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeS2SwapCostStr credits.\n\n$player.creditsStr credits are available.""
+SetTooltipHighlightColors JHS_Swap_S1_to_S2_option buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights JHS_Swap_S1_to_S2_option $global.JHS_UpgradeShip $global.JHS_UpgradeS2SwapCostStr $player.creditsStr
+JHS_AddConfirmation JHS_Swap_S1_to_S2_option ""Changing ship system of $global.JHS_UpgradeShip from Burn Drive to Offence Focus requires $global.JHS_UpgradeS2SwapCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,15:JHS_Swap_S1_to_S2_option:Change ship system from Burn Drive to Offence focus.,
+JHS_Swap_S1_to_S2_Add2,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled S1
 JHS_Core_UpgradeAvailable S2
-!JHS_Core_UpgradeEnoughCredits S2","SetTooltip JHS_MainHull_Upgrade_M1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeM1CostStr credits. Only $player.creditsStr credits are available.""
-SetTooltipHighlightColors JHS_MainHull_Upgrade_M1_option buttonShortcut buttonShortcut bad
-SetTooltipHighlights JHS_MainHull_Upgrade_M1_option $global.JHS_UpgradeShip $global.JHS_UpgradeM1CostStr $player.creditsStr
-SetEnabled JHS_MainHull_Upgrade_M1_option false",,13:JHS_MainHull_Upgrade_S2_option:[System] Change ship system to Offence focus,
-JHS_MainHull_S2,DialogOptionSelected,$option == JHS_MainHull_Upgrade_S2_option,"JHS_Core_UpgradeShip S2
+!JHS_Core_UpgradeEnoughCredits S2","SetTooltip JHS_Swap_S1_to_S2_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeS2SwapCostStr credits.\n\nOnly $player.creditsStr credits are available.""
+SetTooltipHighlightColors JHS_Swap_S1_to_S2_option buttonShortcut buttonShortcut bad
+SetTooltipHighlights JHS_Swap_S1_to_S2_option $global.JHS_UpgradeShip $global.JHS_UpgradeS2SwapCostStr $player.creditsStr
+SetEnabled JHS_Swap_S1_to_S2_option false",,15:JHS_Swap_S1_to_S2_option:Change ship system from Burn Drive to Offence focus.,
+JHS_Swap_S1_to_S2,DialogOptionSelected,$option == JHS_Swap_S1_to_S2_option,"JHS_Core_UpgradeShip S2
+AddText ""Changed ship system of $global.JHS_UpgradeShip from Burn Drive to Offence Focus at the cost of $global.JHS_UpgradeS2SwapCostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeS2SwapCostStr
 FireAll JNS_huboptions",,,
-JHS_MainHull_S3_Add1,JNS_huboptions,"$hasMarket
-JHS_Core_UpgradeAvailable S3
-JHS_Core_UpgradeEnoughCredits S3","SetTooltip JHS_MainHull_Upgrade_M1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeM1CostStr credits. $player.creditsStr credits are available.""
-SetTooltipHighlightColors JHS_MainHull_Upgrade_M1_option buttonShortcut buttonShortcut buttonShortcut
-SetTooltipHighlights JHS_MainHull_Upgrade_M1_option $global.JHS_UpgradeShip $global.JHS_UpgradeM1CostStr $player.creditsStr
-JHS_AddConfirmation JHS_MainHull_Upgrade_M1_option ""Rewamping both modules of $global.JHS_UpgradeShip to be cargo modules requires $global.JHS_UpgradeM1CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,14:JHS_MainHull_Upgrade_S3_option:[System] Change ship system to Fighter Link,
-JHS_MainHull_S3_Add2,JNS_huboptions,"$hasMarket
-JHS_Core_UpgradeAvailable S3
-!JHS_Core_UpgradeEnoughCredits S3","SetTooltip JHS_MainHull_Upgrade_M1_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeM1CostStr credits. Only $player.creditsStr credits are available.""
-SetTooltipHighlightColors JHS_MainHull_Upgrade_M1_option buttonShortcut buttonShortcut bad
-SetTooltipHighlights JHS_MainHull_Upgrade_M1_option $global.JHS_UpgradeShip $global.JHS_UpgradeM1CostStr $player.creditsStr
-SetEnabled JHS_MainHull_Upgrade_M1_option false",,14:JHS_MainHull_Upgrade_S3_option:[System] Change ship system to Fighter Link,
-JHS_MainHull_S3,DialogOptionSelected,$option == JHS_MainHull_Upgrade_S3_option,"JHS_Core_UpgradeShip S3
+,,,,,,
+JHS_Swap_S3_to_S2_Add1,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled S3
+JHS_Core_UpgradeAvailable S2
+JHS_Core_UpgradeEnoughCredits S2","SetTooltip JHS_Swap_S3_to_S2_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeS2SwapCostStr credits.\n\n$player.creditsStr credits are available.""
+SetTooltipHighlightColors JHS_Swap_S3_to_S2_option buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights JHS_Swap_S3_to_S2_option $global.JHS_UpgradeShip $global.JHS_UpgradeS2SwapCostStr $player.creditsStr
+JHS_AddConfirmation JHS_Swap_S3_to_S2_option ""Changing ship system of $global.JHS_UpgradeShip from Fighter Link to Offence Focus requires $global.JHS_UpgradeS2SwapCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,15:JHS_Swap_S3_to_S2_option:Change ship system from Fighter Link to Offence focus.,
+JHS_Swap_S3_to_S2_Add2,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled S3
+JHS_Core_UpgradeAvailable S2
+!JHS_Core_UpgradeEnoughCredits S2","SetTooltip JHS_Swap_S3_to_S2_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeS2SwapCostStr credits.\n\nOnly $player.creditsStr credits are available.""
+SetTooltipHighlightColors JHS_Swap_S3_to_S2_option buttonShortcut buttonShortcut bad
+SetTooltipHighlights JHS_Swap_S3_to_S2_option $global.JHS_UpgradeShip $global.JHS_UpgradeS2SwapCostStr $player.creditsStr
+SetEnabled JHS_Swap_S3_to_S2_option false",,15:JHS_Swap_S3_to_S2_option:Change ship system from Fighter Link to Offence focus.,
+JHS_Swap_S3_to_S2,DialogOptionSelected,$option == JHS_Swap_S3_to_S2_option,"JHS_Core_UpgradeShip S2
+AddText ""Changed ship system of $global.JHS_UpgradeShip from Fighter Link to Offence Focus at the cost of $global.JHS_UpgradeS2SwapCostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeS2SwapCostStr
 FireAll JNS_huboptions",,,
+,,,,,,
+#---------------------,#---------------------,#---------------------,#---------------------,,,
+,,,,,,
+JHS_Swap_S1_to_S3_Add1,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled S1
+JHS_Core_UpgradeAvailable S3
+JHS_Core_UpgradeEnoughCredits S3","SetTooltip JHS_Swap_S1_to_S3_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeS3SwapCostStr credits.\n\n$player.creditsStr credits are available.""
+SetTooltipHighlightColors JHS_Swap_S1_to_S3_option buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights JHS_Swap_S1_to_S3_option $global.JHS_UpgradeShip $global.JHS_UpgradeS3SwapCostStr $player.creditsStr
+JHS_AddConfirmation JHS_Swap_S1_to_S3_option ""Changing ship system of $global.JHS_UpgradeShip from Burn Drive to Fighter Link requires $global.JHS_UpgradeS3SwapCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,16:JHS_Swap_S1_to_S3_option:Change ship system from Burn Drive to Fighter Link.,
+JHS_Swap_S1_to_S3_Add2,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled S1
+JHS_Core_UpgradeAvailable S3
+!JHS_Core_UpgradeEnoughCredits S3","SetTooltip JHS_Swap_S1_to_S3_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeS3SwapCostStr credits.\n\nOnly $player.creditsStr credits are available.""
+SetTooltipHighlightColors JHS_Swap_S1_to_S3_option buttonShortcut buttonShortcut bad
+SetTooltipHighlights JHS_Swap_S1_to_S3_option $global.JHS_UpgradeShip $global.JHS_UpgradeS3SwapCostStr $player.creditsStr
+SetEnabled JHS_Swap_S1_to_S3_option false",,16:JHS_Swap_S1_to_S3_option:Change ship system from Burn Drive to Fighter Link.,
+JHS_Swap_S1_to_S3,DialogOptionSelected,$option == JHS_Swap_S1_to_S3_option,"JHS_Core_UpgradeShip S3
+AddText ""Changed ship system of $global.JHS_UpgradeShip from Burn Drive to Fighter Link at the cost of $global.JHS_UpgradeS3SwapCostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeS3SwapCostStr
+FireAll JNS_huboptions",,,
+,,,,,,
+JHS_Swap_S2_to_S3_Add1,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled S2
+JHS_Core_UpgradeAvailable S3
+JHS_Core_UpgradeEnoughCredits S3","SetTooltip JHS_Swap_S2_to_S3_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeS3SwapCostStr credits.\n\n$player.creditsStr credits are available.""
+SetTooltipHighlightColors JHS_Swap_S2_to_S3_option buttonShortcut buttonShortcut buttonShortcut
+SetTooltipHighlights JHS_Swap_S2_to_S3_option $global.JHS_UpgradeShip $global.JHS_UpgradeS3SwapCostStr $player.creditsStr
+JHS_AddConfirmation JHS_Swap_S2_to_S3_option ""Changing ship system of $global.JHS_UpgradeShip from Offence Focus to Fighter Link requires $global.JHS_UpgradeS3SwapCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,16:JHS_Swap_S2_to_S3_option:Change ship system from Offence Focus to Fighter Link.,
+JHS_Swap_S2_to_S3_Add2,JNS_huboptions,"$hasMarket
+JHS_Core_UpgradeInstalled S2
+JHS_Core_UpgradeAvailable S3
+!JHS_Core_UpgradeEnoughCredits S3","SetTooltip JHS_Swap_S2_to_S3_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeS3SwapCostStr credits.\n\nOnly $player.creditsStr credits are available.""
+SetTooltipHighlightColors JHS_Swap_S2_to_S3_option buttonShortcut buttonShortcut bad
+SetTooltipHighlights JHS_Swap_S2_to_S3_option $global.JHS_UpgradeShip $global.JHS_UpgradeS3SwapCostStr $player.creditsStr
+SetEnabled JHS_Swap_S2_to_S3_option false",,16:JHS_Swap_S2_to_S3_option:Change ship system from Offence Focus to Fighter Link.,
+JHS_Swap_S2_to_S3,DialogOptionSelected,$option == JHS_Swap_S2_to_S3_option,"JHS_Core_UpgradeShip S3
+AddText ""Changed ship system of $global.JHS_UpgradeShip from Offence Focus to Fighter Link at the cost of $global.JHS_UpgradeS3SwapCostStr credits.""
+SetTextHighlightColors hColor hColor
+SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeS3SwapCostStr
+FireAll JNS_huboptions",,,
+,,,,,,
+,,,,,,
 ,,,,,,
 ,,,,,,

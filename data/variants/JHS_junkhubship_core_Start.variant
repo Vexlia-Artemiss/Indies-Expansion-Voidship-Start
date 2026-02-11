@@ -23,19 +23,20 @@
         "WS0046": "taclaser",
         "WS0047": "mininglaser",
         "WS0048": "taclaser",
-        "WS0057": "vulcan"
+        "WS0057": "vulcan",
+        "WS0065": "heavyblaster"
       }
     }
   ],
   "modules": [
     {
-      "WS0001": "JHS_junkhubship_module_left_empty"
+      "WS0001": "JHS_junkhubship_module_left_Start"
     },
     {
-      "WS0002": "JHS_junkhubship_module_right_empty"
+      "WS0002": "JHS_junkhubship_module_right_Start"
     },
     {
-      "WS0009": "JHS_junkhubship_shield_module_Basic"
+      "WS0009": "JHS_junkhubship_shield_module_Start"
     }
   ],
   "wings": []

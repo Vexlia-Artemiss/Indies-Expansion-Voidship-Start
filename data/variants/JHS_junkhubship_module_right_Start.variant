@@ -1,0 +1,28 @@
+{
+  "variantId": "JHS_junkhubship_module_right_Start",
+  "hullId": "JHS_junkhubship_module_right",
+  "displayName": "Empty",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0035": "chaingun",
+        "WS0039": "lightdualmg",
+        "WS0041": "railgun"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": [
+    "mining_drone_wing",
+    "mining_drone_wing",
+    "mining_drone_wing"
+  ]
+}

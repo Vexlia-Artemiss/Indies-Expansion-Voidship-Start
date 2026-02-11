@@ -15,17 +15,17 @@
 	"spriteName":"graphics/junkhubship_Ultra/JHS_junkhubship_main.png",
 	"removeWeaponSlots":[], 		# ids
 	"removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
-	"removeBuiltInMods":[JHS_collapsedFleetGantry],	# hullmod ids
+	"removeBuiltInMods":[JHS_FleetGantry_collapsed],	# hullmod ids
 	"removeBuiltInWeapons":[], 		# weapon slot ids
 	"builtInWeapons": {
-		"WS0005": "acs_bigmookrailslauncher",
-		"WS0006": "acs_bigmookrailslauncher",
-		"WS0007": "acs_watchtowerrailslauncher",
-		"WS0008": "acs_watchtowerrailslauncher",
-		"WS0010": "acs_angrymookrailslauncher"
+		"WS0005": "JHS_smallChungus_launcher",
+		"WS0006": "JHS_smallChungus_launcher",
+		"WS0007": "JHS_smallChungus_launcher",
+		"WS0008": "JHS_smallChungus_launcher",
+		"WS0010": "JHS_angryChungus_launcher",
 	},
 	"builtInMods": [
-		"acs_fleetlogistic2"
+		"JHS_FleetGantry"
 	],
 	"builtInWings": [
 	],

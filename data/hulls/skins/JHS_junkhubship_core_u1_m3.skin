@@ -20,7 +20,7 @@
 	"builtInWeapons":{
     },
 	"builtInWings": [
-		"acs_mook_r_wing",
-		"acs_smallderelicdrone_wing"
+		"sarissa_wing",
+		"sarissa_wing"
 	],
 }

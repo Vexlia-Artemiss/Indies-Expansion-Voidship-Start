@@ -1,14 +1,33 @@
 name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sModDesc,sprite
 # Accelerated Shields,advancedshieldemitter,0,,,"defensive, shields, merc, standard",Shields,3000,,,,3,6,9,15,data.hullmods.AcceleratedShieldEmitter,Increases the turn rate of the ship's shields by %s and the rate at which the shields are raised by %s.,Increases shield turn rate and extension speed.,Increases the shield's turn rate and raise rate by an additional %s.,graphics/hullmods/accelerated_shields.png
 ,,,,,,,,,,,,,,,,,,,
+Fleet Gantry,JHS_FleetGantry,0,,,,,,,TRUE,,0,0,0,15,Vexlia.JunkHubStart.hullmods.JHS_FleetGantry,"Dedicated onboard gantry and fleet servicing facility able to provide wide range of logistical bonus for ship member of the fleets.
+
+Provide %s supply use per month reduction bonus and %s recovery and DP reduction bonus to all ships member of the fleets. 
+
+While ship feature necessary tools and gantry to maintain and store up to 2 frigates due to expired contract with Indies Expansion this effect is unavailable.
+
+Its dedicated fleetwide drive field stabilizer device also provides flat increase of %s to maximum burn of ship's fleet.","Provide supply use, DP, after combat supplies recovery and max burn bonust to all ships within the fleets ",,graphics/hullmods/JHS_fleetGantry_icon.png
+,,,,,,,,,,,,,,,,,,,
+Wanderer Logistic Overhaul,JHS_WandererLogistic,0,,,,,,,TRUE,,0,0,0,15,Vexlia.JunkHubStart.hullmods.JHS_WandererLogistic,"If fleet has 5 or less ships, this ship recieves buffs to it logisctics.
+
+Ship's maximum fuel capacity increased by %s.
+
+Ship's maximum cargo capacity increased by %s.
+
+Ship's monthly maintanance cost redused by %s.
+
+Maximum burn speed incresed by %s.",,,graphics/hullmods/JHS_drifterlogi_icon.png
+,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
 #Hidden and not so Dmods,,,,,,,,,,,,,,,,,,,
-Collapsed Fleet Gantry,JHS_collapsedFleetGantry,0,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_collapsedFleetGantry,"Dedicated onboard gantry and fleet servicing facility collapsed due to damages and able to provide only limited range of logistical bonuses for ship's fleet.
+Fleet Gantry - Collapsed,JHS_FleetGantry_collapsed,0,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_FleetGantry_collapsed,"Dedicated onboard gantry and fleet servicing facility collapsed due to damages and able to provide only limited range of logistical bonuses for ship's fleet.
 
 Provide %s supply use per month reduction bonus and %s recovery and DP reduction bonus to all ships member of the fleets. 
 
 Its vast bulk and hangar consumed by hastly repairs and makeshift supports making it unable to maintain and store frigates inside.
 
-its dedicated fleetwide drive field stabilizer lies uncallibrated and underpowered unable to provide any effect to ship's fleet.","Provide supply use, DP, after combat supplies recovery and max burn bonust to all ships within the fleets ",,graphics/hullmods/JHS_fleetlogistic_icon.png
+Its dedicated fleetwide drive field stabilizer lies uncallibrated and underpowered unable to provide any effect to ship's fleet.","Provide supply use, DP, after combat supplies recovery and max burn bonust to all ships within the fleets ",,graphics/hullmods/JHS_Gantry_Collapsed_icon.png
 Remove Decks,JHS_RemoveDecks,,,,hide_in_codex,,,,TRUE,TRUE,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_RemoveDecks,[Hidden Everywhere] Removes all flight decks.,[Hidden Everywhere] Removes all flight decks.,,graphics/hullmods/converted_hangar.png
 Remove Some Decks,JHS_RemoveSomeDecks,,,,hide_in_codex,,,,TRUE,TRUE,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_RemoveSomeDecks,[Hidden Everywhere] Remove some of flight decks (4).,[Hidden Everywhere] Remove some of flight decks (4).,,graphics/hullmods/converted_hangar.png
 Unstable Shield,JHS_Unstable_Shield,,,,"hide_in_codex, dmod",,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_Unstable_Shield,Long exposure to elements and deep damage had adverce and not easily repaired damade to shield's power supply. While emitar itself seems to be stable power fluctuation force unpredictable behaviour of shield in combat.,,,graphics/hullmods/converted_hangar.png
@@ -23,8 +42,8 @@ When deployed in combat, grants %s ECM rating and reduces the weapon range reduc
 Coorinates wings on ship's modules to prioritize targeting main hull's target. This effect work even if core hull don't have fighter bays but Don't forget to press engage button (default Z)!!!","Increases command point recovery rate when on flagship, reduces effects of enemy ECM on range, provide ECM rating and coorinates module's wings.",,graphics/hullmods/operations_center.png
 ,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,
-Left module converted to Carrier,JHS_Core_Logistics_Harmed,,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_Core_Logistics_Harmed,"Debuff for having more wings on modules: Affects cargo, fuel and DP with supplies/deployment",Debuff for having more wings on modules,,graphics/hullmods/converted_hangar.png
-Right module converted to Cargo,JHS_Core_Logistics_Buffed,,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_Core_Logistics_Buffed,"Buff for removing wings on modules: Affects cargo, fuel and DP with supplies/deployment",Buff for removing wings on modules,,graphics/hullmods/converted_hangar.png
+[Modules] Combat configuration,JHS_Core_Logistics_Harmed,,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_Core_Logistics_Harmed,"Debuff for having more wings on modules: Affects cargo, fuel and DP with supplies/deployment",Debuff for having more wings on modules,,graphics/hullmods/ballistic_rangefinder.png
+[Modules] Logistic configuration,JHS_Core_Logistics_Buffed,,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_Core_Logistics_Buffed,"Buff for removing wings on modules: Affects cargo, fuel and DP with supplies/deployment",Buff for removing wings on modules,,graphics/hullmods/rugged_construction.png
 ,,,,,,,,,,,,,,,,,,,
 Converted to Carrier,JHS_AddDecksModule,,,,hide_in_codex,,,,TRUE,TRUE,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_AddDecksModule,[Hidden Everywhere] Convert Left module to carrier by adding wing slots and swaping sprite.,[Hidden Everywhere] Convert Left module to carrier by adding wing slots and swaping sprite.,,graphics/hullmods/converted_hangar.png
 Converted to Cargo,JHS_RemoveDecksModule,,,,hide_in_codex,,,,TRUE,TRUE,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_RemoveDecksModule,[Hidden Everywhere] Convert Right module to cargo by removing wing slots and swaping sprite.,[Hidden Everywhere] Convert Right module to cargo by removing wing slots and swaping sprite.,,graphics/hullmods/converted_hangar.png

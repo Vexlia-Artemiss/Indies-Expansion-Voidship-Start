@@ -15,12 +15,12 @@
 	"spriteName":"graphics/junkhubship_Ultra/JHS_junkhubship_main.png",
 	"removeWeaponSlots":[], 		# ids
 	"removeEngineSlots":[], 		# indices, as engine slots have no id in the .ship file
-	"removeBuiltInMods":[JHS_collapsedFleetGantry], 		# hullmod ids
+	"removeBuiltInMods":[JHS_FleetGantry_collapsed], 		# hullmod ids
 	"removeBuiltInWeapons":[], 		# weapon slot ids
 	"builtInWeapons":{
     },
 	"builtInMods": [
-		"acs_fleetlogistic2",
+		"JHS_FleetGantry",
 	],
 	"builtInWings": [
 	],

@@ -1,0 +1,36 @@
+{
+	"id":"acs_watchtowerrail_lrm",
+	"specClass":"missile",
+	"missileType":"ROCKET",
+	"sprite":"graphics/acs_watchtowerrail_proj.png",
+	"size":[65,55],	
+	"center":[1,1],
+	"collisionRadius":12,
+	"collisionClass":"NONE",
+	"explosionColor":[255,100,100,255],  # purely visual, will get a white additively blended core on top of this color
+	"explosionRadius":500, # purely visual
+	"engineSpec":{"turnAcc":0,
+				  "turnRate":0,
+				  "acc":200,
+				  "dec":0},
+	"engineSlots":[{"id":"ES1",
+					"loc":[-20, 0],
+				    #"style":"MISSILE_LOW_TECH",
+				    "style":"CUSTOM",
+					"styleSpec":{
+						"mode":"QUAD_STRIP", # PARTICLES or QUAD_STRIP, determines which params are used
+						"engineColor":[255,145,75,255],
+						"contrailDuration":0.0,
+						"contrailWidthMult":0.5,
+						"contrailWidthAddedFractionAtEnd":0,  # can be negative. makes trail spread out/narrow at the end
+						"contrailMinSeg":1, # min segment length, in pixels
+						"contrailMaxSpeedMult":.0f,
+						"contrailAngularVelocityMult":0.5f,
+						"contrailSpawnDistMult":0.0, # how far away from engine it starts
+						"contrailColor":[100,100,100,150],
+						"type":"SMOKE" # GLOW or SMOKE; additive or regular blend mode
+					},
+				    "width":1.0,
+				    "length":1.0,
+				    "angle":180.0}]
+}

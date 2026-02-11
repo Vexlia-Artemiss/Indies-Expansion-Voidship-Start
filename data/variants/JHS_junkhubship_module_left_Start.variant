@@ -1,0 +1,24 @@
+{
+  "variantId": "JHS_junkhubship_module_left_Start",
+  "hullId": "JHS_junkhubship_module_left",
+  "displayName": "Empty",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "autopulse",
+        "WS0015": "breach",
+        "WS0037": "railgun"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

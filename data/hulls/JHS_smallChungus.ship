@@ -1,0 +1,97 @@
+{
+  "hullName": "War Mook",
+  "hullId": "JHS_smallChungus",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/acs_bigmookfrig2.png",
+  "style": "LOW_TECH",
+  "height": 55,
+  "width": 62,
+  "center": [31, 27.5],
+  "collisionRadius": 64.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 48.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "automated",
+    "dedicated_targeting_core"
+  ],
+  "builtInWings": [
+    "terminator_wing"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 26,
+      "angle": 0,
+      "locations": [20.5, 7],
+      "renderOrderMod": 3
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-4.5, -14],
+      "renderOrderMod": 5
+    },
+    {
+      "id": "LB 1",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        -14.5, 19.5,
+        -12, 20.5
+      ]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "HARDPOINT",
+      "arc": 26,
+      "angle": 0,
+      "locations": [21.5, -6]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-26, 5],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-26, -6],
+      "length": 22.5,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 10,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-24.5, -17],
+      "length": 30,
+      "width": 10,
+      "angle": 180,
+      "contrailSize": 30,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    22, -25.5,
+    -13, -25,
+    -15, 13,
+    -3.5, 26.5,
+    20.5, 18.5
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "acs_autothumper",
+  "specClass": "projectile",
+  "projectileSpecId": "acs_autothumper_shot",
+  "type": "BALLISTIC",
+  "size": "MEDIUM",
+  "turretSprite": "graphics/autothumper_new/acs_medium_autothumpernew_turret_base00.png",
+  "hardpointSprite": "graphics/autothumper_new/acs_medium_autothumpernew_hardpoint_base00.png",
+  "turretOffsets": [
+    25.5,
+    -1
+  ],
+  "turretAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    31,
+    0
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "barrelMode": "ALTERNATING",
+  "animationType": "MUZZLE_FLASH",
+  "numFrames": 4,
+  "frameRate": 20,
+  "muzzleFlashSpec": {
+    "length": 35,
+    "spread": 5,
+    "particleSizeMin": 10,
+    "particleSizeRange": 16,
+    "particleDuration": 0.15,
+    "particleCount": 12,
+    "particleColor": [
+      255,
+      225,
+      165,
+      175
+    ]
+  },
+  "fireSoundOne": "thumper_spinup",
+  "fireSoundTwo": "needler_fire"
+}
