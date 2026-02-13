@@ -12,7 +12,7 @@
   "shieldRadius": 228,
   "viewOffset": 0,
   "builtInMods": [
-    "always_detaches"
+    "always_detaches",
   ],
   "weaponSlots": [
     {

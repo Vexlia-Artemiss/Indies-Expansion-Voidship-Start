@@ -3,7 +3,7 @@ name,id,designation,tech/manufacturer,system id,fleet pts,hitpoints,armor rating
 Onslaught,onslaught,Battleship,Low Tech,burndrive,28,20000,1750,17000,15000,600,360,,25,10,10,4,4,3500,FRONT,,180,0.4,1,,,750,1500,300,400,15,27,7,350000,3,12,720,0.25,40,40,,,,,,,,"rare_bp, merc",,,,0.4,2,4,,500
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 The Big Chungus,JHS_junkhubship_core_m3,Tarnished Voidfaring Hubship,Unknown,burndrive,50,22000,1700,30000,12500,1150,400,6,20,15,15,4,4,10000,NONE,,0,0,0,,,2000,10000,12000,12000,20,40,7,1000000,3,12,1200,0.25,80,80,,,,,,,SHIP_WITH_MODULES,,,,,0.2,2,2,,
-,JHS_junkhubship_module_left,Left Barge Module,Unknown,ammofeed,12,10000,1200,10000,5000,600,200,,0,0,0,10,10,1500,NONE,,0,0,0,,,0,0,0,0,1,0,,250000,,1,1500,0.25,0,0,,,,,,,"UNBOARDABLE, HIDE_IN_CODEX",,,,,1,2,3,,2100
+,JHS_junkhubship_module_left,Left Barge Module,Unknown,ammofeed,12,10000,1200,10000,5000,600,200,6,0,0,0,10,10,1500,NONE,,0,0,0,,,0,0,0,0,1,0,,250000,,1,1500,0.25,0,0,,,,,,,"UNBOARDABLE, HIDE_IN_CODEX",,,,,1,2,3,,2100
 ,JHS_junkhubship_module_right,Right Barge Module,Unknown,ammofeed,12,10000,1200,10000,5000,600,200,6,0,0,0,10,10,1500,NONE,,0,0,0,,,0,0,0,0,1,0,,250000,,1,1500,0.25,0,0,,,,,,,"UNBOARDABLE, HIDE_IN_CODEX",,,,,1,2,3,,2100
 ,JHS_junkhubship_shield_module,Shield Module,Unknown,,12,9000,800,8000,,800,50,,0,0,0,10,10,1500,OMNI,,180,0.6,0.5,,,0,0,0,0,1,0,,250000,,1,1500,0.25,0,0,,,,,,,"UNBOARDABLE, HIDE_IN_CODEX",,,,,1,2,3,,2100
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

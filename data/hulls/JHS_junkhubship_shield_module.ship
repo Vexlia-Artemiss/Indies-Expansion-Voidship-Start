@@ -4,19 +4,19 @@
   "hullSize": "FRIGATE",
   "spriteName": "graphics/junkhubship_Ultra/acs_junkhubship_shield_module.png",
   "style": "LOW_TECH",
-  "height": 43,
-  "width": 50,
-  "center": [25, 21.5],
+  "height": 96,
+  "width": 54,
+  "center": [27, 43],
   "collisionRadius": 601,
-  "shieldCenter": [0, 0],
-  "shieldRadius": 448.5,
+  "shieldCenter": [-10, -0],
+  "shieldRadius": 483,
   "viewOffset": 0,
   "weaponSlots": [],
   "engineSlots": [],
   "bounds": [
-    19.5, -22,
-    -19.5, -23,
-    -19.5, 23,
-    19.5, 22
+    51, 24.5,
+    -41, 24.5,
+    -41, -24.5,
+    51, -24.5
   ]
 }
