@@ -7,8 +7,15 @@
     "hullMods": [
         "JHS_RemoveDecks"
     ],
+    "permaMods": [
+        "targetingunit",
+        "comp_structure",
+        "fragile_subsystems",
+        "damaged_mounts",
+        "faulty_grid"
+    ],
     "quality": 1.0,
-    "variantId": "JHS_junkhubship_module_left_Start",
+    "variantId": "JHS_junkhubship_module_left_Start_D",
     "weaponGroups": [
         {
             "autofire": false,

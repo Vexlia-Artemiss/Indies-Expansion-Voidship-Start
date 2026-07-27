@@ -1,4 +1,13 @@
 id,trigger,conditions,script,text,options,notes
+#New game start for vanilla,,,,,,
+ngcHubshipStart,AddNewGameChoices,,"SetTooltip ngcJHS_Hubship ""A group of ships capable of performing salvage operations on the fringes of the Sector, and defending itself against most of the threats found there.\n\nIncludes a tanker for increased fuel capacity and exploration range, and sufficient cargo capacity to carry the salvage back to the Core Worlds.""",,"99:ngcJHS_Hubship:An captain, piloting recently recovered derelict Hubship (modded start)",
+ngcHubshipPicked,NewGameOptionSelected,$option == ngcJHS_Hubship,"NGCAddShip JHS_junkhubship_core_Start_D
+NGCAddShip wayfarer_Starting
+NGCAddShip shepherd_Starting
+NGCAddShip dram_Light
+NGCAddCredits 58000
+$ngcExplorerSelected = true
+FireAll NGCDifficultyOptions",,,
 ,,,,,,
 ,,,,,,
 JHS_marketPopulateOptions,PopulateOptions,"$hasMarket
@@ -105,7 +114,7 @@ JHS_Core_UpgradeAvailable U4
 JHS_Core_UpgradeEnoughCredits U4","SetTooltip JHS_MainHull_Upgrade_U4_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU4CostStr credits.\n\n$player.creditsStr credits are available.\n\nWeapon slot upgrades: 2 Small mounts are changed to Medium, 1 Medium mount is changed to Large, 1 Medium mount changed to Large Universal and 1 Large mount type changed to Universal""
 SetTooltipHighlightColors JHS_MainHull_Upgrade_U4_option buttonShortcut buttonShortcut buttonShortcut
 SetTooltipHighlights JHS_MainHull_Upgrade_U4_option $global.JHS_UpgradeShip $global.JHS_UpgradeU4CostStr $player.creditsStr
-JHS_AddConfirmation JHS_MainHull_Upgrade_U4_option ""Upgrading modular weapon slots and adding Heavy Ballistics Integration on $global.JHS_UpgradeShip requires $global.JHS_UpgradeU4CostStr credits. Combat modules also will get Heavy Ballistics Integration.\n\n$player.creditsStr credits are available.\n\nDo you want to proceed?""",,5:JHS_MainHull_Upgrade_U4_option:Upgrade modular weapon slots (+40 OP) and add Heavy Ballistics Integration.,
+JHS_AddConfirmation JHS_MainHull_Upgrade_U4_option ""Upgrading modular weapon slots and adding Heavy Ballistics Integration on $global.JHS_UpgradeShip requires $global.JHS_UpgradeU4CostStr credits. Combat modules also will get Heavy Ballistics Integration.\n\n$player.creditsStr credits are available. Do you want to proceed?""",,5:JHS_MainHull_Upgrade_U4_option:Upgrade modular weapon slots (+40 OP) and add Heavy Ballistics Integration.,
 JHS_MainHull_U4_Add2,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeAvailable U4
 !JHS_Core_UpgradeEnoughCredits U4","SetTooltip JHS_MainHull_Upgrade_U4_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU4CostStr credits.\n\nOnly $player.creditsStr credits are available.\n\nWeapon slot upgrades: 2 Small mounts are changed to Medium, 1 Medium mount is changed to Large, 1 Medium mount changed to Large Universal, and 1 Large mount type changed to Universal""
@@ -123,7 +132,7 @@ JHS_Core_UpgradeAvailable U5
 JHS_Core_UpgradeEnoughCredits U5","SetTooltip JHS_MainHull_Upgrade_U5_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU5CostStr credits.\n\n$player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_MainHull_Upgrade_U5_option buttonShortcut buttonShortcut buttonShortcut
 SetTooltipHighlights JHS_MainHull_Upgrade_U5_option $global.JHS_UpgradeShip $global.JHS_UpgradeU5CostStr $player.creditsStr
-JHS_AddConfirmation JHS_MainHull_Upgrade_U5_option ""Replacing a built-in Intergrated Targeting Unit with Advanced Targeting Core on $global.JHS_UpgradeShip requires $global.JHS_UpgradeU5CostStr credits. Combat modules will get the same upgrade.\n\n$player.creditsStr credits are available.\n\nDo you want to proceed?""",,6:JHS_MainHull_Upgrade_U5_option:Replace a built-in Intergrated Targeting Unit with Advanced Targeting Core.,
+JHS_AddConfirmation JHS_MainHull_Upgrade_U5_option ""Replacing a built-in Intergrated Targeting Unit with Advanced Targeting Core on $global.JHS_UpgradeShip requires $global.JHS_UpgradeU5CostStr credits. Combat modules will get the same upgrade.\n\n$player.creditsStr credits are available. Do you want to proceed?""",,6:JHS_MainHull_Upgrade_U5_option:Replace a built-in Intergrated Targeting Unit with Advanced Targeting Core.,
 JHS_MainHull_U5_Add2,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeAvailable U5
 !JHS_Core_UpgradeEnoughCredits U5","SetTooltip JHS_MainHull_Upgrade_U5_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU5CostStr credits.\n\nOnly $player.creditsStr credits are available.""

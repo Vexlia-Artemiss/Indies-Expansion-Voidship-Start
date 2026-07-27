@@ -1,0 +1,19 @@
+{
+    "displayName": "Standard",
+    "fluxCapacitors": 0,
+    "fluxVents": 0,
+    "goalVariant": false,
+    "hullId": "JHS_junkhubship_shield_module",
+    "hullMods": [
+        "fluxbreakers",
+        "fluxcoil",
+        "fluxdistributor",
+        "hardenedshieldemitter"
+    ],
+    "permaMods": [
+        "JHS_Unstable_Shield"
+    ],
+    "quality": 1.0,
+    "variantId": "JHS_junkhubship_shield_module_Start_D",
+    "weaponGroups": []
+}

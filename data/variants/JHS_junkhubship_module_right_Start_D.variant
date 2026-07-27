@@ -5,8 +5,15 @@
     "goalVariant": false,
     "hullId": "JHS_junkhubship_module_right",
     "hullMods": [],
+    "permaMods": [
+        "targetingunit",
+        "comp_structure",
+        "damaged_deck",
+        "glitched_sensors",
+        "malfunctioning_comms"
+    ],
     "quality": 1.0,
-    "variantId": "JHS_junkhubship_module_right_Start",
+    "variantId": "JHS_junkhubship_module_right_Start_D",
     "weaponGroups": [
         {
             "autofire": false,

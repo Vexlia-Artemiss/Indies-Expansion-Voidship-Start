@@ -1,0 +1,45 @@
+{
+    "displayName": "Restored Junk",
+    "fluxCapacitors": 0,
+    "fluxVents": 0,
+    "goalVariant": false,
+    "hullId": "JHS_junkhubship_core_m3",
+    "hullMods": [],
+    "permaMods": [
+        "comp_structure",
+        "defective_manufactory",
+        "erratic_injector",
+        "malfunctioning_comms",
+        "faulty_grid",
+        "fragile_subsystems",
+        "degraded_drive_field",
+        "degraded_engines"
+    ],
+    "quality": 1.0,
+    "variantId": "JHS_junkhubship_core_Start_D",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0012": "vulcan",
+                "WS0027": "swarmer",
+                "WS0028": "swarmer",
+                "WS0033": "railgun",
+                "WS0036": "railgun",
+                "WS0043": "vulcan",
+                "WS0045": "mininglaser",
+                "WS0046": "taclaser",
+                "WS0047": "mininglaser",
+                "WS0048": "taclaser",
+                "WS0057": "vulcan",
+                "WS0065": "heavyblaster"
+            }
+        }
+    ],
+    "modules": {
+        "WS0001": "JHS_junkhubship_module_left_Start_D",
+        "WS0009": "JHS_junkhubship_shield_module_Start_D",
+        "WS0002": "JHS_junkhubship_module_right_Start_D"
+    }
+}

@@ -10,8 +10,8 @@
 	"fleetPoints":60,
 	"ordnancePoints":460,
 	"baseValueMult":.8,
-	"suppliesToRecover":75,
-	"suppliesPerMonth":75,
+	"suppliesToRecover":80,
+	"suppliesPerMonth":80,
 	"systemId":"JHS_OffenceFocus",
 	"spriteName":"graphics/junkhubship_Ultra/JHS_junkhubship_main.png",
 	"removeWeaponSlots":[], 		# ids

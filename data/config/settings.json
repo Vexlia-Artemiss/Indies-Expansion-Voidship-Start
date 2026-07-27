@@ -22,6 +22,10 @@
 			},
 		"JHS_junkhubship_module_right":{
 			"JHS_junkhubship_module_right_cargo":"graphics/junkhubship_Ultra/acs_junkhubship_right_cargo.png",
-			}
+			},
+			
+		"lunalib":{
+			"jhs_icon":"graphics/JHS_icon.png",
+			},
 	}
 }
