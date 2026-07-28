@@ -49,7 +49,6 @@ cmake-build-*/
 # IntelliJ
 out/
 
-src/
 .idea/
 .run/
 .gitattributes
