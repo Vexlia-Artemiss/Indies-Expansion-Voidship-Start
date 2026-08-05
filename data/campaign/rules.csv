@@ -269,33 +269,33 @@ FireAll JNS_huboptions",,,
 JHS_Swap_M2_to_M1_Add1,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeInstalled M2
 JHS_Core_UpgradeAvailable M1
-JHS_Core_UpgradeEnoughCredits M1","SetTooltip JHS_Swap_M2_to_M1_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeM1SwapCostStr credits.\n\n$player.creditsStr credits are available.\n\n- Combat configuration is when both modules have 6 fighter bays.\n- Logistic configuration is when both modules support additional cargo and fuel.\n- Balanced configuration is when one module has 6 fighter bays, and other support additional cargo and fuel.""
+JHS_Core_UpgradeEnoughCredits M1","SetTooltip JHS_Swap_M2_to_M1_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeM1SwapCostStr credits.\n\n$player.creditsStr credits are available.\n\n- Combat configuration is when both modules have 5 fighter bays.\n- Logistic configuration is when both modules support additional cargo and fuel.\n- Balanced configuration is when one module has 5 fighter bays, and other support additional cargo and fuel.""
 SetTooltipHighlightColors JHS_Swap_M2_to_M1_option buttonShortcut buttonShortcut buttonShortcut
 SetTooltipHighlights JHS_Swap_M2_to_M1_option $global.JHS_UpgradeShip $global.JHS_UpgradeSwapM1CostStr $player.creditsStr
-JHS_AddConfirmation JHS_Swap_M2_to_M1_option ""Restructuring both combat modules of $global.JHS_UpgradeShip to support 6 fighter bays requires $global.JHS_UpgradeSwapM1CostStr credits.\n\n$player.creditsStr credits are available. Do you want to proceed?""",,11:JHS_Swap_M2_to_M1_option:Refit ship's modules from logistic to combat configuration.,
+JHS_AddConfirmation JHS_Swap_M2_to_M1_option ""Restructuring both combat modules of $global.JHS_UpgradeShip to support 5 fighter bays requires $global.JHS_UpgradeSwapM1CostStr credits.\n\n$player.creditsStr credits are available. Do you want to proceed?""",,11:JHS_Swap_M2_to_M1_option:Refit ship's modules from logistic to combat configuration.,
 JHS_Swap_M2_to_M1_Add2,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeInstalled M2
 JHS_Core_UpgradeAvailable M1
-!JHS_Core_UpgradeEnoughCredits M1","SetTooltip JHS_Swap_M2_to_M1_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeM1SwapCostStr credits.\n\nOnly $player.creditsStr credits are available.\n\nCombat configuration is when both modules have 6 fighter bays.""
+!JHS_Core_UpgradeEnoughCredits M1","SetTooltip JHS_Swap_M2_to_M1_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeM1SwapCostStr credits.\n\nOnly $player.creditsStr credits are available.\n\nCombat configuration is when both modules have 5 fighter bays.""
 SetTooltipHighlightColors JHS_Swap_M2_to_M1_option buttonShortcut buttonShortcut bad
 SetTooltipHighlights JHS_Swap_M2_to_M1_option $global.JHS_UpgradeShip $global.JHS_UpgradeSwapM1CostStr $player.creditsStr
 SetEnabled JHS_Swap_M2_to_M1_option false",,11:JHS_Swap_M2_to_M1_option:Refit ship's modules from logistic to combat configuration.,
 JHS_Swap_M2_to_M1,DialogOptionSelected,$option == JHS_Swap_M2_to_M1_option,"JHS_Core_UpgradeShip M1
-AddText ""Restructuring both combat modules of $global.JHS_UpgradeShip to support 6 fighter bays at the cost of $global.JHS_UpgradeM1SwapCostStr credits.""
+AddText ""Restructuring both combat modules of $global.JHS_UpgradeShip to support 5 fighter bays at the cost of $global.JHS_UpgradeM1SwapCostStr credits.""
 SetTextHighlightColors hColor hColor
 SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeSwapM1CostStr
 FireAll JNS_huboptions",,,
 JHS_Swap_M3_to_M1_Add1,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeInstalled M3
 JHS_Core_UpgradeAvailable M1
-JHS_Core_UpgradeEnoughCredits M1","SetTooltip JHS_Swap_M3_to_M1_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeM1SwapCostStr credits.\n\n$player.creditsStr credits are available.\n\n- Combat configuration is when both modules have 6 fighter bays.\n- Logistic configuration is when both modules support additional cargo and fuel.\n- Balanced configuration is when one module has 6 fighter bays, and other support additional cargo and fuel.""
+JHS_Core_UpgradeEnoughCredits M1","SetTooltip JHS_Swap_M3_to_M1_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeM1SwapCostStr credits.\n\n$player.creditsStr credits are available.\n\n- Combat configuration is when both modules have 5 fighter bays.\n- Logistic configuration is when both modules support additional cargo and fuel.\n- Balanced configuration is when one module has 5 fighter bays, and other support additional cargo and fuel.""
 SetTooltipHighlightColors JHS_Swap_M3_to_M1_option buttonShortcut buttonShortcut buttonShortcut
 SetTooltipHighlights JHS_Swap_M3_to_M1_option $global.JHS_UpgradeShip $global.JHS_UpgradeM1SwapCostStr $player.creditsStr
-JHS_AddConfirmation JHS_Swap_M3_to_M1_option ""Restructuring left combat module of $global.JHS_UpgradeShip to support 6 fighter bays requires $global.JHS_UpgradeM1SwapCostStr credits.\n\n$player.creditsStr credits are available. Do you want to proceed?""",,11:JHS_Swap_M3_to_M1_option:Refit ship's modules from balanced to combat configuration.,
+JHS_AddConfirmation JHS_Swap_M3_to_M1_option ""Restructuring left combat module of $global.JHS_UpgradeShip to support 5 fighter bays requires $global.JHS_UpgradeM1SwapCostStr credits.\n\n$player.creditsStr credits are available. Do you want to proceed?""",,11:JHS_Swap_M3_to_M1_option:Refit ship's modules from balanced to combat configuration.,
 JHS_Swap_M3_to_M1_Add2,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeInstalled M3
 JHS_Core_UpgradeAvailable M1
-!JHS_Core_UpgradeEnoughCredits M1","SetTooltip JHS_Swap_M3_to_M1_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeM1SwapCostStr credits.\n\nOnly $player.creditsStr credits are available.\n\nCombat configuration is when both modules have 6 fighter bays.""
+!JHS_Core_UpgradeEnoughCredits M1","SetTooltip JHS_Swap_M3_to_M1_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeM1SwapCostStr credits.\n\nOnly $player.creditsStr credits are available.\n\nCombat configuration is when both modules have 5 fighter bays.""
 SetTooltipHighlightColors JHS_Swap_M3_to_M1_option buttonShortcut buttonShortcut bad
 SetTooltipHighlights JHS_Swap_M3_to_M1_option $global.JHS_UpgradeShip $global.JHS_UpgradeM1SwapCostStr $player.creditsStr
 SetEnabled JHS_Swap_M3_to_M1_option false",,11:JHS_Swap_M3_to_M1_option:Refit ship's modules from balanced to combat configuration.,
@@ -308,7 +308,7 @@ FireAll JNS_huboptions",,,
 JHS_Swap_M1_to_M2_Add1,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeInstalled M1
 JHS_Core_UpgradeAvailable M2
-JHS_Core_UpgradeEnoughCredits M2","SetTooltip JHS_Swap_M1_to_M2_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeM2SwapCostStr credits.\n\n$player.creditsStr credits are available.\n\n- Combat configuration is when both modules have 6 fighter bays.\n- Logistic configuration is when both modules support additional cargo and fuel.\n- Balanced configuration is when one module has 6 fighter bays, and other support additional cargo and fuel.""
+JHS_Core_UpgradeEnoughCredits M2","SetTooltip JHS_Swap_M1_to_M2_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeM2SwapCostStr credits.\n\n$player.creditsStr credits are available.\n\n- Combat configuration is when both modules have 5 fighter bays.\n- Logistic configuration is when both modules support additional cargo and fuel.\n- Balanced configuration is when one module has 5 fighter bays, and other support additional cargo and fuel.""
 SetTooltipHighlightColors JHS_Swap_M1_to_M2_option buttonShortcut buttonShortcut buttonShortcut
 SetTooltipHighlights JHS_Swap_M1_to_M2_option $global.JHS_UpgradeShip $global.JHS_UpgradeM2SwapCostStr $player.creditsStr
 JHS_AddConfirmation JHS_Swap_M1_to_M2_option ""Rewamping both modules of $global.JHS_UpgradeShip to use wing slots requires $global.JHS_UpgradeM2SwapCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,12:JHS_Swap_M1_to_M2_option:Refit ship's modules from combat to logistic configuration.,
@@ -327,7 +327,7 @@ FireAll JNS_huboptions",,,
 JHS_Swap_M3_to_M2_Add1,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeInstalled M3
 JHS_Core_UpgradeAvailable M2
-JHS_Core_UpgradeEnoughCredits M2","SetTooltip JHS_Swap_M3_to_M2_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeM2SwapCostStr credits.\n\n$player.creditsStr credits are available.\n\n- Combat configuration is when both modules have 6 fighter bays.\n- Logistic configuration is when both modules support additional cargo and fuel.\n- Balanced configuration is when one module has 6 fighter bays, and other support additional cargo and fuel.""
+JHS_Core_UpgradeEnoughCredits M2","SetTooltip JHS_Swap_M3_to_M2_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeM2SwapCostStr credits.\n\n$player.creditsStr credits are available.\n\n- Combat configuration is when both modules have 5 fighter bays.\n- Logistic configuration is when both modules support additional cargo and fuel.\n- Balanced configuration is when one module has 5 fighter bays, and other support additional cargo and fuel.""
 SetTooltipHighlightColors JHS_Swap_M3_to_M2_option buttonShortcut buttonShortcut buttonShortcut
 SetTooltipHighlights JHS_Swap_M3_to_M2_option $global.JHS_UpgradeShip $global.JHS_UpgradeM2SwapCostStr $player.creditsStr
 JHS_AddConfirmation JHS_Swap_M3_to_M2_option ""Rewamping both modules of $global.JHS_UpgradeShip to use wing slots requires $global.JHS_UpgradeM2SwapCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,12:JHS_Swap_M3_to_M2_option:Refit ship's modules from balanced to logistic configuration.,
@@ -347,7 +347,7 @@ FireAll JNS_huboptions",,,
 JHS_Swap_M1_to_M3_Add1,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeInstalled M1
 JHS_Core_UpgradeAvailable M3
-JHS_Core_UpgradeEnoughCredits M3","SetTooltip JHS_Swap_M1_to_M3_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeM3SwapCostStr credits.\n\n$player.creditsStr credits are available.\n\n- Combat configuration is when both modules have 6 fighter bays.\n- Logistic configuration is when both modules support additional cargo and fuel.\n- Balanced configuration is when one module has 6 fighter bays, and other support additional cargo and fuel.""
+JHS_Core_UpgradeEnoughCredits M3","SetTooltip JHS_Swap_M1_to_M3_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeM3SwapCostStr credits.\n\n$player.creditsStr credits are available.\n\n- Combat configuration is when both modules have 5 fighter bays.\n- Logistic configuration is when both modules support additional cargo and fuel.\n- Balanced configuration is when one module has 5 fighter bays, and other support additional cargo and fuel.""
 SetTooltipHighlightColors JHS_Swap_M1_to_M3_option buttonShortcut buttonShortcut buttonShortcut
 SetTooltipHighlights JHS_Swap_M1_to_M3_option $global.JHS_UpgradeShip $global.JHS_UpgradeM3SwapCostStr $player.creditsStr
 JHS_AddConfirmation JHS_Swap_M1_to_M3_option ""Rewamping both modules of $global.JHS_UpgradeShip to use wing slots requires $global.JHS_UpgradeM3SwapCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,13:JHS_Swap_M1_to_M3_option:Refit ship's modules from combat to balanced configuration.,
@@ -366,7 +366,7 @@ FireAll JNS_huboptions",,,
 JHS_Swap_M2_to_M3_Add1,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeInstalled M2
 JHS_Core_UpgradeAvailable M3
-JHS_Core_UpgradeEnoughCredits M3","SetTooltip JHS_Swap_M2_to_M3_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeM3CostStr credits.\n\n$player.creditsStr credits are available.\n\n- Combat configuration is when both modules have 6 fighter bays.\n- Logistic configuration is when both modules support additional cargo and fuel.\n- Balanced configuration is when one module has 6 fighter bays, and other support additional cargo and fuel.""
+JHS_Core_UpgradeEnoughCredits M3","SetTooltip JHS_Swap_M2_to_M3_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeM3CostStr credits.\n\n$player.creditsStr credits are available.\n\n- Combat configuration is when both modules have 5 fighter bays.\n- Logistic configuration is when both modules support additional cargo and fuel.\n- Balanced configuration is when one module has 5 fighter bays, and other support additional cargo and fuel.""
 SetTooltipHighlightColors JHS_Swap_M2_to_M3_option buttonShortcut buttonShortcut buttonShortcut
 SetTooltipHighlights JHS_Swap_M2_to_M3_option $global.JHS_UpgradeShip $global.JHS_UpgradeM3CostStr $player.creditsStr
 JHS_AddConfirmation JHS_Swap_M2_to_M3_option ""Rewamping both modules of $global.JHS_UpgradeShip to use wing slots requires $global.JHS_UpgradeM3CostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,13:JHS_Swap_M2_to_M3_option:Refit ship's modules from logistic to balanced configuration.,

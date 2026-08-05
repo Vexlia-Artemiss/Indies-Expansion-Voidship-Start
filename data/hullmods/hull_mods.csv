@@ -26,7 +26,7 @@ Increases the command point recovery rate by %s when installed on the flagship.
 When deployed in combat, grants %s ECM rating and reduces the weapon range reduction due to enemy ECM by %s.
 
 Coorinates wings on ship's modules to prioritize targeting main hull's target. This effect work even if core hull don't have fighter bays but Don't forget to press engage button (default Z)!!!","Increases command point recovery rate when on flagship, reduces effects of enemy ECM on range, provide ECM rating and coorinates module's wings.",,graphics/hullmods/operations_center.png
-Neavy Weapon Integration,JHS_hwi,,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_hwi,Reduces the ordnance point cost of large ballistic and energy weapons by %s.,Reduces ordnance point cost of large ballistic weapons.,,graphics/hullmods/ballistics_integration.png
+Heavy Weapons Integration,JHS_hwi,,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_hwi,Reduces the ordnance point cost of large ballistic and energy weapons by %s.,Reduces ordnance point cost of large ballistic weapons.,,graphics/hullmods/ballistics_integration.png
 ,,,,,,,,,,,,,,,,,,,
 [Modules] Combat configuration,JHS_Core_Logistics_Harmed,,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_Core_Logistics_Harmed,"Debuff for having more wings on modules: Affects cargo, fuel and DP with supplies/deployment",Debuff for having more wings on modules,,graphics/hullmods/ballistic_rangefinder.png
 [Modules] Logistic configuration,JHS_Core_Logistics_Buffed,,,,,,,,TRUE,,0,0,0,0,Vexlia.JunkHubStart.hullmods.JHS_Core_Logistics_Buffed,"Buff for removing wings on modules: Affects cargo, fuel and DP with supplies/deployment",Buff for removing wings on modules,,graphics/hullmods/rugged_construction.png
