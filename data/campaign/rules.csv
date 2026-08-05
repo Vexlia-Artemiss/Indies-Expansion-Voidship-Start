@@ -114,15 +114,15 @@ JHS_Core_UpgradeAvailable U4
 JHS_Core_UpgradeEnoughCredits U4","SetTooltip JHS_MainHull_Upgrade_U4_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU4CostStr credits.\n\n$player.creditsStr credits are available.\n\nWeapon slot upgrades: 2 Small mounts are changed to Medium, 1 Medium mount is changed to Large, 1 Medium mount changed to Large Universal and 1 Large mount type changed to Universal""
 SetTooltipHighlightColors JHS_MainHull_Upgrade_U4_option buttonShortcut buttonShortcut buttonShortcut
 SetTooltipHighlights JHS_MainHull_Upgrade_U4_option $global.JHS_UpgradeShip $global.JHS_UpgradeU4CostStr $player.creditsStr
-JHS_AddConfirmation JHS_MainHull_Upgrade_U4_option ""Upgrading modular weapon slots and adding Heavy Ballistics Integration on $global.JHS_UpgradeShip requires $global.JHS_UpgradeU4CostStr credits. Combat modules also will get Heavy Ballistics Integration.\n\n$player.creditsStr credits are available. Do you want to proceed?""",,5:JHS_MainHull_Upgrade_U4_option:Upgrade modular weapon slots (+40 OP) and add Heavy Ballistics Integration.,
+JHS_AddConfirmation JHS_MainHull_Upgrade_U4_option ""Upgrading modular weapon slots and adding Heavy Weapons Integration on $global.JHS_UpgradeShip requires $global.JHS_UpgradeU4CostStr credits. Combat modules also will get Heavy Weapons Integration.\n\n$player.creditsStr credits are available. Do you want to proceed?""",,5:JHS_MainHull_Upgrade_U4_option:Upgrade modular weapon slots (+40 OP) and add Heavy Weapons Integration.,
 JHS_MainHull_U4_Add2,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeAvailable U4
 !JHS_Core_UpgradeEnoughCredits U4","SetTooltip JHS_MainHull_Upgrade_U4_option ""Installing this upgrade into $global.JHS_UpgradeShip requires $global.JHS_UpgradeU4CostStr credits.\n\nOnly $player.creditsStr credits are available.\n\nWeapon slot upgrades: 2 Small mounts are changed to Medium, 1 Medium mount is changed to Large, 1 Medium mount changed to Large Universal, and 1 Large mount type changed to Universal""
 SetTooltipHighlightColors JHS_MainHull_Upgrade_U4_option buttonShortcut buttonShortcut bad
 SetTooltipHighlights JHS_MainHull_Upgrade_U4_option $global.JHS_UpgradeShip $global.JHS_UpgradeU4CostStr $player.creditsStr
-SetEnabled JHS_MainHull_Upgrade_U4_option false",,5:JHS_MainHull_Upgrade_U4_option:Upgrade modular weapon slots (+40 OP) and add Heavy Ballistics Integration.,
+SetEnabled JHS_MainHull_Upgrade_U4_option false",,5:JHS_MainHull_Upgrade_U4_option:Upgrade modular weapon slots (+40 OP) and add Heavy Weapons Integration.,
 JHS_MainHull_U4,DialogOptionSelected,$option == JHS_MainHull_Upgrade_U4_option,"JHS_Core_UpgradeShip U4
-AddText ""Upgraded modular weapon slots and added Heavy Ballistics Integration on $global.JHS_UpgradeShip, at the cost of $global.JHS_UpgradeU4CostStr credits.\n\nAdded Heavy Ballistics Integration on combat modules.""
+AddText ""Upgraded modular weapon slots and added Heavy Weapons Integration on $global.JHS_UpgradeShip, at the cost of $global.JHS_UpgradeU4CostStr credits.\n\nAdded Heavy Weapons Integration on combat modules.""
 SetTextHighlightColors hColor hColor
 SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeU4CostStr
 FireAll JNS_huboptions",,,
@@ -392,16 +392,16 @@ JHS_Core_UpgradeAvailable S1
 JHS_Core_UpgradeEnoughCredits S1","SetTooltip JHS_Swap_S2_to_S1_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeS1SwapCostStr credits.\n\n$player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_Swap_S2_to_S1_option buttonShortcut buttonShortcut buttonShortcut
 SetTooltipHighlights JHS_Swap_S2_to_S1_option $global.JHS_UpgradeShip $global.JHS_UpgradeS1SwapCostStr $player.creditsStr
-JHS_AddConfirmation JHS_Swap_S2_to_S1_option ""Changing ship system of $global.JHS_UpgradeShip from Offence Focus to Burn Drive requires $global.JHS_UpgradeS1SwapCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,14:JHS_Swap_S2_to_S1_option:Change ship system from Offence Focus to Burn Drive.,
+JHS_AddConfirmation JHS_Swap_S2_to_S1_option ""Changing ship system of $global.JHS_UpgradeShip from Offense Focus to Burn Drive requires $global.JHS_UpgradeS1SwapCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,14:JHS_Swap_S2_to_S1_option:Change ship system from Offense Focus to Burn Drive.,
 JHS_Swap_S2_to_S1_Add2,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeInstalled S2
 JHS_Core_UpgradeAvailable S1
 !JHS_Core_UpgradeEnoughCredits S1","SetTooltip JHS_Swap_S2_to_S1_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeS1SwapCostStr credits.\n\nOnly $player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_Swap_S2_to_S1_option buttonShortcut buttonShortcut bad
 SetTooltipHighlights JHS_Swap_S2_to_S1_option $global.JHS_UpgradeShip $global.JHS_UpgradeS1SwapCostStr $player.creditsStr
-SetEnabled JHS_Swap_S2_to_S1_option false",,14:JHS_Swap_S2_to_S1_option:Change ship system from Offence Focus to Burn Drive.,
+SetEnabled JHS_Swap_S2_to_S1_option false",,14:JHS_Swap_S2_to_S1_option:Change ship system from Offense Focus to Burn Drive.,
 JHS_Swap_S2_to_S1,DialogOptionSelected,$option == JHS_Swap_S2_to_S1_option,"JHS_Core_UpgradeShip S1
-AddText ""Changed ship system of $global.JHS_UpgradeShip from Offence Focus to Burn Drive at the cost of $global.JHS_UpgradeS1SwapCostStr credits.""
+AddText ""Changed ship system of $global.JHS_UpgradeShip from Offense Focus to Burn Drive at the cost of $global.JHS_UpgradeS1SwapCostStr credits.""
 SetTextHighlightColors hColor hColor
 SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeS1SwapCostStr
 FireAll JNS_huboptions",,,
@@ -434,16 +434,16 @@ JHS_Core_UpgradeAvailable S2
 JHS_Core_UpgradeEnoughCredits S2","SetTooltip JHS_Swap_S1_to_S2_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeS2SwapCostStr credits.\n\n$player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_Swap_S1_to_S2_option buttonShortcut buttonShortcut buttonShortcut
 SetTooltipHighlights JHS_Swap_S1_to_S2_option $global.JHS_UpgradeShip $global.JHS_UpgradeS2SwapCostStr $player.creditsStr
-JHS_AddConfirmation JHS_Swap_S1_to_S2_option ""Changing ship system of $global.JHS_UpgradeShip from Burn Drive to Offence Focus requires $global.JHS_UpgradeS2SwapCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,15:JHS_Swap_S1_to_S2_option:Change ship system from Burn Drive to Offence focus.,
+JHS_AddConfirmation JHS_Swap_S1_to_S2_option ""Changing ship system of $global.JHS_UpgradeShip from Burn Drive to Offense Focus requires $global.JHS_UpgradeS2SwapCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,15:JHS_Swap_S1_to_S2_option:Change ship system from Burn Drive to Offense Focus.,
 JHS_Swap_S1_to_S2_Add2,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeInstalled S1
 JHS_Core_UpgradeAvailable S2
 !JHS_Core_UpgradeEnoughCredits S2","SetTooltip JHS_Swap_S1_to_S2_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeS2SwapCostStr credits.\n\nOnly $player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_Swap_S1_to_S2_option buttonShortcut buttonShortcut bad
 SetTooltipHighlights JHS_Swap_S1_to_S2_option $global.JHS_UpgradeShip $global.JHS_UpgradeS2SwapCostStr $player.creditsStr
-SetEnabled JHS_Swap_S1_to_S2_option false",,15:JHS_Swap_S1_to_S2_option:Change ship system from Burn Drive to Offence focus.,
+SetEnabled JHS_Swap_S1_to_S2_option false",,15:JHS_Swap_S1_to_S2_option:Change ship system from Burn Drive to Offense Focus.,
 JHS_Swap_S1_to_S2,DialogOptionSelected,$option == JHS_Swap_S1_to_S2_option,"JHS_Core_UpgradeShip S2
-AddText ""Changed ship system of $global.JHS_UpgradeShip from Burn Drive to Offence Focus at the cost of $global.JHS_UpgradeS2SwapCostStr credits.""
+AddText ""Changed ship system of $global.JHS_UpgradeShip from Burn Drive to Offense Focus at the cost of $global.JHS_UpgradeS2SwapCostStr credits.""
 SetTextHighlightColors hColor hColor
 SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeS2SwapCostStr
 FireAll JNS_huboptions",,,
@@ -454,16 +454,16 @@ JHS_Core_UpgradeAvailable S2
 JHS_Core_UpgradeEnoughCredits S2","SetTooltip JHS_Swap_S3_to_S2_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeS2SwapCostStr credits.\n\n$player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_Swap_S3_to_S2_option buttonShortcut buttonShortcut buttonShortcut
 SetTooltipHighlights JHS_Swap_S3_to_S2_option $global.JHS_UpgradeShip $global.JHS_UpgradeS2SwapCostStr $player.creditsStr
-JHS_AddConfirmation JHS_Swap_S3_to_S2_option ""Changing ship system of $global.JHS_UpgradeShip from Fighter Link to Offence Focus requires $global.JHS_UpgradeS2SwapCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,15:JHS_Swap_S3_to_S2_option:Change ship system from Fighter Link to Offence focus.,
+JHS_AddConfirmation JHS_Swap_S3_to_S2_option ""Changing ship system of $global.JHS_UpgradeShip from Fighter Link to Offense Focus requires $global.JHS_UpgradeS2SwapCostStr credits. $player.creditsStr credits are available. Do you want to proceed?""",,15:JHS_Swap_S3_to_S2_option:Change ship system from Fighter Link to Offense Focus.,
 JHS_Swap_S3_to_S2_Add2,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeInstalled S3
 JHS_Core_UpgradeAvailable S2
 !JHS_Core_UpgradeEnoughCredits S2","SetTooltip JHS_Swap_S3_to_S2_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeS2SwapCostStr credits.\n\nOnly $player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_Swap_S3_to_S2_option buttonShortcut buttonShortcut bad
 SetTooltipHighlights JHS_Swap_S3_to_S2_option $global.JHS_UpgradeShip $global.JHS_UpgradeS2SwapCostStr $player.creditsStr
-SetEnabled JHS_Swap_S3_to_S2_option false",,15:JHS_Swap_S3_to_S2_option:Change ship system from Fighter Link to Offence focus.,
+SetEnabled JHS_Swap_S3_to_S2_option false",,15:JHS_Swap_S3_to_S2_option:Change ship system from Fighter Link to Offense Focus.,
 JHS_Swap_S3_to_S2,DialogOptionSelected,$option == JHS_Swap_S3_to_S2_option,"JHS_Core_UpgradeShip S2
-AddText ""Changed ship system of $global.JHS_UpgradeShip from Fighter Link to Offence Focus at the cost of $global.JHS_UpgradeS2SwapCostStr credits.""
+AddText ""Changed ship system of $global.JHS_UpgradeShip from Fighter Link to Offense Focus at the cost of $global.JHS_UpgradeS2SwapCostStr credits.""
 SetTextHighlightColors hColor hColor
 SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeS2SwapCostStr
 FireAll JNS_huboptions",,,
@@ -496,16 +496,16 @@ JHS_Core_UpgradeAvailable S3
 JHS_Core_UpgradeEnoughCredits S3","SetTooltip JHS_Swap_S2_to_S3_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeS3SwapCostStr credits.\n\n$player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_Swap_S2_to_S3_option buttonShortcut buttonShortcut buttonShortcut
 SetTooltipHighlights JHS_Swap_S2_to_S3_option $global.JHS_UpgradeShip $global.JHS_UpgradeS3SwapCostStr $player.creditsStr
-JHS_AddConfirmation JHS_Swap_S2_to_S3_option ""Changing ship system of $global.JHS_UpgradeShip from Offence Focus to Fighter Link requires $global.JHS_UpgradeS3SwapCostStr credits.\n\n$player.creditsStr credits are available. Do you want to proceed?""",,16:JHS_Swap_S2_to_S3_option:Change ship system from Offence Focus to Fighter Link.,
+JHS_AddConfirmation JHS_Swap_S2_to_S3_option ""Changing ship system of $global.JHS_UpgradeShip from Offense Focus to Fighter Link requires $global.JHS_UpgradeS3SwapCostStr credits.\n\n$player.creditsStr credits are available. Do you want to proceed?""",,16:JHS_Swap_S2_to_S3_option:Change ship system from Offense Focus to Fighter Link.,
 JHS_Swap_S2_to_S3_Add2,JNS_huboptions,"$hasMarket
 JHS_Core_UpgradeInstalled S2
 JHS_Core_UpgradeAvailable S3
 !JHS_Core_UpgradeEnoughCredits S3","SetTooltip JHS_Swap_S2_to_S3_option ""Swapping to this upgrade for $global.JHS_UpgradeShip requires $global.JHS_UpgradeS3SwapCostStr credits.\n\nOnly $player.creditsStr credits are available.""
 SetTooltipHighlightColors JHS_Swap_S2_to_S3_option buttonShortcut buttonShortcut bad
 SetTooltipHighlights JHS_Swap_S2_to_S3_option $global.JHS_UpgradeShip $global.JHS_UpgradeS3SwapCostStr $player.creditsStr
-SetEnabled JHS_Swap_S2_to_S3_option false",,16:JHS_Swap_S2_to_S3_option:Change ship system from Offence Focus to Fighter Link.,
+SetEnabled JHS_Swap_S2_to_S3_option false",,16:JHS_Swap_S2_to_S3_option:Change ship system from Offense Focus to Fighter Link.,
 JHS_Swap_S2_to_S3,DialogOptionSelected,$option == JHS_Swap_S2_to_S3_option,"JHS_Core_UpgradeShip S3
-AddText ""Changed ship system of $global.JHS_UpgradeShip from Offence Focus to Fighter Link at the cost of $global.JHS_UpgradeS3SwapCostStr credits.""
+AddText ""Changed ship system of $global.JHS_UpgradeShip from Offense Focus to Fighter Link at the cost of $global.JHS_UpgradeS3SwapCostStr credits.""
 SetTextHighlightColors hColor hColor
 SetTextHighlights $global.JHS_UpgradeShip $global.JHS_UpgradeS3SwapCostStr
 FireAll JNS_huboptions",,,
