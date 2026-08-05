@@ -31,18 +31,6 @@ public class JHS_FleetGantry_collapsed extends BaseHullMod implements HullModFle
     //Vexlia: Copy of IEP version without frigate stuff
 
     public void applyEffectsBeforeShipCreation(ShipAPI.HullSize hullSize, MutableShipStatsAPI stats, String id) {
-        if (Global.getSector().getPlayerFleet() != null) {
-            CampaignFleetAPI fleet = Global.getSector().getPlayerFleet();
-
-            for(FleetMemberAPI member : fleet.getFleetData().getMembersListCopy())
-            {
-                member.getStats().getSuppliesPerMonth().modifyMult(MOD_KEY, MAINTENANCE_MULT_VAGABOND);
-                member.getStats().getSuppliesToRecover().modifyMult(MOD_KEY, 1-DP_BONUS);
-                float baseCost = member.getStats().getSuppliesToRecover().getBaseValue();
-                float reduction = baseCost * DP_BONUS;
-                member.getStats().getDynamic().getMod(Stats.DEPLOYMENT_POINTS_MOD).modifyFlat(MOD_KEY, -reduction);
-            }
-        }
     }
 
 	@Override
@@ -52,10 +40,32 @@ public class JHS_FleetGantry_collapsed extends BaseHullMod implements HullModFle
     public boolean withAdvanceInCampaign() { return false; }
 
     @Override
-    public boolean withOnFleetSync() { return false; }
+    public boolean withOnFleetSync() { return true; }
 
     @Override
     public void onFleetSync(CampaignFleetAPI fleet) {
+        boolean gantry_active = false;
+        for (FleetMemberAPI member : fleet.getFleetData().getMembersListCopy()) {
+            if (!gantry_active && member.getVariant().hasHullMod("JHS_FleetGantry_collapsed")) {
+                gantry_active = true;
+            }
+        }
+
+        if (gantry_active) {
+            for (FleetMemberAPI member : fleet.getFleetData().getMembersListCopy()) {
+                member.getStats().getSuppliesPerMonth().modifyMult(MOD_KEY, MAINTENANCE_MULT_VAGABOND);
+                member.getStats().getSuppliesToRecover().modifyMult(MOD_KEY, 1 - DP_BONUS);
+                float baseCost = member.getStats().getSuppliesToRecover().getBaseValue();
+                float reduction = baseCost * DP_BONUS;
+                member.getStats().getDynamic().getMod(Stats.DEPLOYMENT_POINTS_MOD).modifyFlat(MOD_KEY, -reduction);
+            }
+        } else {
+            for (FleetMemberAPI member : fleet.getFleetData().getMembersListCopy()) {
+                member.getStats().getSuppliesPerMonth().unmodifyMult(MOD_KEY);
+                member.getStats().getSuppliesToRecover().unmodifyMult(MOD_KEY);
+                member.getStats().getDynamic().getMod(Stats.DEPLOYMENT_POINTS_MOD).unmodifyFlat(MOD_KEY);
+            }
+        }
     }
 
     @Override

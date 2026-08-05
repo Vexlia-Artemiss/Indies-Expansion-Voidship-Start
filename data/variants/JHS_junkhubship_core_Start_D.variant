@@ -8,11 +8,10 @@
     "permaMods": [
         "comp_structure",
         "defective_manufactory",
-        "erratic_injector",
-        "malfunctioning_comms",
         "faulty_grid",
         "fragile_subsystems",
-        "degraded_drive_field",
+        "damaged_mounts",
+        "glitched_sensors",
         "degraded_engines"
     ],
     "quality": 1.0,

@@ -25,18 +25,6 @@ public class JHS_FleetGantry extends BaseHullMod implements HullModFleetEffect  
     private static final float DP_BONUS = 0.1F;
 
     public void applyEffectsBeforeShipCreation(ShipAPI.HullSize hullSize, MutableShipStatsAPI stats, String id) {
-        if (Global.getSector().getPlayerFleet() != null) {
-            CampaignFleetAPI fleet = Global.getSector().getPlayerFleet();
-
-            for(FleetMemberAPI member : fleet.getFleetData().getMembersListCopy())
-            {
-                member.getStats().getSuppliesPerMonth().modifyMult(MOD_KEY, MAINTENANCE_MULT_VAGABOND);
-                member.getStats().getSuppliesToRecover().modifyMult(MOD_KEY, 1-DP_BONUS);
-                float baseCost = member.getStats().getSuppliesToRecover().getBaseValue();
-                float reduction = baseCost * DP_BONUS;
-                member.getStats().getDynamic().getMod(Stats.DEPLOYMENT_POINTS_MOD).modifyFlat(MOD_KEY, -reduction);
-            }
-        }
     }
 
     @Override
@@ -54,15 +42,30 @@ public class JHS_FleetGantry extends BaseHullMod implements HullModFleetEffect  
 
     public void onFleetSync(CampaignFleetAPI fleet) {
         boolean gantry_active = false;
-        for(FleetMemberAPI member : fleet.getFleetData().getMembersListCopy()){
-            if(!gantry_active && member.getVariant().hasHullMod("JHS_FleetGantry")){
+        for (FleetMemberAPI member : fleet.getFleetData().getMembersListCopy()) {
+            if (!gantry_active && member.getVariant().hasHullMod("JHS_FleetGantry")) {
                 gantry_active = true;
             }
         }
+
         if (gantry_active) {
             fleet.getStats().getDynamic().getMod(Stats.SUSTAINED_BURN_BONUS).modifyFlat(MOD_KEY, BURN_BONUS);
+
+            for (FleetMemberAPI member : fleet.getFleetData().getMembersListCopy()) {
+                member.getStats().getSuppliesPerMonth().modifyMult(MOD_KEY, MAINTENANCE_MULT_VAGABOND);
+                member.getStats().getSuppliesToRecover().modifyMult(MOD_KEY, 1 - DP_BONUS);
+                float baseCost = member.getStats().getSuppliesToRecover().getBaseValue();
+                float reduction = baseCost * DP_BONUS;
+                member.getStats().getDynamic().getMod(Stats.DEPLOYMENT_POINTS_MOD).modifyFlat(MOD_KEY, -reduction);
+            }
         } else {
             fleet.getStats().getDynamic().getMod(Stats.SUSTAINED_BURN_BONUS).unmodifyFlat(MOD_KEY);
+
+            for (FleetMemberAPI member : fleet.getFleetData().getMembersListCopy()) {
+                member.getStats().getSuppliesPerMonth().unmodifyMult(MOD_KEY);
+                member.getStats().getSuppliesToRecover().unmodifyMult(MOD_KEY);
+                member.getStats().getDynamic().getMod(Stats.DEPLOYMENT_POINTS_MOD).unmodifyFlat(MOD_KEY);
+            }
         }
     }
 

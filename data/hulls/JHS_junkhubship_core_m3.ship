@@ -32,10 +32,10 @@
             "size": "MEDIUM",
             "type": "COMPOSITE",
             "mount": "TURRET",
-            "arc": 88,
+            "arc": 90,
             "angle": 0,
             "locations": [
-                   286.5,      -20
+                     286,      -20
             ]
         },
         {
@@ -43,10 +43,10 @@
             "size": "MEDIUM",
             "type": "COMPOSITE",
             "mount": "TURRET",
-            "arc": 88,
+            "arc": 90,
             "angle": 0,
             "locations": [
-                   286.5,       20
+                     286,       20
             ]
         },
         {
@@ -54,10 +54,10 @@
             "size": "SMALL",
             "type": "BALLISTIC",
             "mount": "TURRET",
-            "arc": 104,
-            "angle": -133.5,
+            "arc": 120,
+            "angle": 270,
             "locations": [
-                  -210.5,     -116
+                    -210,   -115.5
             ]
         },
         {
@@ -65,10 +65,10 @@
             "size": "SMALL",
             "type": "BALLISTIC",
             "mount": "TURRET",
-            "arc": 104,
-            "angle": 133.5,
+            "arc": 120,
+            "angle": 90,
             "locations": [
-                  -210.5,      116
+                    -210,    115.5
             ]
         },
         {
@@ -79,7 +79,7 @@
             "arc": 10,
             "angle": 90,
             "locations": [
-                  -222.5,      192
+                    -222,      190
             ]
         },
         {
@@ -90,7 +90,7 @@
             "arc": 10,
             "angle": -90,
             "locations": [
-                  -222.5,     -192
+                    -222,     -190
             ]
         },
         {
@@ -101,7 +101,7 @@
             "arc": 10,
             "angle": 90,
             "locations": [
-                  -243.5,    185.5
+                    -243,      185
             ]
         },
         {
@@ -112,29 +112,29 @@
             "arc": 10,
             "angle": -90,
             "locations": [
-                  -243.5,   -185.5
+                    -243,     -185
             ]
         },
         {
             "id": "WS0021",
             "size": "SMALL",
             "type": "MISSILE",
-            "mount": "HARDPOINT",
-            "arc": 10,
-            "angle": -90,
+            "mount": "TURRET",
+            "arc": 90,
+            "angle": 270,
             "locations": [
-                  -250.5,   -117.5
+                    -250,     -117
             ]
         },
         {
             "id": "WS0022",
             "size": "SMALL",
             "type": "MISSILE",
-            "mount": "HARDPOINT",
-            "arc": 10,
+            "mount": "TURRET",
+            "arc": 90,
             "angle": 90,
             "locations": [
-                  -250.5,    117.5
+                    -250,      117
             ]
         },
         {
@@ -167,7 +167,7 @@
             "arc": 10,
             "angle": 0,
             "locations": [
-                   134.5,      -53
+                     135,      -53
             ]
         },
         {
@@ -178,7 +178,7 @@
             "arc": 10,
             "angle": 0,
             "locations": [
-                   134.5,       53
+                     135,       53
             ]
         },
         {
@@ -189,7 +189,7 @@
             "arc": 10,
             "angle": 0,
             "locations": [
-                   334.5,      -44
+                     333,      -44
             ]
         },
         {
@@ -200,7 +200,7 @@
             "arc": 10,
             "angle": 0,
             "locations": [
-                   334.5,       44
+                     333,       44
             ]
         },
         {
@@ -208,8 +208,8 @@
             "size": "SMALL",
             "type": "BALLISTIC",
             "mount": "TURRET",
-            "arc": 157,
-            "angle": -36,
+            "arc": 110,
+            "angle": 315,
             "locations": [
                      266,      -56
             ]
@@ -219,8 +219,8 @@
             "size": "SMALL",
             "type": "BALLISTIC",
             "mount": "TURRET",
-            "arc": 157,
-            "angle": 36,
+            "arc": 110,
+            "angle": 45,
             "locations": [
                      266,       56
             ]
@@ -230,7 +230,7 @@
             "size": "SMALL",
             "type": "BALLISTIC",
             "mount": "TURRET",
-            "arc": 88,
+            "arc": 110,
             "angle": 0,
             "locations": [
                      325,      -62
@@ -241,7 +241,7 @@
             "size": "SMALL",
             "type": "BALLISTIC",
             "mount": "TURRET",
-            "arc": 88,
+            "arc": 110,
             "angle": 0,
             "locations": [
                      325,       62
@@ -252,10 +252,10 @@
             "size": "SMALL",
             "type": "BALLISTIC",
             "mount": "TURRET",
-            "arc": 191,
-            "angle": -80,
+            "arc": 180,
+            "angle": 270,
             "locations": [
-                   236.5,      -58
+                     237,      -58
             ]
         },
         {
@@ -263,10 +263,10 @@
             "size": "SMALL",
             "type": "BALLISTIC",
             "mount": "TURRET",
-            "arc": 191,
-            "angle": 80,
+            "arc": 180,
+            "angle": 90,
             "locations": [
-                   236.5,       58
+                     237,       58
             ]
         },
         {
@@ -274,10 +274,10 @@
             "size": "SMALL",
             "type": "BALLISTIC",
             "mount": "TURRET",
-            "arc": 171,
-            "angle": -80,
+            "arc": 150,
+            "angle": 270,
             "locations": [
-                   109.5,      -54
+                     110,      -54
             ]
         },
         {
@@ -285,10 +285,10 @@
             "size": "SMALL",
             "type": "BALLISTIC",
             "mount": "TURRET",
-            "arc": 171,
-            "angle": 80,
+            "arc": 150,
+            "angle": 90,
             "locations": [
-                   109.5,       54
+                     110,       54
             ]
         },
         {
@@ -296,10 +296,10 @@
             "size": "SMALL",
             "type": "BALLISTIC",
             "mount": "TURRET",
-            "arc": 94,
-            "angle": -54,
+            "arc": 110,
+            "angle": 315,
             "locations": [
-                  -106.5,     -148
+                    -106,     -148
             ]
         },
         {
@@ -307,10 +307,10 @@
             "size": "SMALL",
             "type": "BALLISTIC",
             "mount": "TURRET",
-            "arc": 94,
-            "angle": 54,
+            "arc": 110,
+            "angle": 45,
             "locations": [
-                  -106.5,      148
+                    -106,      148
             ]
         },
         {
@@ -318,10 +318,10 @@
             "size": "SMALL",
             "type": "HYBRID",
             "mount": "TURRET",
-            "arc": 168,
-            "angle": -78,
+            "arc": 150,
+            "angle": 270,
             "locations": [
-                   -22.5,      -48
+                     -22,      -48
             ]
         },
         {
@@ -329,10 +329,10 @@
             "size": "SMALL",
             "type": "HYBRID",
             "mount": "TURRET",
-            "arc": 168,
-            "angle": 78,
+            "arc": 150,
+            "angle": 90,
             "locations": [
-                   -22.5,       48
+                     -22,       48
             ]
         },
         {
@@ -343,7 +343,7 @@
             "arc": 150,
             "angle": -90,
             "locations": [
-                   -59.5,      -58
+                     -59,      -58
             ]
         },
         {
@@ -354,7 +354,7 @@
             "arc": 150,
             "angle": 90,
             "locations": [
-                   -59.5,       58
+                     -59,       58
             ]
         },
         {
@@ -362,10 +362,10 @@
             "size": "SMALL",
             "type": "BALLISTIC",
             "mount": "TURRET",
-            "arc": 149,
+            "arc": 150,
             "angle": -90,
             "locations": [
-                  -141.5,      -60
+                    -141,      -60
             ]
         },
         {
@@ -373,10 +373,10 @@
             "size": "SMALL",
             "type": "BALLISTIC",
             "mount": "TURRET",
-            "arc": 149,
+            "arc": 150,
             "angle": 90,
             "locations": [
-                  -141.5,       60
+                    -141,       60
             ]
         },
         {
@@ -384,10 +384,10 @@
             "size": "SMALL",
             "type": "BALLISTIC",
             "mount": "TURRET",
-            "arc": 144,
+            "arc": 140,
             "angle": -70,
             "locations": [
-                  -182.5,      -79
+                    -182,      -79
             ]
         },
         {
@@ -395,10 +395,10 @@
             "size": "SMALL",
             "type": "BALLISTIC",
             "mount": "TURRET",
-            "arc": 144,
+            "arc": 140,
             "angle": 70,
             "locations": [
-                  -182.5,       79
+                    -182,       79
             ]
         },
         {
@@ -406,10 +406,10 @@
             "size": "SMALL",
             "type": "BALLISTIC",
             "mount": "TURRET",
-            "arc": 198,
-            "angle": -115,
+            "arc": 140,
+            "angle": -110,
             "locations": [
-                  -220.5,      -84
+                    -220,      -84
             ]
         },
         {
@@ -417,10 +417,10 @@
             "size": "SMALL",
             "type": "BALLISTIC",
             "mount": "TURRET",
-            "arc": 198,
-            "angle": 115,
+            "arc": 140,
+            "angle": 110,
             "locations": [
-                  -220.5,       84
+                    -220,       84
             ]
         },
         {
@@ -428,8 +428,8 @@
             "size": "SMALL",
             "type": "BALLISTIC",
             "mount": "TURRET",
-            "arc": 194,
-            "angle": -105,
+            "arc": 180,
+            "angle": -135,
             "locations": [
                     -225,      -55
             ]
@@ -439,8 +439,8 @@
             "size": "SMALL",
             "type": "BALLISTIC",
             "mount": "TURRET",
-            "arc": 194,
-            "angle": 105,
+            "arc": 180,
+            "angle": 135,
             "locations": [
                     -225,       55
             ]
@@ -450,8 +450,8 @@
             "size": "SMALL",
             "type": "BALLISTIC",
             "mount": "TURRET",
-            "arc": 142,
-            "angle": -140,
+            "arc": 120,
+            "angle": 270,
             "locations": [
                   -204.5,     -147
             ]
@@ -461,8 +461,8 @@
             "size": "SMALL",
             "type": "BALLISTIC",
             "mount": "TURRET",
-            "arc": 142,
-            "angle": 140,
+            "arc": 120,
+            "angle": 90,
             "locations": [
                   -204.5,      147
             ]
@@ -475,7 +475,7 @@
             "arc": 170,
             "angle": -90,
             "locations": [
-                  -198.5,     -180
+                    -198,     -180
             ]
         },
         {
@@ -486,7 +486,7 @@
             "arc": 170,
             "angle": 90,
             "locations": [
-                  -198.5,      180
+                    -198,      180
             ]
         },
         {
@@ -494,10 +494,10 @@
             "size": "MEDIUM",
             "type": "HYBRID",
             "mount": "TURRET",
-            "arc": 208,
-            "angle": -50,
+            "arc": 210,
+            "angle": 315,
             "locations": [
-                     8.5,      -30
+                       9,      -30
             ]
         },
         {
@@ -505,21 +505,21 @@
             "size": "MEDIUM",
             "type": "HYBRID",
             "mount": "TURRET",
-            "arc": 208,
-            "angle": 50,
+            "arc": 210,
+            "angle": 45,
             "locations": [
-                     8.5,       30
+                       9,       30
             ]
         },
         {
             "id": "WS0063",
             "size": "LARGE",
             "type": "HYBRID",
-            "mount": "HARDPOINT",
-            "arc": 17,
+            "mount": "TURRET",
+            "arc": 210,
             "angle": 0,
             "locations": [
-                     6.5,        0
+                      15,        0
             ]
         },
         {
@@ -594,7 +594,7 @@
             "type": "BUILT_IN",
             "mount": "HIDDEN",
             "arc": 0,
-            "angle": 148,
+            "angle": 150,
             "locations": [
                     -239,      147
             ]
@@ -605,7 +605,7 @@
             "type": "BUILT_IN",
             "mount": "HIDDEN",
             "arc": 0,
-            "angle": -148,
+            "angle": -150,
             "locations": [
                     -239,     -147
             ]
@@ -680,23 +680,23 @@
     "engineSlots": [
         {
             "location": [
-                -312, 74.5
+                -311, 75
             ],
             "length": 201.646774,
             "width": 43.165913,
             "angle": 180,
             "contrailSize": 43,
-            "style": "LOW_TECH"
+            "style": "ONSLAUGHT_MKI"
         },
         {
             "location": [
-                -312, -74.5
+                -311, -75
             ],
             "length": 201.649994,
             "width": 43.169998,
             "angle": 180,
             "contrailSize": 43,
-            "style": "LOW_TECH"
+            "style": "ONSLAUGHT_MKI"
         },
         {
             "location": [
@@ -706,7 +706,7 @@
             "width": 20.5,
             "angle": 180,
             "contrailSize": 20,
-            "style": "HIGH_TECH"
+            "style": "ONSLAUGHT_MKI"
         },
         {
             "location": [
@@ -716,7 +716,7 @@
             "width": 20.049999,
             "angle": -180,
             "contrailSize": 20,
-            "style": "HIGH_TECH"
+            "style": "ONSLAUGHT_MKI"
         },
         {
             "location": [
@@ -726,7 +726,7 @@
             "width": 26,
             "angle": 180,
             "contrailSize": 26,
-            "style": "LOW_TECH"
+            "style": "ONSLAUGHT_MKI"
         },
         {
             "location": [
@@ -736,7 +736,7 @@
             "width": 26,
             "angle": -180,
             "contrailSize": 26,
-            "style": "LOW_TECH"
+            "style": "ONSLAUGHT_MKI"
         },
         {
             "location": [
@@ -746,7 +746,7 @@
             "width": 12.53916,
             "angle": 180,
             "contrailSize": 12,
-            "style": "LOW_TECH"
+            "style": "ONSLAUGHT_MKI"
         },
         {
             "location": [
@@ -756,7 +756,7 @@
             "width": 12.53916,
             "angle": -180,
             "contrailSize": 12,
-            "style": "LOW_TECH"
+            "style": "ONSLAUGHT_MKI"
         },
         {
             "location": [
@@ -766,7 +766,7 @@
             "width": 98,
             "angle": 180,
             "contrailSize": 98,
-            "style": "HIGH_TECH"
+            "style": "ONSLAUGHT_MKI"
         }
     ],
     "bounds": [

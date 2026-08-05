@@ -5,7 +5,7 @@ import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 
 public class JHS_OffenceFocus_Stats extends BaseShipSystemScript {
 
-    public static final float ROF_BONUS = 80f;
+    public static final float ROF_BONUS = 70f;
     public static final float FLUX_REDUCTION = 40f;
 
     public static final float DAMAGE_BONUS_PERCENT = 30f;

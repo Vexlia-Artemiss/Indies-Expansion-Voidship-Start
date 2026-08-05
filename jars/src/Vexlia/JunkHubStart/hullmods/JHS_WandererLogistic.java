@@ -3,11 +3,13 @@ package Vexlia.JunkHubStart.hullmods;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.CampaignFleetAPI;
 import com.fs.starfarer.api.combat.BaseHullMod;
+import com.fs.starfarer.api.combat.HullModFleetEffect;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 
-public class JHS_WandererLogistic extends BaseHullMod {
+public class JHS_WandererLogistic extends BaseHullMod  implements HullModFleetEffect {
     private static final float FUEL_ADDED_MAX = 2000.0F;
     private static final float FUEL_ADDED_MIN = 200.0F;
     private static final float CARGO_ADDED_MAX = 2000.0F;
@@ -15,10 +17,19 @@ public class JHS_WandererLogistic extends BaseHullMod {
     private static final float MAINTENANCE_MULT = 0.6F;
     private static final float FUEL_USE_MULT = 0.7F;
 
+    public static final String MOD_KEY = "JHS_JHS_WandererLogistic_bonus";
+
     public void applyEffectsBeforeShipCreation(ShipAPI.HullSize hullSize, MutableShipStatsAPI stats, String id) {
         if (Global.getSector().getPlayerFleet() != null) {
             CampaignFleetAPI fleet = Global.getSector().getPlayerFleet();
-            int fleetNumber = fleet.getFleetData().getNumMembers();
+            int fleetNumber = 0;
+
+            for (FleetMemberAPI member : fleet.getFleetData().getMembersListCopy()) {
+                if (!member.isMothballed()) {
+                    fleetNumber++;
+                }
+            }
+
             if (fleetNumber <= 5) {
                 stats.getFuelMod().modifyFlat(id, CARGO_ADDED_MAX);
                 stats.getCargoMod().modifyFlat(id, FUEL_ADDED_MAX);
@@ -44,5 +55,54 @@ public class JHS_WandererLogistic extends BaseHullMod {
     @Override
     public void addPostDescriptionSection(TooltipMakerAPI tooltip, ShipAPI.HullSize hullSize, ShipAPI ship, float width, boolean isForModSpec) {
         super.addPostDescriptionSection(tooltip, hullSize, ship, width, isForModSpec);
+    }
+
+    @Override
+    public void advanceInCampaign(CampaignFleetAPI fleet) {
+
+    }
+
+    @Override
+    public boolean withAdvanceInCampaign() {
+        return false;
+    }
+
+    @Override
+    public boolean withOnFleetSync() {
+        return true;
+    }
+
+    @Override
+    public void onFleetSync(CampaignFleetAPI fleet) {
+        /*
+        int fleetNumber = 0;
+        FleetMemberAPI hubship = null;
+        for (FleetMemberAPI member : fleet.getFleetData().getMembersListCopy()) {
+            if (member.getVariant().hasHullMod("JHS_WandererLogistic")) {
+                hubship = member;
+            }
+
+            if (!member.isMothballed()) {
+                fleetNumber++;
+            }
+        }
+
+        if(hubship == null){
+            return;
+        }
+
+        if (fleetNumber <= 5) {
+            hubship.getStats().getFuelMod().modifyFlat(MOD_KEY, CARGO_ADDED_MAX);
+            hubship.getStats().getCargoMod().modifyFlat(MOD_KEY, FUEL_ADDED_MAX);
+            hubship.getStats().getSuppliesPerMonth().modifyMult(MOD_KEY, MAINTENANCE_MULT);
+            hubship.getStats().getFuelUseMod().modifyMult(MOD_KEY, FUEL_USE_MULT);
+        } else {
+            hubship.getStats().getFuelMod().unmodifyFlat(MOD_KEY);
+            hubship.getStats().getCargoMod().unmodifyFlat(MOD_KEY);
+            hubship.getStats().getSuppliesPerMonth().unmodifyMult(MOD_KEY);
+            hubship.getStats().getFuelUseMod().unmodifyMult(MOD_KEY);
+        }
+
+         */
     }
 }

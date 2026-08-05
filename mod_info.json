@@ -3,7 +3,7 @@
   "name": "Voidfaring Hubship Start - Upgrade and Enjoy!", # Displayed to the player
   "author": "Vexlia Artemiss",
   "utility": false,
-  "version": "1.0b",
+  "version": "1.1a",
   "description": "Explore the sector starting with Djoeng Voidfaring hubship. Custom start featuring full on TIM style upgrade system!",
   "gameVersion": "0.98a-RC5",
   "jars": [ "jars/JunkHubStart.jar" ],

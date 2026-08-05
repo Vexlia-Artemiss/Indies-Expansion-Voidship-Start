@@ -13,6 +13,8 @@ public class JHS_IDs {
     public static String Collapsed_Gantry = "JHS_FleetGantry_collapsed";
     public static String RemoveDecks = "JHS_RemoveDecks";
     public static String VoidshipCommand = "JHS_VoidshipCommand";
+    public static String HeavyWeaponsIntegration = "JHS_hwi";
+
     public static String L_Module_AddDecks= "JHS_AddDecksModule";
     public static String R_Module_RemoveDecks = "JHS_RemoveDecksModule";
 

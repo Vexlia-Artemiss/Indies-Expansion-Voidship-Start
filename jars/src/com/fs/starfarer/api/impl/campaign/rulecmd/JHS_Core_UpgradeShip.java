@@ -425,10 +425,10 @@ public class JHS_Core_UpgradeShip extends BaseCommandPlugin {
             targetMember.getVariant().addPermaMod("JHS_FleetGantry");
         }
         if (upgrade == UpgradeType.U4_FIXED_WEAPON_SLOTS_40_OP) {
-            targetMember.getVariant().addPermaMod("hbi");
+            targetMember.getVariant().addPermaMod(JHS_IDs.HeavyWeaponsIntegration);
 
-            rightModule.addPermaMod("hbi");
-            leftModule.addPermaMod("hbi");
+            rightModule.addPermaMod(JHS_IDs.HeavyWeaponsIntegration);
+            leftModule.addPermaMod(JHS_IDs.HeavyWeaponsIntegration);
         }
         if (upgrade == UpgradeType.U5_FIXED_TARGETING_CORE) {
             targetMember.getVariant().removeMod(HullMods.INTEGRATED_TARGETING_UNIT);
