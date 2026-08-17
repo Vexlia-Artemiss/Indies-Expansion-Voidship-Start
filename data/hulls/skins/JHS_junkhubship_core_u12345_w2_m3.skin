@@ -1,5 +1,5 @@
 {
-	"baseHullId":"JHS_junkhubship_core_m3",
+	"baseHullId":"JHS_junkhubship_core_m3", 	"incompatibleWithBaseHull":false,
 	"skinHullId":"JHS_junkhubship_core_u12345_w2_m3",
 	"hullName":"Cripled Hubship",
 	"descriptionId":"JHS_junkhubship_core",

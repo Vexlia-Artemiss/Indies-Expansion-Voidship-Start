@@ -1,5 +1,5 @@
 {
-	"baseHullId":"JHS_junkhubship_core_m3",
+	"baseHullId":"JHS_junkhubship_core_m3", 	"incompatibleWithBaseHull":false,
 	"skinHullId":"JHS_junkhubship_core_u134_m3",
 	"hullName":"Tarnished Voidfaring Hubship",
 	"descriptionId":"JHS_junkhubship_core",
